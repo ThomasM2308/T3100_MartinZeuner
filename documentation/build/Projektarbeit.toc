@@ -1,0 +1,34 @@
+\babel@toc {ngerman}{}\relax 
+\contentsline {section}{\numberline {1}Einleitung}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Motivation}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Bedeutung der Lagerlogistik}{1}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Das DHBW-Hochregallager-Modell}{2}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Zielsetzung der Studienarbeit}{2}{subsection.1.4}%
+\contentsline {section}{\numberline {2}Grundlagen}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Problemstellung}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Stand der Technik}{5}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Aufbau des Hochregallagers}{5}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Speicherprogrammierbare Steuerungen}{7}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}SPS-Programmierung}{10}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}Industrielle Bussysteme}{16}{subsubsection.2.2.4}%
+\contentsline {subsubsection}{\numberline {2.2.5}IO-Link}{18}{subsubsection.2.2.5}%
+\contentsline {subsubsection}{\numberline {2.2.6}Vorteile und Nutzen in der Praxis}{22}{subsubsection.2.2.6}%
+\contentsline {subsubsection}{\numberline {2.2.7}Sicherheit in der Automatisierung}{23}{subsubsection.2.2.7}%
+\contentsline {subsubsection}{\numberline {2.2.8}Lichtschranken in sicherheitsrelevanten Anlagen}{25}{subsubsection.2.2.8}%
+\contentsline {section}{\numberline {3}Implementierung eines Lichtgatters in das Gesamtkonzept}{27}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Zielsetzung der Implementierung}{27}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Analyse der Paramerierung des Lichtgatters}{28}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Prozesswerte der Steuerung des Arbeitsverhaltens}{28}{subsubsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.3}Komponentenübersicht und Systemaufbau}{29}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Systemaufbau}{29}{subsubsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.4}Implementieren der Sicherheitslogik in die SPS}{29}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Logische Abschaltbedienungen der Lichtschranke}{31}{subsubsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.5}Visualisierung auf dem HMI}{31}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Implementierung eines Umlagerungsprozesses}{32}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Definition "Umlagerung" im Kontext der Intralogistik}{32}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Prozessablauf der Umlagerung}{32}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Umsetzung im TIA Portal}{33}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Fazit und Ausblick}{35}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Fazit}{35}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Ausblick}{36}{subsection.5.2}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

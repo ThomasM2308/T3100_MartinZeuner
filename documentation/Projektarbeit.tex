@@ -1,0 +1,321 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%BESCHREIBUNG
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Autor (Vorlage): Janik Siller
+%Created: 07/2018
+%
+% !TeX root = Projektarbeit.tex
+%
+%LaTeX Formatvorlage für wissenschaftliche Arbeiten
+%
+%Empfohlene LaTeX Distribution: TeXLive; 
+%	Available: https://www.tug.org/texlive/
+%Empfohlener Editor: Visual Studio Code; 
+%	Available: https://code.visualstudio.com/
+%Empfohlenes LaTeX Plugin für VS Code: LaTeX Workshop; 
+%	Available: https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop
+%
+%Version: 2.0.2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%PRÄAMBEL
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[
+	pdftex,	
+	a4paper,
+	12pt,
+	parskip = half,
+	listof=totoc,
+	bibliography=totoc,
+    headheight = 50pt]
+	{scrartcl}
+
+
+% Sprachpaket Deutsch ------------------------------------------------------------------------------------------
+\usepackage[ngerman]{babel}
+% UTF8 und T1 Fontencoding -------------------------------------------------------------------------------------
+
+
+\usepackage{csquotes}
+
+\usepackage[backend=biber,style=alphabetic]{biblatex}
+
+\addbibresource{content/literature.bib}
+
+\usepackage[T1]{fontenc}
+% ToDo Notes ---------------------------------------------------------------------------------------------------
+%\usepackage{todonotes}
+% Kopf / Fußzeilen----------------------------------------------------------------------------------------------
+\usepackage[headsepline, footsepline]{scrlayer-scrpage}
+% Grafiken einbinden--------------------------------------------------------------------------------------------
+\usepackage{graphicx}
+\usepackage{subcaption} % Benötigt für subfigure
+\usepackage{listings}
+
+% Einfache Verwendung von Farben -------------------------------------------------------------------------------
+\usepackage{xcolor}
+% Inhaltsverzeichnis als Lesezeichen in PDF --------------------------------------------------------------------
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+% Seitenränder -------------------------------------------------------------------------------------------------
+\usepackage[left = 25mm, right=25mm, top=35mm, bottom=30mm, head=41pt]{geometry}
+% Zeilenabstand ------------------------------------------------------------------------------------------------
+\usepackage{setspace}
+% Abkürzungen, Abkürzungsverzeichnis ---------------------------------------------------------------------------
+\usepackage{acronym}
+% Fixe Positionierung von Bildern mit der Option [H]------------------------------------------------------------
+\usepackage{here}
+% Latin Modern Schriftart - schönere Darstellung in PDF --------------------------------------------------------
+\usepackage{lmodern}
+% Mehr Darstellungsoptionen bei Aufzählungen -------------------------------------------------------------------
+\usepackage{enumitem}
+% Ermöglicht Berechnungen in den Argumenten von Kommandos ------------------------------------------------------
+\usepackage{calc}
+% Darstellung von Geburt und Tod -------------------------------------------------------------------------------
+\usepackage{textcomp}
+% Bessere Zeilentrennung zur Vermeidung von overful hbox -------------------------------------------------------
+%\usepackage{microtype}
+% AMS Mathematikpake--------------------------------------------------------------------------------------------
+\usepackage{amsmath}
+% Quellcodelistings --------------------------------------------------------------------------------------------
+\usepackage{listings}
+\usepackage{wrapfig}
+\usepackage{textcomp}
+\usepackage{textgreek}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%META INFORMATIONEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Projektspezifische Informationen -----------------------------------------------------------------------------
+\newcommand{\titel}{Automatisiertes Modell-Hochregallager}
+\newcommand{\arbeit}{T4-3100}
+\newcommand{\studiengang}{Elektro- und Informationstechnik,\\Automation}
+\newcommand{\hochschule}{DHBW Ravensburg}
+\newcommand{\campus}{Campus Friedrichshafen}
+\newcommand{\autor}{Thomas Martin und Melvin Zeuner}
+\newcommand{\abgabe}{18.01.2027}
+\newcommand{\zeitraum}{07.10.2026 - 18.01.2027}
+\newcommand{\matrikelnummer}{2566504 und }
+\newcommand{\kurs}{TEA 24}
+\newcommand{\unternehmen}{DHBW Ravensburg, Campus Friedrichshafen}
+\newcommand{\unternehmenstr}{}
+\newcommand{\unternehmenaddr}{}
+\newcommand{\betreuereins}{Prof. Dr. Ing. Thorsten Kever}
+\newcommand{\betreuerzwei}{}
+\newcommand{\betreuerdrei}{}
+%\newcommand{\gutachter}{Prof. Dr. Gutachter}
+\newcommand{\ort}{}
+% Information für PDF Generierung ------------------------------------------------------------------------------
+\hypersetup{
+	pdftitle = {\titel},
+	pdfsubject = {\titel},
+	pdfauthor = {\autor}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%LAYOUT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Kopf- und Fußzeilen -------------------------------------------------------------------------------------------
+\pagestyle{scrheadings}
+\clearpairofpagestyles
+\ihead{\includegraphics[height = 1.25 cm]{logos/logo_dhbw.png}}
+\ohead{\includegraphics[height = 0.65 cm]{logos/logo_rafi.png}}
+\ofoot{\pagemark}
+%Anpassen der KOMA Überschriften -------------------------------------------------------------------------------
+\addtokomafont{sectioning}{\rmfamily}
+%Zeilenabstand--------------------------------------------------------------------------------------------------
+\onehalfspacing
+%Counter für römische Seitenzahl -------------------------------------------------------------------------------
+\newcounter{savepage}
+%Quellenangabe von Grafiken ------------------------------------------------------------------------------------
+\newcommand*{\quelle}[1]{\footnotesize ~#1}
+%Größe von Abbildungen------------------------------------------------------------------------------------------
+\newcommand{\imgsmall}{0.25\textwidth}
+\newcommand{\imgmedium}{0.5\textwidth}
+\newcommand{\imgbig}{0.75\textwidth}
+\newcommand{\imglarge}{\textwidth}
+%Quellcodeformatierung -----------------------------------------------------------------------------------------
+
+%Farben------------------------------------
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{8} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{8}  % for normal
+
+%JSON -------------------------------------
+\lstdefinelanguage{json}{
+	basicstyle=\scriptsize\normalfont\ttfamily,
+    numbersep=8pt,
+	showstringspaces=false,
+	captionpos=b,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{background},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
+% Farben für die SCL-Syntax definieren
+\definecolor{sclkeyword}{RGB}{0, 0, 255}   % Blau für Schlüsselwörter (IF, THEN, etc.)
+\definecolor{sclstring}{RGB}{0, 0, 0}      % Schwarz für Variablen/Strings
+
+% SCL-Sprache für listings definieren
+\lstdefinelanguage{SCL}{
+  keywords={IF, THEN, ELSIF, ELSE, END_IF, AND, OR, NOT, TRUE, FALSE},
+  keywordstyle=\color{sclkeyword}\bfseries,
+  sensitive=false,
+  morecomment=[l]{//},
+  morecomment=[s]{(*}{*)},
+  morestring=[b]",
+  morestring=[b]'
+}
+
+% Grundlegendes Aussehen der Codeblöcke festlegen
+\lstset{
+  language=SCL,
+  basicstyle=\ttfamily\small,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  stepnumber=1,
+  numbersep=6pt,
+  frame=single,                % Einfacher Rahmen um den Code
+  showstringspaces=false,
+  tabsize=2,
+  breaklines=true
+}
+
+%Python -------------------------------------
+\newcommand\pythonstyle{\lstset{
+    basicstyle=\scriptsize\normalfont\ttfamily,
+    showstringspaces=false,
+    language=Python,
+	captionpos=b,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{background},
+    otherkeywords={self},             % Add keywords here
+    keywordstyle=\ttb\color{deepblue},
+    emph={MyClass,__init__},          % Custom highlighting
+    emphstyle=\ttb\color{deepred},    % Custom highlighting style
+    stringstyle=\color{deepgreen},
+    frame=tb                        % Any extra options here
+}}
+
+\lstnewenvironment{python}[1][]
+{
+\pythonstyle
+\lstset{#1}
+}
+{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%HAUPTTEIL
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+    % Deckblatt ----------------------------------------------------------------------------------------------------
+    \input{content/0_0_1Deckblatt.tex}
+
+    % Eidesstattliche Erklärung-------------------------------------------------------------------------------------
+    \newpage
+    \pagenumbering{Roman}
+    \input{content/0_0_2Erklaerung.tex}
+
+    % Sperrvermerk ------------------------------------------------------------------------------------------------
+    \newpage
+    \input{content/0_0_3Sperrvermerk.tex}
+
+    %Leitgedanke ---------------------------------------------------------------------------------------------------
+    %\newpage
+    %\input{content/0_0_4Leitgedanke.tex}
+
+    %Kurzbeschreibung-----------------------------------------------------------------------------------------------
+    \newpage
+    \input{content/0_0_5Kurzbeschreibung.tex}
+
+    %Abstract-------------------------------------------------------------------------------------------------------
+    \newpage
+    \input{content/0_0_6Abstract.tex}
+
+    %Danksagung-----------------------------------------------------------------------------------------------------
+    %\newpage
+    %\input{content/0_0_7Danksagung.tex}
+
+    %Inhaltsverzeichnis---------------------------------------------------------------------------------------------
+    \newpage
+    \tableofcontents
+    
+    \setcounter{savepage}{\value{page}}
+    \newpage
+
+    %Beginn der Hauptkapitel-----------------------------------------------------------------------------------------------------
+    \pagenumbering{arabic}
+    \input{content/01_Einleitung.tex}
+    \newpage
+    \input{content/02_Grundlagen.tex}
+    \newpage
+    \input{content/03_Thema1.tex}
+    \newpage
+    \input{content/04_Thema2.tex}
+    \newpage
+    \input{content/05_Fazit_und_Ausblick.tex}
+    \newpage
+    %\input{content/06_MomentaufnahmeBisherigeLösung.tex}
+    %\newpage
+    %\input{content/07_LoesungenfuerWebvisualisierung.tex}
+    %\newpage
+    %\input{content/08_Prototyp.tex}
+    %\newpage
+    %\input{content/09_DatenstruckturFuerPredMain.tex}
+    %\newpage
+    %\input{content/099_Evaluation}
+    %\newpage
+    %Abbildungsverzeichnis -----------------------------------------------------------------------------------------
+    \pagenumbering{Roman}
+    %\setcounter{page}{\value{savepage}+1}
+    %\listoffigures
+
+    %Formelzeichenverzeichnis---------------------------------------------------------------------------------------
+    %\newpage
+    %\input{content/100_Formelzeichen.tex}
+    
+    
+
+    %Abkürzungsverzeichnis------------------------------------------------------------------------------------------
+    %\newpage
+    %\input{content/101_Abkuerzungsverzeichnis.tex}
+
+    %Tabellenverzeichnis--------------------------------------------------------------------------------------------
+    %\newpage
+    %\listoftables
+
+    %Nutzung künstlicher Intelligenzen------------------------------------------------------------------------------
+    \newpage
+    \input{content/102_NutzungKünstlicherIntelligenzen.tex}
+
+    %Literaturverzeichnis-------------------------------------------------------------------------------------------
+    \newpage
+    \printbibliography
+\end{document}

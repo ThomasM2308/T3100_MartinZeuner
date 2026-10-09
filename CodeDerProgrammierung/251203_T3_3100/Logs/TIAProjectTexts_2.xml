@@ -1,0 +1,10 @@
+<?xml version="1.0" standalone="no"?>
+<?xml-stylesheet type='text/xsl' href='MassDataHandlerLogFile.xsl'?>
+<LogFile titleName="TIAProjectTexts_2.xml" projectName="C:\Users\julia\Documents\Automatisierung\TIAProjectTexts.xlsx" typeText="Typ" messageText="Meldung" timeText="Zeit">
+  <LogEntry type="Information" dateTime="13:53:29">
+    <Message>Textimport gestartet.</Message>
+  </LogEntry>
+  <LogEntry type="Information" dateTime="13:53:29">
+    <Message>Textimport abgeschlossen.</Message>
+  </LogEntry>
+</LogFile>

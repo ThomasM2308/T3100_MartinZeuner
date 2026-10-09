@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<DownloadTask xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ProjectInfo ProjectId="665770a9-e7cc-4a81-92ca-51d18aee18dd" ESProjectName="2505113_HLR_TEA22_T3_3200_Butten_reset_Gesamtlager" ESDeviceName="HMI_RT_1" RtProjectFolderName="2505113_HLR_TEA22_T3_3200_Butten_reset_Gesamtlager.HMI_1[MTP1500 Unified Comfort]" RtProjectName="2505113_HLR_TEA22_T3_3200_Butten_reset_Gesamtlager.HMI_1[MTP1500 Unified Comfort]" DeviceType="MTP1500 Unified Comfort" DeviceVersion="18.0.0.0" CreationTime="05/13/2025 15:25:11" RuntimeAddonFolderName="UCP_7_22" FirmwareFileName="" RuntimeFileName="" PRCV="4.1.0.0" RTCV="16.0.0.0" RTReleaseNo="18.0.0.0" ImageReleaseNo="18.0.0.0" />
+  <FullDownload type="ADMINDATA">UMCData.json</FullDownload>
+  <FullDownload>User.pbb</FullDownload>
+  <FullDownload>{894AD6A7-6155-424B-AA9D-7E77FD174D24}.zip</FullDownload>
+  <FullDownload>{9BA2ACF0-39B3-465B-8E10-28301ED605C5}.zip</FullDownload>
+  <FullDownload>device\devicesettings.pbb</FullDownload>
+  <FullDownload>fonts\SISAN03.ttf</FullDownload>
+  <FullDownload>fonts\SISAN03.woff2</FullDownload>
+  <FullDownload>general\cds.rdf</FullDownload>
+  <FullDownload>general\ChromIdentification.rdf</FullDownload>
+  <FullDownload>general\config_AlertClass.rdf</FullDownload>
+  <FullDownload>general\config_AlertHandler.rdf</FullDownload>
+  <FullDownload>general\config_InitialValue.rdf</FullDownload>
+  <FullDownload>general\dpIdentification.rdf</FullDownload>
+  <FullDownload>general\fontLocatorList.rdf</FullDownload>
+  <FullDownload>general\main.rdf</FullDownload>
+  <FullDownload>general\style_114.rdf</FullDownload>
+  <FullDownload>general\style_206.rdf</FullDownload>
+  <FullDownload>general\style_24.rdf</FullDownload>
+  <FullDownload>general\textLibrary_112_1031.rdf</FullDownload>
+  <FullDownload>general\textLibrary_207_1031.rdf</FullDownload>
+  <FullDownload>general\textListLibrary.rdf</FullDownload>
+  <FullDownload>system\ES2RTID.rdf</FullDownload>
+  <FullDownload>system\ProjectCharacteristics.rdf</FullDownload>
+</DownloadTask>

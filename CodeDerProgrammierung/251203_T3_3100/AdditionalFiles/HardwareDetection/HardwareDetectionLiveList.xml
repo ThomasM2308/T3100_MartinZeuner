@@ -1,0 +1,8 @@
+<OnlineDevices>
+  <OnlineDevice VendorID="136" DeviceID="AC52" TypeID="136AC52" DeviceType="ifm IO-Link Master ">
+    <DeviceRole>Device</DeviceRole>
+    <NameOfStation>al1100</NameOfStation>
+    <MacAddress>00-02-01-63-D1-BB</MacAddress>
+    <IPAddress>192.168.0.4</IPAddress>
+  </OnlineDevice>
+</OnlineDevices>
