@@ -16,32 +16,32 @@
 \contentsline {subsubsection}{\numberline {2.2.7}Sicherheit in der Automatisierung}{23}{subsubsection.2.2.7}%
 \contentsline {subsubsection}{\numberline {2.2.8}Lichtschranken in sicherheitsrelevanten Anlagen}{25}{subsubsection.2.2.8}%
 \contentsline {section}{\numberline {3}Implementierung eines Auftragsmanagement in das Gesamtkonzept}{27}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Zielsetzung der Implementierung}{27}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Grundlagen des Auftragsmanagements}{27}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Systemaufbau mit Python und SPS-Programm}{27}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Konzept des Python-Programms}{27}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Konzept des SPS-Programms}{27}{subsubsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.4}Auftragshandling}{28}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Anlegen von Aufträgen}{28}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Prisorisierung von Aufträgen}{28}{subsubsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}Ausführen von Aufträgen}{28}{subsubsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.5}Implementieren des Auftragsmanagements}{28}{subsection.3.5}%
-\contentsline {subsubsection}{\numberline {3.5.1}Intersktion zwischen Python und SPS-Programm}{28}{subsubsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.6}Visualisierung auf dem HMI}{28}{subsection.3.6}%
-\contentsline {section}{\numberline {4}Implementierung eines Lichtgatters in das Gesamtkonzept}{28}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Zielsetzung der Implementierung}{28}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Analyse der Paramerierung des Lichtgatters}{29}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Prozesswerte der Steuerung des Arbeitsverhaltens}{29}{subsubsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.3}Komponentenübersicht und Systemaufbau}{30}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Systemaufbau}{30}{subsubsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.4}Implementieren der Sicherheitslogik in die SPS}{31}{subsection.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.1}Logische Abschaltbedienungen der Lichtschranke}{32}{subsubsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.5}Visualisierung auf dem HMI}{32}{subsection.4.5}%
-\contentsline {section}{\numberline {5}Implementierung eines Umlagerungsprozesses}{33}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Definition "Umlagerung" im Kontext der Intralogistik}{33}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Prozessablauf der Umlagerung}{33}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Umsetzung im TIA Portal}{34}{subsection.5.3}%
-\contentsline {section}{\numberline {6}Fazit und Ausblick}{36}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Fazit}{36}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Ausblick}{37}{subsection.6.2}%
+\contentsline {subsection}{\numberline {3.1}Zielsetzung der Arbeit und des Auftragsmanagements}{27}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Grundlagen des Auftragsmanagements}{28}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Systemaufbau mit Python und SPS-Programm}{29}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Konzept des Python-Programms}{30}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Konzept des SPS-Programms}{30}{subsubsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.4}Auftragshandling}{30}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Anlegen von Aufträgen}{30}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Prisorisierung von Aufträgen}{30}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Ausführen von Aufträgen}{30}{subsubsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.5}Implementieren des Auftragsmanagements}{30}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Intersktion zwischen Python und SPS-Programm}{30}{subsubsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.6}Visualisierung auf dem HMI}{30}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Implementierung eines Lichtgatters in das Gesamtkonzept}{31}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Zielsetzung der Implementierung}{31}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Analyse der Paramerierung des Lichtgatters}{32}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Prozesswerte der Steuerung des Arbeitsverhaltens}{32}{subsubsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.3}Komponentenübersicht und Systemaufbau}{33}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Systemaufbau}{33}{subsubsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.4}Implementieren der Sicherheitslogik in die SPS}{34}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Logische Abschaltbedienungen der Lichtschranke}{35}{subsubsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.5}Visualisierung auf dem HMI}{35}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Implementierung eines Umlagerungsprozesses}{36}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Definition "Umlagerung" im Kontext der Intralogistik}{36}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Prozessablauf der Umlagerung}{36}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Umsetzung im TIA Portal}{37}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Fazit und Ausblick}{39}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Fazit}{39}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Ausblick}{40}{subsection.6.2}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

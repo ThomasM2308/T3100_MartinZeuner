@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.30)  9 OCT 2026 14:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.30)  9 OCT 2026 15:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1353,16 +1353,7 @@ File: logos/logo_rafi.png Graphic file (type png)
 <use logos/logo_rafi.png>
 Package pdftex.def Info: logos/logo_rafi.png  used on input line 267.
 (pdftex.def)             Requested size: 124.83679pt x 18.49411pt.
- [4] (c:\Users\h0109030\Documents\GitHub\T3100_MartinZeuner\documentation\build\Projektarbeit.toc
-File: logos/logo_dhbw.png Graphic file (type png)
-<use logos/logo_dhbw.png>
-Package pdftex.def Info: logos/logo_dhbw.png  used on input line 35.
-(pdftex.def)             Requested size: 85.08328pt x 35.56593pt.
-File: logos/logo_rafi.png Graphic file (type png)
-<use logos/logo_rafi.png>
-Package pdftex.def Info: logos/logo_rafi.png  used on input line 35.
-(pdftex.def)             Requested size: 124.83679pt x 18.49411pt.
- [5])
+ [4] (c:\Users\h0109030\Documents\GitHub\T3100_MartinZeuner\documentation\build\Projektarbeit.toc)
 \tf@toc=\write4
 \openout4 = `Projektarbeit.toc'.
 
@@ -1374,7 +1365,7 @@ File: logos/logo_rafi.png Graphic file (type png)
 <use logos/logo_rafi.png>
 Package pdftex.def Info: logos/logo_rafi.png  used on input line 271.
 (pdftex.def)             Requested size: 124.83679pt x 18.49411pt.
- [6] (content/01_Einleitung.tex
+ [5] (content/01_Einleitung.tex
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 46.
  (C:\Users\h0109030\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -1424,7 +1415,7 @@ File: logos/logo_rafi.png Graphic file (type png)
 Package pdftex.def Info: logos/logo_rafi.png  used on input line 47.
 (pdftex.def)             Requested size: 124.83679pt x 18.49411pt.
 [4]
-<images/KoordinatensystemAufbau.png, id=146, 723.70375pt x 525.965pt>
+<images/KoordinatensystemAufbau.png, id=59, 723.70375pt x 525.965pt>
 File: images/KoordinatensystemAufbau.png Graphic file (type png)
 <use images/KoordinatensystemAufbau.png>
 Package pdftex.def Info: images/KoordinatensystemAufbau.png  used on input line 60.
@@ -1515,7 +1506,7 @@ File: logos/logo_rafi.png Graphic file (type png)
 Package pdftex.def Info: logos/logo_rafi.png  used on input line 177.
 (pdftex.def)             Requested size: 124.83679pt x 18.49411pt.
 [7]
-<images/EVAPrinzip.png, id=161, 926.46124pt x 281.05pt>
+<images/EVAPrinzip.png, id=77, 926.46124pt x 281.05pt>
 File: images/EVAPrinzip.png Graphic file (type png)
 <use images/EVAPrinzip.png>
 Package pdftex.def Info: images/EVAPrinzip.png  used on input line 194.
@@ -1529,7 +1520,7 @@ File: logos/logo_rafi.png Graphic file (type png)
 Package pdftex.def Info: logos/logo_rafi.png  used on input line 198.
 (pdftex.def)             Requested size: 124.83679pt x 18.49411pt.
  [8]
-<images/S7-1500.png, id=167, 871.255pt x 493.845pt>
+<images/S7-1500.png, id=83, 871.255pt x 493.845pt>
 File: images/S7-1500.png Graphic file (type png)
 <use images/S7-1500.png>
 Package pdftex.def Info: images/S7-1500.png  used on input line 210.
@@ -1548,7 +1539,7 @@ File: logos/logo_rafi.png Graphic file (type png)
 Package pdftex.def Info: logos/logo_rafi.png  used on input line 221.
 (pdftex.def)             Requested size: 124.83679pt x 18.49411pt.
 [9 <./images/EVAPrinzip.png (PNG copy)> <./images/S7-1500.png (PNG copy)>]
-<images/VariablentabelleTIA.png, id=174, 708.6475pt x 521.95pt>
+<images/VariablentabelleTIA.png, id=90, 708.6475pt x 521.95pt>
 File: images/VariablentabelleTIA.png Graphic file (type png)
 <use images/VariablentabelleTIA.png>
 Package pdftex.def Info: images/VariablentabelleTIA.png  used on input line 240.
@@ -1605,27 +1596,27 @@ File: logos/logo_rafi.png Graphic file (type png)
 Package pdftex.def Info: logos/logo_rafi.png  used on input line 321.
 (pdftex.def)             Requested size: 124.83679pt x 18.49411pt.
 [12]
-<images/UndGatter.png, id=190, 587.19376pt x 190.7125pt>
+<images/UndGatter.png, id=106, 587.19376pt x 190.7125pt>
 File: images/UndGatter.png Graphic file (type png)
 <use images/UndGatter.png>
 Package pdftex.def Info: images/UndGatter.png  used on input line 329.
 (pdftex.def)             Requested size: 141.12456pt x 45.83304pt.
-<images/OderGatter.png, id=191, 589.20125pt x 203.76125pt>
+<images/OderGatter.png, id=107, 589.20125pt x 203.76125pt>
 File: images/OderGatter.png Graphic file (type png)
 <use images/OderGatter.png>
 Package pdftex.def Info: images/OderGatter.png  used on input line 335.
 (pdftex.def)             Requested size: 141.12456pt x 48.8042pt.
-<images/NotGatter.png, id=192, 600.2425pt x 136.51pt>
+<images/NotGatter.png, id=108, 600.2425pt x 136.51pt>
 File: images/NotGatter.png Graphic file (type png)
 <use images/NotGatter.png>
 Package pdftex.def Info: images/NotGatter.png  used on input line 341.
 (pdftex.def)             Requested size: 141.12456pt x 32.09442pt.
-<images/SRFlipFlop.png, id=193, 363.3575pt x 142.5325pt>
+<images/SRFlipFlop.png, id=109, 363.3575pt x 142.5325pt>
 File: images/SRFlipFlop.png Graphic file (type png)
 <use images/SRFlipFlop.png>
 Package pdftex.def Info: images/SRFlipFlop.png  used on input line 357.
 (pdftex.def)             Requested size: 223.07211pt x 87.5058pt.
-<images/TON.png, id=194, 389.455pt x 138.5175pt>
+<images/TON.png, id=110, 389.455pt x 138.5175pt>
 File: images/TON.png Graphic file (type png)
 <use images/TON.png>
 Package pdftex.def Info: images/TON.png  used on input line 363.
@@ -1639,12 +1630,12 @@ File: logos/logo_rafi.png Graphic file (type png)
 Package pdftex.def Info: logos/logo_rafi.png  used on input line 392.
 (pdftex.def)             Requested size: 124.83679pt x 18.49411pt.
  [13 <./images/UndGatter.png (PNG copy)> <./images/OderGatter.png (PNG copy)> <./images/NotGatter.png (PNG copy)> <./images/SRFlipFlop.png (PNG copy)> <./images/TON.png (PNG copy)>]
-<images/FBSteuerungFoerderband.png, id=202, 703.62875pt x 478.78876pt>
+<images/FBSteuerungFoerderband.png, id=119, 703.62875pt x 478.78876pt>
 File: images/FBSteuerungFoerderband.png Graphic file (type png)
 <use images/FBSteuerungFoerderband.png>
 Package pdftex.def Info: images/FBSteuerungFoerderband.png  used on input line 432.
 (pdftex.def)             Requested size: 223.07211pt x 151.79091pt.
-<images/FreigabeImOB.png, id=203, 704.6325pt x 430.60875pt>
+<images/FreigabeImOB.png, id=120, 704.6325pt x 430.60875pt>
 File: images/FreigabeImOB.png Graphic file (type png)
 <use images/FreigabeImOB.png>
 Package pdftex.def Info: images/FreigabeImOB.png  used on input line 438.
@@ -1673,7 +1664,7 @@ File: logos/logo_rafi.png Graphic file (type png)
 Package pdftex.def Info: logos/logo_rafi.png  used on input line 491.
 (pdftex.def)             Requested size: 124.83679pt x 18.49411pt.
  [15 <./images/FBSteuerungFoerderband.png (PNG copy)> <./images/FreigabeImOB.png (PNG copy)>]
-<images/BusTopologien.png, id=239, 538.01pt x 565.11125pt>
+<images/BusTopologien.png, id=156, 538.01pt x 565.11125pt>
 File: images/BusTopologien.png Graphic file (type png)
 <use images/BusTopologien.png>
 Package pdftex.def Info: images/BusTopologien.png  used on input line 527.
@@ -1752,7 +1743,7 @@ File: logos/logo_rafi.png Graphic file (type png)
 Package pdftex.def Info: logos/logo_rafi.png  used on input line 571.
 (pdftex.def)             Requested size: 124.83679pt x 18.49411pt.
 [17 <./images/BusTopologien.png (PNG copy)>]
-<images/IOLinkArchitektur.png, id=249, 737.75626pt x 553.06625pt>
+<images/IOLinkArchitektur.png, id=167, 737.75626pt x 553.06625pt>
 File: images/IOLinkArchitektur.png Graphic file (type png)
 <use images/IOLinkArchitektur.png>
 Package pdftex.def Info: images/IOLinkArchitektur.png  used on input line 592.
@@ -1766,7 +1757,7 @@ File: logos/logo_rafi.png Graphic file (type png)
 Package pdftex.def Info: logos/logo_rafi.png  used on input line 596.
 (pdftex.def)             Requested size: 124.83679pt x 18.49411pt.
  [18]
-<images/IOLinkAnschluss.png, id=256, 743.77875pt x 323.2075pt>
+<images/IOLinkAnschluss.png, id=174, 743.77875pt x 323.2075pt>
 File: images/IOLinkAnschluss.png Graphic file (type png)
 <use images/IOLinkAnschluss.png>
 Package pdftex.def Info: images/IOLinkAnschluss.png  used on input line 609.
@@ -1785,7 +1776,7 @@ File: logos/logo_rafi.png Graphic file (type png)
 Package pdftex.def Info: logos/logo_rafi.png  used on input line 616.
 (pdftex.def)             Requested size: 124.83679pt x 18.49411pt.
 [19 <./images/IOLinkArchitektur.png (PNG copy)> <./images/IOLinkAnschluss.png (PNG copy)>]
-<images/IOLinkMaster.png, id=263, 286.06876pt x 494.84875pt>
+<images/IOLinkMaster.png, id=182, 286.06876pt x 494.84875pt>
 File: images/IOLinkMaster.png Graphic file (type png)
 <use images/IOLinkMaster.png>
 Package pdftex.def Info: images/IOLinkMaster.png  used on input line 620.
@@ -1839,7 +1830,7 @@ File: logos/logo_rafi.png Graphic file (type png)
 Package pdftex.def Info: logos/logo_rafi.png  used on input line 831.
 (pdftex.def)             Requested size: 124.83679pt x 18.49411pt.
  [24]
-<images/SchematischeDarstellungIFMLichtgatter.png, id=286, 850.17625pt x 636.3775pt>
+<images/SchematischeDarstellungIFMLichtgatter.png, id=206, 850.17625pt x 636.3775pt>
 File: images/SchematischeDarstellungIFMLichtgatter.png Graphic file (type png)
 <use images/SchematischeDarstellungIFMLichtgatter.png>
 Package pdftex.def Info: images/SchematischeDarstellungIFMLichtgatter.png  used on input line 869.
@@ -1861,96 +1852,308 @@ File: logos/logo_rafi.png Graphic file (type png)
 <use logos/logo_rafi.png>
 Package pdftex.def Info: logos/logo_rafi.png  used on input line 278.
 (pdftex.def)             Requested size: 124.83679pt x 18.49411pt.
- [26 <./images/SchematischeDarstellungIFMLichtgatter.png (PNG copy)>] (content/03_Thema1.tex
+ [26 <./images/SchematischeDarstellungIFMLichtgatter.png (PNG copy)>] (content/03_ImplementierungAuftragsmanagement.tex
+Overfull \hbox (26.11925pt too wide) in paragraph at lines 11--12
+\T1/lmr/m/n/12 Die bis-he-ri-gen Ar-bei-ten am Modell-Hochregallager der Dua-len Hoch-schu-le Baden-W�rttemberg
+ []
+
 File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
-Package pdftex.def Info: logos/logo_dhbw.png  used on input line 54.
+Package pdftex.def Info: logos/logo_dhbw.png  used on input line 14.
 (pdftex.def)             Requested size: 85.08328pt x 35.56593pt.
 File: logos/logo_rafi.png Graphic file (type png)
 <use logos/logo_rafi.png>
-Package pdftex.def Info: logos/logo_rafi.png  used on input line 54.
+Package pdftex.def Info: logos/logo_rafi.png  used on input line 14.
 (pdftex.def)             Requested size: 124.83679pt x 18.49411pt.
- [27]
+[27]
 File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
-Package pdftex.def Info: logos/logo_dhbw.png  used on input line 74.
+Package pdftex.def Info: logos/logo_dhbw.png  used on input line 28.
 (pdftex.def)             Requested size: 85.08328pt x 35.56593pt.
 File: logos/logo_rafi.png Graphic file (type png)
 <use logos/logo_rafi.png>
-Package pdftex.def Info: logos/logo_rafi.png  used on input line 74.
+Package pdftex.def Info: logos/logo_rafi.png  used on input line 28.
 (pdftex.def)             Requested size: 124.83679pt x 18.49411pt.
  [28]
 File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
-Package pdftex.def Info: logos/logo_dhbw.png  used on input line 121.
+Package pdftex.def Info: logos/logo_dhbw.png  used on input line 41.
 (pdftex.def)             Requested size: 85.08328pt x 35.56593pt.
 File: logos/logo_rafi.png Graphic file (type png)
 <use logos/logo_rafi.png>
-Package pdftex.def Info: logos/logo_rafi.png  used on input line 121.
+Package pdftex.def Info: logos/logo_rafi.png  used on input line 41.
 (pdftex.def)             Requested size: 124.83679pt x 18.49411pt.
  [29]
-Overfull \hbox (115.35362pt too wide) in paragraph at lines 123--163
+content/03_ImplementierungAuftragsmanagement.tex:71: Misplaced alignment tab character &.
+l.71 | OBEN LINKS: BETRIEBSMODUS &
+                                   SICHERHEIT            | MITTE: AUFTRAGSQU...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+content/03_ImplementierungAuftragsmanagement.tex:74: LaTeX Error: Unicode character ● (U+25CF)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.74 ... ID: AUF-2026-0891     Executable: JA [●
+                                                  ]   |  |
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+content/03_ImplementierungAuftragsmanagement.tex:76: LaTeX Error: Unicode character ▲ (U+25B2)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.76 ...e Folgeaufträge)     |  |  |        [ ▲
+                                                   HOCH ]  [ ▼ RUNTER ]  [...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+content/03_ImplementierungAuftragsmanagement.tex:76: LaTeX Error: Unicode character ▼ (U+25BC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.76 ...ge)     |  |  |        [ ▲ HOCH ]  [ ▼
+                                                   RUNTER ]  [ 🗑 LÖSCHEN...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+content/03_ImplementierungAuftragsmanagement.tex:76: LaTeX Error: Unicode character 🗑 (U+1F5D1)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.76 ...      [ ▲ HOCH ]  [ ▼ RUNTER ]  [ 🗑
+                                                   LÖSCHEN ]       |  |
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+content/03_ImplementierungAuftragsmanagement.tex:78: LaTeX Error: Unicode character ○ (U+25CB)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.78 ...D: AUF-2026-0892     Executable: NEIN [○
+                                                  ] |  |
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+content/03_ImplementierungAuftragsmanagement.tex:80: Misplaced alignment tab character &.
+l.80 |  | SICHERHEIT &
+                       NOT-AUS                        |  |  |        [ ▲ H...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+content/03_ImplementierungAuftragsmanagement.tex:80: LaTeX Error: Unicode character ▲ (U+25B2)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.80 ...                      |  |  |        [ ▲
+                                                   HOCH ]  [ ▼ RUNTER ]  [...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+content/03_ImplementierungAuftragsmanagement.tex:80: LaTeX Error: Unicode character ▼ (U+25BC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.80 ...        |  |  |        [ ▲ HOCH ]  [ ▼
+                                                   RUNTER ]  [ 🗑 LÖSCHEN...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+content/03_ImplementierungAuftragsmanagement.tex:80: LaTeX Error: Unicode character 🗑 (U+1F5D1)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.80 ...      [ ▲ HOCH ]  [ ▼ RUNTER ]  [ 🗑
+                                                   LÖSCHEN ]       |  |
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+content/03_ImplementierungAuftragsmanagement.tex:82: LaTeX Error: Unicode character ● (U+25CF)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.82 ... ID: AUF-2026-0893     Executable: JA [●
+                                                  ]   |  |
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+content/03_ImplementierungAuftragsmanagement.tex:84: LaTeX Error: Unicode character ▲ (U+25B2)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.84 ...----------------------+  |  |        [ ▲
+                                                   HOCH ]  [ ▼ RUNTER ]  [...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+content/03_ImplementierungAuftragsmanagement.tex:84: LaTeX Error: Unicode character ▼ (U+25BC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.84 ...--------+  |  |        [ ▲ HOCH ]  [ ▼
+                                                   RUNTER ]  [ 🗑 LÖSCHEN...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+content/03_ImplementierungAuftragsmanagement.tex:84: LaTeX Error: Unicode character 🗑 (U+1F5D1)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.84 ...      [ ▲ HOCH ]  [ ▼ RUNTER ]  [ 🗑
+                                                   LÖSCHEN ]       |  |
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Overfull \hbox (3.65889pt too wide) in paragraph at lines 68--92
+[]\T1/lmr/m/n/12 +-----------------------------------------------------------------------------------------------------------------+
+ []
+
+File: logos/logo_dhbw.png Graphic file (type png)
+<use logos/logo_dhbw.png>
+Package pdftex.def Info: logos/logo_dhbw.png  used on input line 92.
+(pdftex.def)             Requested size: 85.08328pt x 35.56593pt.
+File: logos/logo_rafi.png Graphic file (type png)
+<use logos/logo_rafi.png>
+Package pdftex.def Info: logos/logo_rafi.png  used on input line 92.
+(pdftex.def)             Requested size: 124.83679pt x 18.49411pt.
+[30]
+File: logos/logo_dhbw.png Graphic file (type png)
+<use logos/logo_dhbw.png>
+Package pdftex.def Info: logos/logo_dhbw.png  used on input line 131.
+(pdftex.def)             Requested size: 85.08328pt x 35.56593pt.
+File: logos/logo_rafi.png Graphic file (type png)
+<use logos/logo_rafi.png>
+Package pdftex.def Info: logos/logo_rafi.png  used on input line 131.
+(pdftex.def)             Requested size: 124.83679pt x 18.49411pt.
+ [31]
+File: logos/logo_dhbw.png Graphic file (type png)
+<use logos/logo_dhbw.png>
+Package pdftex.def Info: logos/logo_dhbw.png  used on input line 178.
+(pdftex.def)             Requested size: 85.08328pt x 35.56593pt.
+File: logos/logo_rafi.png Graphic file (type png)
+<use logos/logo_rafi.png>
+Package pdftex.def Info: logos/logo_rafi.png  used on input line 178.
+(pdftex.def)             Requested size: 124.83679pt x 18.49411pt.
+ [32]
+Overfull \hbox (115.35362pt too wide) in paragraph at lines 180--220
 \T1/lmr/m/n/12 F�rdieUmsetzungderSicherheitsfunktionwurdeeinSystemaufbaurealisiert,derdie LichtschrankedirektmiteinemIO-
  []
 
 
-Overfull \hbox (0.40979pt too wide) in paragraph at lines 123--163
+Overfull \hbox (0.40979pt too wide) in paragraph at lines 180--220
 \T1/lmr/m/n/12 Link-MasterundderSPSverbindet.ImFolgenden wer-den-die-ein-ge-setz-ten-Kom-po-nen-ten-so-wie-
  []
 
 
-Overfull \hbox (9.5484pt too wide) in paragraph at lines 123--163
+Overfull \hbox (9.5484pt too wide) in paragraph at lines 180--220
 \T1/lmr/m/n/12 der-en-Zu-sam-men-spiel in-ner-halb-des Ge-samt-sys-tems-be-schrie-ben. Kom-po-nen-te Her-stel-ler/Typ
  []
 
 
-Overfull \hbox (8.463pt too wide) in paragraph at lines 123--163
+Overfull \hbox (8.463pt too wide) in paragraph at lines 180--220
 \T1/lmr/m/n/12 Ob-jek-ten und-�ber-wa-chung-des-Ge fah-ren-be-reichs IO-Link IO-LinkMaster IF-MAL1100 Kom-
  []
 
 
-Overfull \hbox (1.69635pt too wide) in paragraph at lines 123--163
+Overfull \hbox (1.69635pt too wide) in paragraph at lines 180--220
 \T1/lmr/m/n/12 mu-ni-ka-ti-on zwi-schen IO-Link-Devices und der SPS PRO-FI-NET / IO-Link SPS SiemensS7-
  []
 
 
-Overfull \hbox (4.8689pt too wide) in paragraph at lines 123--163
+Overfull \hbox (4.8689pt too wide) in paragraph at lines 180--220
 \T1/lmr/m/n/12 teil24VDC Sie-mens-SI-TOP/ver gleich-bar Ver-sor-gung von IO-Link Mas-ter,Lichtschrankeund
  []
 
 
-Overfull \hbox (93.92035pt too wide) in paragraph at lines 123--163
+Overfull \hbox (93.92035pt too wide) in paragraph at lines 180--220
 \T1/lmr/m/n/12 la-ger-be-we-gung Di-gi-ta-le Aus g�n-ge der SPS Ta-bel-le4:�bersichtderverwendetenKomponentenimSystemaufbau
  []
 
 
-Overfull \hbox (14.49948pt too wide) in paragraph at lines 123--163
+Overfull \hbox (14.49948pt too wide) in paragraph at lines 180--220
 \T1/lmr/m/n/12 ge-stellt. Die-se-m�s-sen-op-ti-mal-mi-tein-an-der-in-ter-a-gie-ren,umdiegew�nschteFunktionalit�tsi cher-
  []
 
 
-Overfull \hbox (4.75226pt too wide) in paragraph at lines 123--163
+Overfull \hbox (4.75226pt too wide) in paragraph at lines 180--220
 \T1/lmr/m/n/12 zu-stel-len. Die-Licht-schrank-eist-vom-Ty-pOY5100undstammtvomHerstellerIFM.Eshandeltsich
  []
 
 File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
-Package pdftex.def Info: logos/logo_dhbw.png  used on input line 189.
+Package pdftex.def Info: logos/logo_dhbw.png  used on input line 246.
 (pdftex.def)             Requested size: 85.08328pt x 35.56593pt.
 File: logos/logo_rafi.png Graphic file (type png)
 <use logos/logo_rafi.png>
-Package pdftex.def Info: logos/logo_rafi.png  used on input line 189.
+Package pdftex.def Info: logos/logo_rafi.png  used on input line 246.
 (pdftex.def)             Requested size: 124.83679pt x 18.49411pt.
-[30]
+[33]
 File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
-Package pdftex.def Info: logos/logo_dhbw.png  used on input line 251.
+Package pdftex.def Info: logos/logo_dhbw.png  used on input line 308.
 (pdftex.def)             Requested size: 85.08328pt x 35.56593pt.
 File: logos/logo_rafi.png Graphic file (type png)
 <use logos/logo_rafi.png>
-Package pdftex.def Info: logos/logo_rafi.png  used on input line 251.
+Package pdftex.def Info: logos/logo_rafi.png  used on input line 308.
 (pdftex.def)             Requested size: 124.83679pt x 18.49411pt.
- [31])
+ [34])
 File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
 Package pdftex.def Info: logos/logo_dhbw.png  used on input line 280.
@@ -1959,7 +2162,7 @@ File: logos/logo_rafi.png Graphic file (type png)
 <use logos/logo_rafi.png>
 Package pdftex.def Info: logos/logo_rafi.png  used on input line 280.
 (pdftex.def)             Requested size: 124.83679pt x 18.49411pt.
- [32] (content/04_Thema2.tex
+ [35] (content/04_Thema2.tex
 File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
 Package pdftex.def Info: logos/logo_dhbw.png  used on input line 79.
@@ -1968,7 +2171,7 @@ File: logos/logo_rafi.png Graphic file (type png)
 <use logos/logo_rafi.png>
 Package pdftex.def Info: logos/logo_rafi.png  used on input line 79.
 (pdftex.def)             Requested size: 124.83679pt x 18.49411pt.
- [33]
+ [36]
 File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
 Package pdftex.def Info: logos/logo_dhbw.png  used on input line 106.
@@ -1977,7 +2180,7 @@ File: logos/logo_rafi.png Graphic file (type png)
 <use logos/logo_rafi.png>
 Package pdftex.def Info: logos/logo_rafi.png  used on input line 106.
 (pdftex.def)             Requested size: 124.83679pt x 18.49411pt.
- [34])
+ [37])
 File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
 Package pdftex.def Info: logos/logo_dhbw.png  used on input line 282.
@@ -1986,7 +2189,7 @@ File: logos/logo_rafi.png Graphic file (type png)
 <use logos/logo_rafi.png>
 Package pdftex.def Info: logos/logo_rafi.png  used on input line 282.
 (pdftex.def)             Requested size: 124.83679pt x 18.49411pt.
- [35] (content/05_Fazit_und_Ausblick.tex
+ [38] (content/05_Fazit_und_Ausblick.tex
 File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
 Package pdftex.def Info: logos/logo_dhbw.png  used on input line 49.
@@ -1995,7 +2198,7 @@ File: logos/logo_rafi.png Graphic file (type png)
 <use logos/logo_rafi.png>
 Package pdftex.def Info: logos/logo_rafi.png  used on input line 49.
 (pdftex.def)             Requested size: 124.83679pt x 18.49411pt.
- [36]
+ [39]
 File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
 Package pdftex.def Info: logos/logo_dhbw.png  used on input line 110.
@@ -2004,7 +2207,7 @@ File: logos/logo_rafi.png Graphic file (type png)
 <use logos/logo_rafi.png>
 Package pdftex.def Info: logos/logo_rafi.png  used on input line 110.
 (pdftex.def)             Requested size: 124.83679pt x 18.49411pt.
- [37])
+ [40])
 File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
 Package pdftex.def Info: logos/logo_dhbw.png  used on input line 284.
@@ -2013,7 +2216,7 @@ File: logos/logo_rafi.png Graphic file (type png)
 <use logos/logo_rafi.png>
 Package pdftex.def Info: logos/logo_rafi.png  used on input line 284.
 (pdftex.def)             Requested size: 124.83679pt x 18.49411pt.
- [38] (content/102_NutzungKünstlicherIntelligenzen.tex
+ [41] (content/102_NutzungKünstlicherIntelligenzen.tex
 Underfull \hbox (badness 1939) in paragraph at lines 6--7
 []\T1/lmr/bx/n/12 Arbeitsschritt /
  []
@@ -2166,17 +2369,17 @@ Package logreq Info: Writing requests to 'Projektarbeit.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30395 strings out of 467867
- 580650 string characters out of 5416882
- 1666304 words of memory out of 5000000
+ 30397 strings out of 467867
+ 580710 string characters out of 5416882
+ 1666242 words of memory out of 5000000
  58766 multiletter control sequences out of 15000+600000
  678432 words of font info for 72 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,24n,110p,11284b,2371s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
-Output written on c:\Users\h0109030\Documents\GitHub\T3100_MartinZeuner\documentation\build\Projektarbeit.pdf (47 pages, 2377438 bytes).
+Output written on c:\Users\h0109030\Documents\GitHub\T3100_MartinZeuner\documentation\build\Projektarbeit.pdf (49 pages, 2376290 bytes).
 PDF statistics:
- 551 PDF objects out of 1000 (max. 8388607)
- 126 named destinations out of 1000 (max. 500000)
+ 516 PDF objects out of 1000 (max. 8388607)
+ 128 named destinations out of 1000 (max. 500000)
  451 words of extra memory for PDF output out of 10000 (max. 10000000)
 

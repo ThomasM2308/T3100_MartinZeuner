@@ -1,15 +1,40 @@
 \section{Implementierung eines Auftragsmanagement in das Gesamtkonzept}
 
+Im aktuellen Ist-Zustand des Hochregallagers fehlt die vollständige Implementierung einer zentralen Auftragsverwaltung. Bisher werden Steuerungssignale oder Aufträge lediglich starr abgearbeitet, ohne dass eine dynamische Priorisierung, flexible Reihenfolgeanpassung oder Echtzeit-Statusüberwachung stattfindet. Es existiert keine übergeordnete Instanz, die Aufträge in einer zentralen Warteschlange verwaltet, deren Ausführbarkeit (Executable) prüft oder Auftragsarten (Ein-, Um- und Auslagerung) strukturiert aufbereitet.
 
-\subsection{Zielsetzung der Implementierung}
+Die Logik des Ein-, Um- und Auslagerns ist somit unflexibel. Sobald ein Eingriff in den Prozess erfolgt – wie etwa das Veranlassen einer Lagersperre im Automatikbetrieb, der Wechsel in den Tippbetrieb oder das kurzfristige Vorziehen dringender Aufträge –, kann der Prozess nicht dynamisch geregelt werden. Da das Miniaturmodell eine reale Situation in der Intralogistik abbilden soll, stellt das Fehlen einer flexiblen Auftragssteuerung ein erhebliches Defizit dar.
 
+Um diesen Nachteil zu beheben, wird im Rahmen dieses Vorhabens eine zentrale Auftragsverwaltung inklusive einer visuellen Mensch-Maschine-Schnittstelle (HMI) und einem Python-basierten Backend implementiert. Diese ermöglicht es, Aufträge dynamisch anzulegen, in ihrer Priorität (nach oben/unten) zu verschieben, gezielt zu stornieren sowie die Ausführbarkeit der Folgeaufträge bei aktiver Lagersperre oder Störungen automatisch zu unterbrechen.
+
+\subsection{Zielsetzung der Arbeit und des Auftragsmanagements}
+
+Die bisherigen Arbeiten am Modell-Hochregallager der Dualen Hochschule Baden-Württemberg haben den physischen Grundbetrieb des Systems sowie grundlegende Abläufe zum Ein-, Aus- und Umlagern erfolgreich umgesetzt. In einer realistischen Industrieumgebung werden Lagerprozesse jedoch nicht durch manuelle Einzeleingaben gesteuert, sondern über ein strukturiertes Auftragsmanagement verwaltet. Das Hauptziel dieser Arbeit besteht daher in der Entwicklung und Implementierung eines zentralen Auftragsmanagements für das Hochregallager. Dieses System fungiert als überlagerte Steuerungsebene und trennt die Auftragserfassung klar von der unterlagerten Achs- und Bewegungssteuerung.  
+
+Im Rahmen der Umsetzung wird zunächst in der Programmiersprache Structured Text eine benutzerdefinierte Datenstruktur (STRUCT) entwickelt, die alle relevanten Auftragsdaten wie ID, Prozessart, Zielkoordinaten und Priorität bündelt. Diese Objekte werden in einer zentralen Warteschlange innerhalb der SPS gespeichert, um eingehende Aufträge geordnet und nach Priorität abzuarbeiten. Vor jedem Bewegungsablauf führt das System eine automatisierte Freigabeprüfung (Executable-Logik) durch. Dabei wird kontrolliert, ob das Quellfach belegt und das Zielfach frei ist. Gleichzeitig ist die Sicherheitslogik eingebunden, sodass bei einer Unterbrechung der Lichtschranke oder einem Not-Halt die Freigabe sofort entzogen und der Prozess sicher pausiert wird.  
+
+Die Auftragsdaten können flexibel über verschiedene Schnittstellen eingelesen werden, darunter ein QR-Code-Reader, manuelle HMI-Eingaben oder ein externes Python-Skript. Abschließend werden alle Auftragszustände, der Anlagenstatus und vorliegende Störungen übersichtlich auf dem HMI-Bediengerät visualisiert. Die durchgeführte Arbeit erweitert das Hochregallager zu einer praxisnahen, sicheren Gesamtanlage und schafft eine verlässliche Grundlage für den zukünftigen Lehr- und Forschungsbetrieb an der DHBW.  
 
 \subsection{Grundlagen des Auftragsmanagements}
-
+\iffalse
 Bedingungen für Vollautomatisiertes Hochregallager
 Datensatz des HRLs ist die Grundlage für Funktion.
 
+\fi
+
+Für den Betrieb eines vollautomatisierten Hochregallagers bildet der vollständige und konsistente Datensatz der Anlage die essenzielle Funktionsgrundlage[cite: 1, 3]. In modernen intralogistischen Anwendungen werden Materialflüsse nicht durch manuelle Einzeleingaben oder fest vorgegebene Routinen ausgelöst, sondern systematisch über ein übergeordnetes Auftragsmanagement gesteuert, um Prozesse realitätsnah und industrieorientiert abzubilden[cite: 1, 3]. Über digitale Schnittstellen werden dabei alle auftragsrelevanten Parameter — wie etwa Material-ID, Quell- und Zielkoordinaten, Prozessart sowie Prioritäten — erfasst und geordnet an die Steuerungsebene übergeben[cite: 1, 3].
+
+Ein zentraler Baustein des Auftragsmanagements liegt in der Definition geeigneter Datenstrukturen innerhalb der Speicherprogrammierbaren Steuerung[cite: 1, 3]. Durch den Einsatz von benutzerdefinierten, strukturierten Datentypen in der Programmiersprache Structured Text lassen sich Auftragsobjekte, Warteschlangen sowie detaillierte Statusinformationen zur Verfolgung des Bearbeitungsstands abbilden[cite: 1, 3]. Diese Strukturierung erlaubt es, ausstehende Aufträge klar zu definieren, dynamisch zu verwalten und sequenziell abzuarbeiten[cite: 1, 3]. Ein wesentlicher Vorteil dieser Architektur besteht in der sauberen mechatronischen Trennung zwischen der logischen Auftragsebene und der unterlagerten Bewegungs- und Sicherheitslogik, was die Modularität und Wartbarkeit des Gesamtsystems deutlich erhöht[cite: 1, 3].
+
+Darüber hinaus ermöglicht ein auftragsbasiertes Steuerungskonzept die Zusammenführung der Grundfunktionen — Einlagerung, Auslagerung und Umlagerung — unter einer einheitlichen Logik[cite: 1, 3]. Anstatt Funktionen isoliert anzusteuern, wird der gesamte Anlagenbetrieb über generierte Aufträge abgewickelt[cite: 1, 3]. Dies eröffnet erhebliche Potenziale für eine automatische Priorisierung, eine flexible Anpassung der Abarbeitungsreihenfolge sowie eine optimierte Gesamtauslastung der Anlage[cite: 1, 3]. Um einen verlässlichen Betrieb zu gewährleisten, wird das Auftragsmanagement direkt mit den sicherheitsgerichteten Komponenten der Anlage verknüpft, sodass Aufträge bei aktiven Störungen oder einer Unterbrechung von Schutzfunktionen unverzüglich pausiert oder gesperrt werden[cite: 1, 3].
+
 \subsection{Systemaufbau mit Python und SPS-Programm}
+
+
+Das Python-basierte Backend übernimmt die Aufgaben eines übergeordneten Leitsystems und dient als externe Schnittstelle zur Generierung und Verarbeitung von Lageraufträgen. Über Python werden externe Eingaben, wie beispielsweise die ausgelesenen Daten eines QR-Code-Readers oder Parameter überlagerter Softwaresysteme, erfasst, verarbeitet und in ein einheitliches Auftragsformat übersetzt. Das Programm kümmert sich um die dynamische Erzeugung von Aufträgen, die Anpassung von Prioritäten sowie die Bereitstellung der Datensätze über Kommunikationsschnittstellen an die Steuerung[cite: 1].
+
+Auf Ebene der Speicherprogrammierbaren Steuerung liegt der Fokus hingegen auf der echtzeitkritischen Speicherung, Validierung und physischen Koordinierung des Gesamtsystems[cite: 1, 2]. Das SPS-Programm speichert die eingehenden Aufträge in einer zentralen Warteschlange, welche als Array von benutzerdefinierten Datenstrukturen im Bausteinspeicher abgelegt ist[cite: 1]. Neben dieser Auftrags-Queue koordiniert die SPS kontinuierlich den aktuellen Belegungszustand der einzelnen Regalfächer sowie den Zustand der sicherheitsgerichteten Komponenten der Anlage[cite: 1]. Vor jeder Achsbewegung führt das SPS-Programm die automatisierte Freigabeprüfung durch, indem es kontrolliert, ob Quell- und Zielfächer korrekt belegt bzw. frei sind und ob Schutzfunktionen wie die Lichtschranke ununterbrochen signalisieren[cite: 1]. Erst nach erfolgreicher Validierung steuert die SPS die Sequenz der zwei physischen Achsen zur Ausführung des Ein-, Aus- oder Umlagerprozesses an und spiegelt den aktuellen Auftragsstatus live an das HMI-Bediengerät wider[cite: 1].
+
+
 \subsubsection{Konzept des Python-Programms}
 Ziel: Was soll hier erreicht werden?
 
@@ -35,7 +60,39 @@ Ablaufplan; GRAPH SET
 
 
 \subsection{Visualisierung auf dem HMI}
+
+Es soll :
+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+|  HMI LAGERSTEUERUNG | OFFENE AUFTRÄGE                                                12.10.2026 - 14:32:10      |
++---------------------------------------------------+-------------------------------------------------------------+
+| OBEN LINKS: BETRIEBSMODUS & SICHERHEIT            | MITTE: AUFTRAGSQUEUE (OBERSTER = AKTUELLSTER)               |
+|                                                   |                                                             |
+|  +---------------------------------------------+  |  +-------------------------------------------------------+  |
+|  | [  AUTOMATIK  ]  |  ( Tippbetrieb )         |  |  | [ E ]  ID: AUF-2026-0891     Executable: JA [●]   |  |
+|  +---------------------------------------------+  |  |        Status: In Bearbeitung                        |  |
+|  | [X] LAGER SPERREN (Keine Folgeaufträge)     |  |  |        [ ▲ HOCH ]  [ ▼ RUNTER ]  [ 🗑 LÖSCHEN ]       |  |
+|  +---------------------------------------------+  |  +-------------------------------------------------------+  |
+|                                                   |  | [ U ]  ID: AUF-2026-0892     Executable: NEIN [○] |  |
+|  +---------------------------------------------+  |  |        Status: Wartet auf Quellplatz                 |  |
+|  | SICHERHEIT & NOT-AUS                        |  |  |        [ ▲ HOCH ]  [ ▼ RUNTER ]  [ 🗑 LÖSCHEN ]       |  |
+|  | • Not-Aus Status:   [ ENTRIEGELT / OK  ]    |  |  +-------------------------------------------------------+  |
+|  | • Sicherheitskreis: [ IN ORDNUNG (OK)  ]    |  |  | [ A ]  ID: AUF-2026-0893     Executable: JA [●]   |  |
+|  | • Schutztüren:      [ GESCHLOSSEN      ]    |  |  |        Status: Bereit                                |  |
+|  +---------------------------------------------+  |  |        [ ▲ HOCH ]  [ ▼ RUNTER ]  [ 🗑 LÖSCHEN ]       |  |
+|                                                   |  +-------------------------------------------------------+  |
++---------------------------------------------------+-------------------------------------------------------------+
+| UNTEN: AUFTRAGSANLAGE                                                                                           |
+|                                                                                                                 |
+|  [ + UMLAGERAUFTRAG ANLEGEN ]                              [ + AUSLAGERAUFTRAG ANLEGEN ]                         |
++-----------------------------------------------------------------------------------------------------------------+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
 
 \section{Implementierung eines Lichtgatters in das Gesamtkonzept}
 
