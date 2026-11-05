@@ -39,7 +39,7 @@
 
 \usepackage{csquotes}
 
-\usepackage[backend=biber,style=numeric,sorting=none]{biblatex} % numerisch [1], [2] in Zitierreihenfolge – Stil mit Betreuer bestätigen
+\usepackage[backend=biber,style=alphabetic]{biblatex}
 
 \addbibresource{content/literature.bib}
 \addbibresource{content/_vorgaenger/literature_vorgaenger.bib} % VORÜBERGEHEND für Platzhaltertexte in Kap. 1/2 – entfernen, sobald eigener Text steht
@@ -277,6 +277,14 @@
     \newpage
     \input{content/02_Grundlagen.tex}
     \newpage
+    % --- alte Kapitel der Vorgänger (Platzhalter, vor Abgabe ersetzen/entfernen) ---
+    \input{content/_vorgaenger/03_ImplementierungAuftragsmanagement.tex}
+    \newpage
+    \input{content/_vorgaenger/04_Thema2.tex}
+    \newpage
+    \input{content/_vorgaenger/05_Fazit_und_Ausblick.tex}
+    \newpage
+    % --- eigene Kapitel ---
     \input{content/03_Bestandsaufnahme.tex}
     \newpage
     \input{content/04_Sicherheitsrelais.tex}
@@ -300,7 +308,7 @@
     %Abbildungsverzeichnis -----------------------------------------------------------------------------------------
     \pagenumbering{Roman}
     %\setcounter{page}{\value{savepage}+1}
-    \listoffigures
+    %\listoffigures
 
     %Formelzeichenverzeichnis---------------------------------------------------------------------------------------
     %\newpage
@@ -309,12 +317,12 @@
     
 
     %Abkürzungsverzeichnis------------------------------------------------------------------------------------------
-    \newpage
-    \input{content/101_Abkuerzungsverzeichnis.tex}
+    %\newpage
+    %\input{content/101_Abkuerzungsverzeichnis.tex}
 
     %Tabellenverzeichnis--------------------------------------------------------------------------------------------
-    \newpage
-    \listoftables
+    %\newpage
+    %\listoftables
 
     %Nutzung künstlicher Intelligenzen------------------------------------------------------------------------------
     \newpage
