@@ -1,46 +1,53 @@
 % =====================================================================================================
-% Kapitel 4: Integration des Sicherheitsrelais PNOZ s4                          Zielumfang: ca. 6 Seiten
-% Sicherheitshinweis: Schaltplan vor dem Umbau von Prof. Kever / Elektrofachkraft freigeben lassen.
-% Umbau nur freigeschaltet, gegen Wiedereinschalten gesichert, Spannungsfreiheit festgestellt.
+% Kapitel 4: Umsetzung des Sicherheitsrelais PNOZ s4                            Zielumfang: ca. 5 Seiten
+% Umfang der Aufgabe: Das PNOZ s4 wird an einen geeigneten Ort umgesetzt (alte Hutschiene zu klein und
+% nicht dafür vorgesehen), sauber montiert, und die bestehende Verdrahtung wird auf korrekten Anschluss
+% geprüft. Die Sicherheitsfunktion selbst wird NICHT neu konzipiert.
+% Sicherheitshinweis: Umbau nur freigeschaltet, gegen Wiedereinschalten gesichert, Spannungsfreiheit
+% festgestellt. Danach kurzer Funktionstest.
 % =====================================================================================================
 
-\section{Integration des Sicherheitsrelais}
+\section{Umsetzung des Sicherheitsrelais}
 
-\subsection{Anforderungen und Randbedingungen}
-% INHALT:  - aus Kapitel 3.2 übernehmen; Montageort Steuerungsgestell neben SPS und Switch
-%          - Gerätedaten PNOZ s4 (Versorgung, Kontaktbelastbarkeit, Absicherung) – Handbuch!
-%          - Motorströme (gemessen oder Datenblatt) vs. zulässige Kontaktbelastung
-% UMFANG:  ca. 1 Seite
-
-\subsection{Schaltungskonzept}
-% INHALT:  - Soll-Stromlaufplan (selbst gezeichnet) als Abbildung
-%          - Entscheidung zweikanaliger Not-Halt, Start-Art (überwacht mit Reset-Taster?),
-%            Absicherung, Meldung Y32 an SPS-Eingang – jeweils mit Begründung
-%          - Position des Reset-Tasters (Sicht auf Gefahrenbereich)
-%          - Abgrenzung: Meldung an SPS ist keine Sicherheitsfunktion
-% QUELLEN: Betriebsanleitung PNOZ s4 (Anschlussbeispiele), DIN EN ISO 13850, DIN EN 60204-1
-% UMFANG:  ca. 1,5 Seiten
-
-\subsection{Schnittstelle zwischen Prototyp und Steuerungsgestell}
-% INHALT:  - Klemmenplan X1 (Gestell) / X2 (Prototyp), Kabelliste (Adern, Querschnitt, Länge)
-%          - Steckverbindung, Zugentlastung, Kennzeichnung nach DIN EN IEC 81346
-% UMFANG:  ca. 1 Seite
-
-\subsection{Montage und Verdrahtung}
-% INHALT:  - Aufbauplan der Hutschiene (Abbildung), Fotos nachher
-%          - Vorgehen beim Umbau inkl. Sicherheitsmaßnahmen
-% UMFANG:  ca. 1 Seite
-
-\subsection{Anbindung an die SPS}
-% INHALT:  - Y32 auf SPS-Eingang, Variable, Auswertung in FB11/b_Freigabe, HMI-Meldung
-%          - Code-/FUP-Ausschnitt als Listing oder Abbildung
+\subsection{Ausgangssituation}
+% ZIEL:    Warum muss das Relais umgesetzt werden?
+% INHALT:  - bisherige Montage am Prototyp, Hutschiene zu klein / nicht dafür vorgesehen (Foto vorher)
+%          - Probleme: mechanisch unsicher, unübersichtlich, schlecht zugänglich, Leitungen ungeordnet
+%          - Gerät: PILZ PNOZ s4 (Bestellnummer, Versorgung vom Typenschild)
+% QUELLEN: eigene Aufnahme (Datum), Betriebsanleitung PNOZ s4
 % UMFANG:  ca. 0,5 Seiten
+
+\subsection{Anforderungen an den neuen Montageort}
+% ZIEL:    Kriterien, nach denen der neue Ort gewählt wurde.
+% INHALT:  - Steuerungsgestell neben dem Prototyp (dort auch SPS, Switch, Konverter)
+%          - Normhutschiene TS35 mit ausreichend Platz, Einbaulage/Abstände laut Handbuch
+%          - Zugänglichkeit, saubere Leitungsführung, Zugentlastung, Kennzeichnung
+%          - Leitungslängen zu Not-Halt und Motoren
+% UMFANG:  ca. 0,5–1 Seite
+
+\subsection{Prüfung der bestehenden Verdrahtung}
+% ZIEL:    Nachweis, dass das Relais korrekt angeschlossen ist – bzw. dokumentierte Abweichungen.
+% INHALT:  - Tabelle Ist-Belegung je Klemme vs. Vorgabe/Anschlussbeispiel der Betriebsanleitung
+%            (A1, A2, S11/S12, S21/S22, S34, 13/14, 23/24, 33/34, 41/42, Y32)
+%          - Bewertung je Klemme: korrekt / Abweichung / offen
+%          - Befunde sachlich dokumentieren, z. B. Start-Art (Brücke S12–S34), Absicherung,
+%            Kontaktbelastung durch Motoren – mit Empfehlung, aber ohne Umkonzeption
+%          - Abstimmung der Befunde mit Prof. Kever
+% QUELLEN: Betriebsanleitung PNOZ s4 (Anschlussbeispiele, technische Daten)
+% UMFANG:  ca. 1,5 Seiten
+% HINWEIS: Klemmenfunktionen nur aus dem Handbuch belegen, nicht aus dem Gedächtnis.
+
+\subsection{Montage am neuen Ort}
+% INHALT:  - Vorgehen Schritt für Schritt inkl. Sicherheitsmaßnahmen
+%          - Aufbau auf der Hutschiene (Foto/Skizze), Leitungsführung, Klemmen/Kennzeichnung
+%          - Fotos vorher/nachher als Gegenüberstellung
+% UMFANG:  ca. 1 Seite
 
 \subsection{Funktionsprüfung}
-% INHALT:  - Prüfprotokoll als Tabelle: Prüfschritt | Erwartung | Ergebnis | Datum/Prüfer
-%            (Not-Halt drücken → Stopp; Entriegeln → kein Anlauf; Reset → Freigabe;
-%             Drahtbruch/Querschluss je Kanal, soweit laut Handbuch prüfbar)
-% UMFANG:  ca. 0,5 Seiten
+% INHALT:  - einfacher Funktionstest nach dem Umsetzen: funktioniert die Anlage wie vorher?
+%            (Not-Halt drücken → Motoren stoppen; entriegeln → Anlage wieder betriebsbereit)
+%          - kurz festhalten: Datum, wer, Ergebnis (kleine Tabelle mit 2–3 Zeilen reicht)
+% UMFANG:  ca. 0,25 Seiten
 
 \subsection{Fazit}
-% INHALT:  Ergebnis bezogen auf Ziel 1, offene Punkte, Überleitung zu Kapitel 5
+% INHALT:  Relais umgesetzt und geprüft? Offene Befunde/Empfehlungen, Überleitung zu Kapitel 5
