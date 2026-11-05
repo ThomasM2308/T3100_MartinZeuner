@@ -39,22 +39,29 @@
 % Netzwerk: IP-Adressen außer SPS (192.168.0.20) noch unbekannt → aus TIA-Netzsicht ablesen
 %
 % Vorschlag Tabelle für 3.1 (Werte ergänzen):
+% Netzwerkkonfiguration laut TIA-Projekt 260705_T3_3200 (Netzsicht, abgelesen 05.11.2026):
 \begin{table}[H]
   \centering
-  \caption{Komponenten des Steuerungsgestells (Ist-Zustand, Stand 11/2026)}
+  \caption{Komponenten und Netzwerkadressen (Ist-Zustand laut TIA-Projekt, Stand 11/2026)}
   \label{tab:komponenten_gestell}
   \begin{tabular}{|l|l|l|l|}
     \hline
-    \textbf{Position} & \textbf{Komponente} & \textbf{Typ} & \textbf{IP-Adresse} \\ \hline
-    oben links   & Druckluft-/Wartungseinheit & TODO & -- \\ \hline
-    oben rechts  & HMI (Siemens)              & TODO & TODO \\ \hline
-    unten links  & SPS (Siemens S7-1500)      & TODO & 192.168.0.20 \\ \hline
-    unten rechts & Netzwerk-Switch            & TODO & TODO \\ \hline
-    neu          & Sicherheitsrelais PILZ PNOZ s4 & TODO Bestellnr. & -- \\ \hline
-    neu          & Datalogic CBX100           & CBX100 & -- \\ \hline
-    neu          & RS232-Ethernet-Konverter   & TODO & TODO \\ \hline
+    \textbf{Komponente} & \textbf{Typ (TIA)} & \textbf{IP-Adresse} & \textbf{Ort} \\ \hline
+    SPS (PLC\_1)        & CPU 1511-1 PN                & 192.168.0.20 & Gestell unten links \\ \hline
+    Kommunikationsmodul & CM PtP RS232 BA              & --           & SPS-Baugruppenträger \\ \hline
+    HMI (HMI\_2)        & MTP1500 Unified Comfort      & 192.168.0.2 (2.~Port: 192.168.1.2, nicht vernetzt) & Gestell oben rechts \\ \hline
+    IO-Link-Master      & ifm AL1100                   & 192.168.0.4  & Prototyp, fest bei den Lichtgittern \\ \hline
+    Router (IXON)       & Ethernet-Gerät               & 192.168.0.1  & TODO \\ \hline
+    Switch              & SCALANCE X005                & --           & Gestell unten rechts \\ \hline
+    Kamera ifm, Router  & Ethernet-Gerät (ohne Adresse)& --           & TODO \\ \hline
+    Druckluft-/Wartungseinheit & TODO                  & --           & Gestell oben links \\ \hline
+    Sicherheitsrelais   & PILZ PNOZ s4, 24 V DC        & --           & neu: Gestell neben Switch \\ \hline
+    RS232-Ethernet-Konverter & TODO                    & TODO (frei im Netz 192.168.0.x) & neu: Gestell \\ \hline
   \end{tabular}
 \end{table}
+% Netz: Subnetz PN/IE_1, 192.168.0.0/24 (Maske im TIA prüfen); belegt: .1, .2, .4, .20
+% Hinweis: Im SPS-Baugruppenträger steckt ein CM PtP RS232 BA – Option, den Scanner direkt an der
+% SPS zu betreiben (Variantenvergleich Kap. 5 / Ausblick; würde TIA-Änderungen erfordern)
 
 \subsection{Identifizierte Schwachstellen und Anforderungen}
 % ZIEL:    Aus dem Ist-Zustand messbare Anforderungen ableiten.
