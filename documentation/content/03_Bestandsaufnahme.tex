@@ -15,6 +15,46 @@
 %          - Fotos „vorher“
 % QUELLEN: eigene Aufnahme (Datum!), Vorgängerarbeiten, Code T3200
 % UMFANG:  ca. 1,5 Seiten
+%
+% -----------------------------------------------------------------------------------------------------
+% MATERIAL AUS DEM INTERVIEW (05.11.2026) – Stichpunkte, vor dem Ausformulieren prüfen
+% -----------------------------------------------------------------------------------------------------
+% Aufbau Steuerungsgestell (neben dem Prototyp):
+%   - Alu-Gestell mit Einschubplatten, 2 Einschubbereiche; Hersteller vermutlich Christiani (prüfen)
+%   - oben links: Druckluft-/Wartungseinheit (versorgt den Zylinder am Regalbediengerät)
+%   - oben rechts: Siemens HMI (Typ: TODO)
+%   - unten links: Hutschiene mit Siemens S7-1500 (CPU-Typ: TODO)
+%   - unten rechts: Netzwerk-Switch auf Hutschiene (Typ: TODO)
+%   - NEU geplant rechts neben dem Switch: PILZ PNOZ s4
+%   - NEU geplant rechts daneben: Datalogic CBX100 (Anschlussbox des Scanners)
+%   - zusätzliches Netzwerkkabel am Switch vorbereitet für die Scanner-Anbindung (Konverter)
+% Bewegungen des Regalbediengeräts:
+%   - horizontale Achse (nach rechts): Motor
+%   - vertikale Achse (nach oben): Motor
+%   - Einlagern: Zylinder (Druckluft) fährt vor → Gerät senkt leicht ab → Zylinder fährt ein →
+%     Holzklotz/Palette liegt im Regalfach
+% Motorschaltung:
+%   - Motoren werden über kleine Relais geschaltet (weiterhin verbaut)
+%   - zusätzlich sind die Sicherheitskontakte des PNOZ s4 in die Motorleitungen (+) verdrahtet
+% Netzwerk: IP-Adressen außer SPS (192.168.0.20) noch unbekannt → aus TIA-Netzsicht ablesen
+%
+% Vorschlag Tabelle für 3.1 (Werte ergänzen):
+\begin{table}[H]
+  \centering
+  \caption{Komponenten des Steuerungsgestells (Ist-Zustand, Stand 11/2026)}
+  \label{tab:komponenten_gestell}
+  \begin{tabular}{|l|l|l|l|}
+    \hline
+    \textbf{Position} & \textbf{Komponente} & \textbf{Typ} & \textbf{IP-Adresse} \\ \hline
+    oben links   & Druckluft-/Wartungseinheit & TODO & -- \\ \hline
+    oben rechts  & HMI (Siemens)              & TODO & TODO \\ \hline
+    unten links  & SPS (Siemens S7-1500)      & TODO & 192.168.0.20 \\ \hline
+    unten rechts & Netzwerk-Switch            & TODO & TODO \\ \hline
+    neu          & Sicherheitsrelais PILZ PNOZ s4 & TODO Bestellnr. & -- \\ \hline
+    neu          & Datalogic CBX100           & CBX100 & -- \\ \hline
+    neu          & RS232-Ethernet-Konverter   & TODO & TODO \\ \hline
+  \end{tabular}
+\end{table}
 
 \subsection{Identifizierte Schwachstellen und Anforderungen}
 % ZIEL:    Aus dem Ist-Zustand messbare Anforderungen ableiten.
