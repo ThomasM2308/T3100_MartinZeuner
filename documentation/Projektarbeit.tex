@@ -39,7 +39,7 @@
 
 \usepackage{csquotes}
 
-\usepackage[backend=biber,style=numeric,sorting=none]{biblatex} % numerisch [1], [2] in Zitierreihenfolge – Stil mit Betreuer bestätigen
+\usepackage[backend=biber,style=alphabetic]{biblatex}
 
 \addbibresource{content/literature.bib}
 
@@ -88,15 +88,15 @@
 %META INFORMATIONEN
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Projektspezifische Informationen -----------------------------------------------------------------------------
-\newcommand{\titel}{Automatisiertes Modell-Hochregallager} % TODO eigener Titel, z. B. mit Bezug auf Sicherheitskreis und Kommunikation
-\newcommand{\arbeit}{T3100}
+\newcommand{\titel}{Automatisiertes Modell-Hochregallager}
+\newcommand{\arbeit}{T4-3100}
 \newcommand{\studiengang}{Elektro- und Informationstechnik,\\Automation}
 \newcommand{\hochschule}{DHBW Ravensburg}
 \newcommand{\campus}{Campus Friedrichshafen}
 \newcommand{\autor}{Thomas Martin und Melvin Zeuner}
-\newcommand{\abgabe}{18.01.2027} % TODO Abgabetermin klären (18.01.2027 oder 12.04.2027?)
+\newcommand{\abgabe}{18.01.2027}
 \newcommand{\zeitraum}{07.10.2026 - 18.01.2027}
-\newcommand{\matrikelnummer}{2566504 und TODO}
+\newcommand{\matrikelnummer}{2566504 und }
 \newcommand{\kurs}{TEA 24}
 \newcommand{\unternehmen}{DHBW Ravensburg, Campus Friedrichshafen}
 \newcommand{\unternehmenstr}{}
@@ -105,7 +105,7 @@
 \newcommand{\betreuerzwei}{}
 \newcommand{\betreuerdrei}{}
 %\newcommand{\gutachter}{Prof. Dr. Gutachter}
-\newcommand{\ort}{Friedrichshafen} % TODO prüfen
+\newcommand{\ort}{}
 % Information für PDF Generierung ------------------------------------------------------------------------------
 \hypersetup{
 	pdftitle = {\titel},
@@ -120,7 +120,7 @@
 \pagestyle{scrheadings}
 \clearpairofpagestyles
 \ihead{\includegraphics[height = 1.25 cm]{logos/logo_dhbw.png}}
-%\ohead{\includegraphics[height = 0.65 cm]{logos/logo_rafi.png}} % Firmenlogo entfernt (DHBW-interne Arbeit)
+\ohead{\includegraphics[height = 0.65 cm]{logos/logo_rafi.png}}
 \ofoot{\pagemark}
 %Anpassen der KOMA Überschriften -------------------------------------------------------------------------------
 \addtokomafont{sectioning}{\rmfamily}
@@ -276,15 +276,11 @@
     \newpage
     \input{content/02_Grundlagen.tex}
     \newpage
-    \input{content/03_Bestandsaufnahme.tex}
+    \input{content/03_ImplementierungAuftragsmanagement.tex}
     \newpage
-    \input{content/04_Sicherheitsrelais.tex}
+    \input{content/04_Thema2.tex}
     \newpage
-    \input{content/05_QR-Scanner.tex}
-    \newpage
-    \input{content/06_IO-Link-Master.tex}
-    \newpage
-    \input{content/07_Fazit_und_Ausblick.tex}
+    \input{content/05_Fazit_und_Ausblick.tex}
     \newpage
     %\input{content/06_MomentaufnahmeBisherigeLösung.tex}
     %\newpage
@@ -299,7 +295,7 @@
     %Abbildungsverzeichnis -----------------------------------------------------------------------------------------
     \pagenumbering{Roman}
     %\setcounter{page}{\value{savepage}+1}
-    \listoffigures
+    %\listoffigures
 
     %Formelzeichenverzeichnis---------------------------------------------------------------------------------------
     %\newpage
@@ -308,12 +304,12 @@
     
 
     %Abkürzungsverzeichnis------------------------------------------------------------------------------------------
-    \newpage
-    \input{content/101_Abkuerzungsverzeichnis.tex}
+    %\newpage
+    %\input{content/101_Abkuerzungsverzeichnis.tex}
 
     %Tabellenverzeichnis--------------------------------------------------------------------------------------------
-    \newpage
-    \listoftables
+    %\newpage
+    %\listoftables
 
     %Nutzung künstlicher Intelligenzen------------------------------------------------------------------------------
     \newpage
