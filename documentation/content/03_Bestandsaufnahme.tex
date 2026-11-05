@@ -1,0 +1,30 @@
+% =====================================================================================================
+% Kapitel 3: Bestandsaufnahme und Planung                                       Zielumfang: ca. 3 Seiten
+% Zeigt methodisches Vorgehen (fehlt bei den Vorgängern) und begründet die Maßnahmen in Kapitel 4–6.
+% =====================================================================================================
+
+\section{Bestandsaufnahme und Planung}
+
+\subsection{Ist-Zustand der Anlage}
+% ZIEL:    Dokumentierter Ausgangszustand vor allen Änderungen.
+% INHALT:  - Sicherheitsrelais: lose am Prototyp; Ist-Verdrahtung als Tabelle/Stromlaufplan
+%            (S11/S12/S21/S22 Not-Halt, Brücke S12–S34, A1–33–41, 13/14 und 23/24 Motoren, Y32 frei)
+%          - Scanner: RS232 über CBX100 an Laptop, COM3, 19200 Baud, 8N1, Start-String „LON“
+%          - IO-Link-Master: auf der Schleppkette, Port 1 DTI515, Port 2 OY5100
+%          - Netzwerk: Adressplan (SPS 192.168.0.20, …), Switch-Belegung
+%          - Fotos „vorher“
+% QUELLEN: eigene Aufnahme (Datum!), Vorgängerarbeiten, Code T3200
+% UMFANG:  ca. 1,5 Seiten
+
+\subsection{Identifizierte Schwachstellen und Anforderungen}
+% ZIEL:    Aus dem Ist-Zustand messbare Anforderungen ableiten.
+% INHALT:  - Tabelle: Schwachstelle → Anforderung → Kapitel
+%            z. B. automatischer Wiederanlauf → überwachter Start (Kap. 4)
+%                  Scanner an Laptop/COM-Port → Netzwerkanbindung, Reconnect (Kap. 5)
+%                  Masse auf Schleppkette → feste Montage (Kap. 6)
+% UMFANG:  ca. 1 Seite
+
+\subsection{Vorgehen}
+% INHALT:  - Reihenfolge der Umsetzung und Begründung (Scanner isoliert testbar; Hardware in einem
+%            Umbaufenster), Abstimmung/Freigabe durch Betreuer, Prüfprotokolle
+% UMFANG:  ca. 0,5 Seiten

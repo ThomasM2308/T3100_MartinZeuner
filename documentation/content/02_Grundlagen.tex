@@ -1,4 +1,13 @@
+% #####################################################################################################
+% ACHTUNG: Unterhalb steht vorübergehend der TEXT DER VORGÄNGER als Platzhalter.
+% Er MUSS vor der Abgabe vollständig durch eigenen Text ersetzt werden (Eigenständigkeitserklärung).
+% Das Gerüst mit den Stichpunkten für den eigenen Text steht am Ende dieser Datei.
+% #####################################################################################################
+
 \section{Grundlagen}
+
+\noindent\colorbox{red!15}{\parbox{\dimexpr\textwidth-2\fboxsep}{\textbf{\color{red}PLATZHALTER: Text der Vorgängerarbeit (Schaal \& Zorko) – vor der Abgabe vollständig durch eigenen Text ersetzen!}}}
+
 \subsection{Problemstellung}
 Durch zahlreiche vorangegangene Studienarbeiten wurden bereits viele grundlegende
 Funktionen des Hochregallagers implementiert.
@@ -884,3 +893,89 @@ Diese
 Systeme sind modular aufgebaut und lassen sich über verschiedene Schnittstellen
 beispielsweise IO-Link direkt in eine Steuerung integrieren
 
+
+
+% =====================================================================================================
+% GERÜST FÜR DEN EIGENEN TEXT (auskommentiert)
+% =====================================================================================================
+% =====================================================================================================
+% Kapitel 2: Grundlagen                                                        Zielumfang: ca. 11 Seiten
+% Nur das erklären, was in Kapitel 4–6 tatsächlich gebraucht wird. Allgemeines SPS-/IO-Link-Wissen
+% haben die Vorgänger bereits beschrieben → kurz zusammenfassen und auf sie verweisen.
+% =====================================================================================================
+
+% \section{Grundlagen}
+
+% \subsection{Aufbau des Modell-Hochregallagers}
+% ZIEL:    Leser kennt alle Komponenten, die in dieser Arbeit angefasst werden.
+% INHALT:  - Prototyp (Regal, Achsen, Förderband) und separates Steuerungsgestell (SPS, Switch)
+%          - Komponentenübersicht als Tabelle: SPS S7-1500, HMI, Switch, IO-Link-Master ifm AL1100,
+%            RFID ifm DTI515, Lichtgitter ifm OY5100, Scanner Datalogic Matrix 200 + CBX100, PNOZ s4,
+%            Python-PC
+%          - eindeutiges Koordinatensystem der Achsen festlegen (Vorgänger widersprüchlich!)
+%          - Abbildung: Übersichtsfoto oder Blockschaltbild (selbst erstellt)
+% QUELLEN: Vorgängerarbeiten, Datenblätter der Komponenten
+% UMFANG:  ca. 2 Seiten
+
+% \subsection{Funktionale Sicherheit}
+% \subsubsection{Not-Halt}
+% ZIEL:    Was ist ein Not-Halt, welche Anforderungen gelten?
+% INHALT:  - Not-Halt (Emergency Stop) als ergänzende Schutzmaßnahme
+%          - Stopp-Kategorien 0/1 (kurz)
+%          - Entriegeln darf keinen Wiederanlauf auslösen → Rücksetzen (Reset) als eigene Handlung
+% QUELLEN: DIN EN ISO 13850, DIN EN 60204-1 (genaue Ausgabe + Abschnitt im Original prüfen)
+% UMFANG:  ca. 1 Seite
+
+% \subsubsection{Sicherheitsrelais}
+% ZIEL:    Funktionsprinzip eines Sicherheitsrelais am Beispiel PNOZ s4.
+% INHALT:  - redundante, zwangsgeführte Kontakte, Selbstüberwachung
+%          - ein-/zweikanalige Eingangsbeschaltung, Querschlusserkennung
+%          - automatischer vs. überwachter Start
+%          - Sicherheitskontakte, Hilfskontakt, Halbleiterausgang (Y32)
+% QUELLEN: Betriebsanleitung PNOZ s4 (Pilz), ggf. Fachbuch
+% UMFANG:  ca. 1,5 Seiten
+% HINWEIS: Alle Gerätedaten (Strom, Spannung, Kategorie/PL) nur aus dem Handbuch übernehmen.
+
+% \subsubsection{Bewertung nach DIN EN ISO 13849-1}
+% ZIEL:    Begriffe Kategorie und Performance Level so weit erklären, wie in Kapitel 4 benötigt.
+% INHALT:  - Risikograph → PL_r (kurz), Kategorien B, 1–4 (kurz), Bedeutung für Ein-/Zweikanaligkeit
+%          - Abgrenzung: Diese Arbeit führt keine vollständige Validierung durch (mit Betreuer klären)
+% QUELLEN: DIN EN ISO 13849-1, ggf. IFA-Report / Fachbuch
+% UMFANG:  ca. 1 Seite
+
+% \subsection{Serielle Kommunikation nach RS232}
+% ZIEL:    Leser versteht die Parameter, die am Konverter eingestellt werden müssen.
+% INHALT:  - Signalpegel, Leitungen (TX, RX, GND), Steckverbinder
+%          - UART-Rahmen: Startbit, Datenbits, Parität, Stoppbits; Baudrate
+%          - Flusssteuerung, Terminator (CR/LF)
+%          - Grenzen: Leitungslänge, Punkt-zu-Punkt
+% QUELLEN: Fachbuch Kommunikationstechnik / Norm TIA-232 (nicht mikrocontroller.net!)
+% UMFANG:  ca. 1,5 Seiten
+
+% \subsection{Ethernet und TCP/IP}
+% ZIEL:    Grundlagen für die Netzwerkanbindung des Scanners.
+% INHALT:  - Schichtenmodell (kurz), IP-Adresse, Subnetz, Port
+%          - TCP: verbindungsorientiert, Datenstrom ohne Nachrichtengrenzen (wichtig für Kap. 5!)
+%          - Client/Server-Prinzip, Sockets
+% QUELLEN: Fachbuch Netzwerktechnik; Python-Dokumentation (socket)
+% UMFANG:  ca. 1,5 Seiten
+
+% \subsection{Seriell-Ethernet-Konverter}
+% ZIEL:    Was macht der Konverter, welche Betriebsarten gibt es?
+% INHALT:  - Prinzip: serielle Daten ↔ TCP/UDP
+%          - Betriebsarten: TCP-Server, TCP-Client, UDP, virtueller COM-Port
+%          - Konfiguration (Web-Oberfläche/Tool), feste IP
+% QUELLEN: Handbuch des eingesetzten Konverters (Modell noch offen)
+% UMFANG:  ca. 1 Seite
+
+% \subsection{IO-Link und Energieführungsketten}
+% ZIEL:    Nur das Nötige für das Versetzen des IO-Link-Masters.
+% INHALT:  - IO-Link kurz (Master, Device, Port, Punkt-zu-Punkt), max. Leitungslänge (Quelle!)
+%          - Verweis auf ausführliche Darstellung der Vorgänger
+%          - Energieführungskette (Schleppkette): Aufgabe, Belastung durch Masse und Leitungen
+% QUELLEN: IO-Link-Spezifikation / Systembeschreibung, Datenblatt AL1100, Herstellerangaben
+%          Energiekette
+% UMFANG:  ca. 1,5 Seiten
+
+% \subsection{Fazit Grundlagen}
+% INHALT:  2–3 Sätze, Überleitung zu Kapitel 3
