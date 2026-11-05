@@ -1,0 +1,375 @@
+\section{Implementierung eines Umlagerungsprozesses}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Definition "Umlagerung" im Kontext der Intralogistik}
+In der Intralogistik bezeichnet eine Umlagerung die interne Verlagerung von Mate
+rial oder Ladeeinheiten innerhalb eines Lagersystems, ohne dass ein Warenein
+oder-ausgang erfolgt. Sie dient nicht der Erfüllung eines Kundenauftrags, sondern
+der Optimierung der Lagerstruktur und der Betriebsabläufe. Typische Gründe für
+Umlagerungen sind:
+• Platzoptimierung: Zusammenführen von Teilpaletten oder das Freiräumen be
+stimmter Stellplätze für neue Einlagerungen.
+• Reduktion der Zykluszeiten: Lagerware, die weit weg von der Entnahmestelle
+eingelagert wurde, wird in Totzeiten des Systems näher an die Entnahmestelle
+umgelagert. Dies verkürzt die Zykluszeit bei späterer Anfrage der Ware.
+• Strategische Positionierung: Umlagerung von Artikeln in Bereiche mit höherer
+Zugriffshäufigkeit, um Kommissionierzeiten zu reduzieren.
+• Qualitätssicherung: Verbringen von Waren in Quarantäne- oder Prüfzonen.
+• Technische Anforderungen: Freihalten von Stellplätzen für Wartungsarbeiten
+oder zur Vermeidung von Blockaden.
+• Bestandskorrekturen: Anpassungen nach Inventuren oder bei fehlerhaften Bu
+chungen.
+Im Gegensatz zu Ein- und Auslagerungen, die externe Materialflüsse abbilden, ist die
+Umlagerung ein rein interner Prozess.
+
+
+
+\subsection{Prozessablauf der Umlagerung}
+In diesem Kapitel wird der Funktionsablauf aus einer systemorientierten Perspekti
+ve betrachtet. Ziel ist es, die Interaktion der beteiligten Komponenten sowie die
+Abhängigkeiten zwischen mechanischen Bewegungen, Steuerungslogik und
+Sicherheitsmechanismen darzustellen. Darüber hinaus werden die wesentlichen
+Prozessschritte erläutert, die für einen störungsfreien Betrieb erforderlich sind. Die
+Darstellung erfolgt unabhängig von der konkreten Programmierung, um eine klare
+Trennung zwischen konzeptioneller Beschreibung und technischer Umsetzung zu
+gewährleisten.
+Automatisiertes Modell- Hochregallager
+34
+4 Implementierung eines Umlagerungsprozesses
+Entwurf der Schrittkette für Umlagerungen
+Die im Rahmen dieser Arbeit implementierte Umlagerungsfunktion basiert konzeptionell
+auf den bereits vorhandenen Schrittketten für die Einlagerungs- und Auslagerungspro
+zesse. Beide Abläufe bilden die Grundlage für die Umlagerung, da sie die wesentlichen
+Bewegungs- und Steuerungslogiken enthalten, die für den sicheren Transport von Lade
+einheiten erforderlich sind. Die Umlagerung kombiniert diese beiden Prozessketten in
+einer strukturierten Sequenz: Zunächst wird die Ladeeinheit am Quellplatz aufgenom
+men (analog zur Auslagerung), anschließend erfolgt die Verfahrbewegung zum Zielplatz
+und die Ablage (analog zur Einlagerung).
+Allerdings wurde für die Realisierung der Umlagerungsfunktion eine eigenständige
+Schrittkette entwickelt. Dies war notwendig, da der Umlagerungsprozess im Vergleich
+zu den bestehenden Abläufen zusätzliche Anforderungen stellt: Zum einen sind mehr
+Schritte erforderlich, um die vollständige Sequenz von Aufnahme, Transport und Ablage
+abzubilden. Zum anderen müssen an zwei Stellen Verzweigungen integriert werden,
+um unterschiedliche Prozesspfade abhängig von den Betriebsbedingungen zu ermög
+lichen. Durch die Erstellung einer eigenen Schrittkette wird sichergestellt, dass die
+Logik klar strukturiert bleibt und die zusätzlichen Schritte sowie Verzweigungen ohne
+Beeinträchtigung der bestehenden Programme umgesetzt werden können.
+Automatisiertes Modell- Hochregallager
+35
+4 Implementierung eines Umlagerungsprozesses
+Besonderheiten der Umlagerungsschrittkette
+Die Umlagerungsschrittkette stellt eine Erweiterung der bestehenden Abläufe für Ein
+lagerung und Auslagerung dar, basiert jedoch nicht ausschließlich auf deren Struktur.
+Während die Grundlogik der Bewegungen übernommen wurde, erfordert die Umla
+gerung zusätzliche Schritte und Verzweigungen, um die komplexeren Anforderungen
+dieses Prozesses abzubilden.
+Abbildung 4.20: GRAFCET-Ausschnitt der Umlagerungsschrittkette mit zwei Verzwei
+gungen zur Richtungsbestimmung
+Im Gegensatz zu den linearen Schrittketten der Ein- und Auslagerung muss die Um
+lagerung sowohl die horizontale als auch die vertikale Fahrtrichtung dynamisch be
+stimmen. Dies wird im dargestellten GRAFCET deutlich: Nach der Initialisierung (Be
+reit\_Zum\_Verfahren\_In\_X) erfolgt die erste Verzweigung, bei der abhängig von der
+Soll-/Ist-Position die Fahrtrichtung der X-Achse gewählt wird (Motor\_X\_rechts oder
+Motor\_X\_links). Nach Erreichen der Zielposition wird analog die Y-Achse angesteuert,
+wobei ebenfalls eine Verzweigung zwischen Motor\_Y\_hoch und Motor\_Y\_runter erfolgt.
+Diese beiden Verzweigungen sind notwendig, um die Umlagerung flexibel zwischen
+beliebigen Lagerplätzen auszuführen. Aufgrund der zusätzlichen Schritte und der lo
+gischen Verzweigungen wurde eine eigenständige Schrittkette entwickelt, anstatt die
+bestehenden Abläufe lediglich zu kombinieren. Dadurch bleibt die Programmstruktur
+übersichtlich, und die Steuerungslogik kann die erhöhten Anforderungen hinsichtlich
+
+\subsection{Umsetzung im TIA Portal}
+Im Rahmen der Automatisierung der Modellhochregalanlage wurde eine Umlagerfunk
+tion implementiert, die den Transport von Ladeeinheiten zwischen unterschiedlichen
+Lagerplätzen ermöglicht. Zur Realisierung dieser Funktion wurde eine Schrittkette ein
+gesetzt, da sie eine strukturierte und übersichtliche Abbildung sequenzieller Abläufe
+erlaubt. Die Schrittkette dient hierbei als Steuerungslogik, um die einzelnen Prozess
+schritte– vom Anfahren des Quellplatzes über die Aufnahme der Ladeeinheit bis hin
+zur Ablage am Zielplatz– in einer definierten Reihenfolge auszuführen. Durch diese
+Vorgehensweise wird eine hohe Prozesssicherheit gewährleistet und die Komplexität
+der Steuerung reduziert.
+4.3.1 Aufruf und Funktionsprinzip der Positionsvergleichsfunktion
+Abbildung 4.21: Aufruf des Positionsvergleichs
+Zur Bestimmung der für die Umlagerung notwendigen Fahrwege wird eine Positions
+vergleichsfunktion (Vergleiche\_Fahrweg) aufgerufen, welche aus den Sollwerten der
+Quell- (P1) und Zielposition (P2) die Differenzen in den kartesischen Achsen berechnet
+und daraus die jeweilige Fahrtrichtung ableitet. Der Aufruf erfolgt in Abhängigkeit des
+aktuellen Umlagerungskontextes (manueller Modus und Übersichts-Modus), wobei die
+Eingänge als Sollwertpaare für X und Y übergeben werden und die Ausgänge als
+Richtungsflags bereitgestellt werden.
+Automatisiertes Modell- Hochregallager
+37
+4 Implementierung eines Umlagerungsprozesses
+Formal seien die Sollwerte der Positionen gegeben durch
+P1 = (X1, Y1),
+P2 = (X2, Y2).
+Die Funktion berechnet die Restwege (Differenzen)
+
+\iffalse
+∆X =X2−X1, ∆Y =Y2−Y1,
+
+und leitet hieraus die Richtungsentscheidung für die Verfahrbewegungen ab:
+
+b\_Fahrtrichtung\_X =
+
+TRUE falls ∆X > 0 (Fahrt nach rechts)
+FALSE falls ∆X < 0 (Fahrt nach links)
+
+
+b\_Fahrtrichtung\_Y =
+
+TRUE falls ∆Y > 0 (Fahrt nach oben)
+FALSE falls ∆Y < 0 (Fahrt nach unten)
+Für den Grenzfall ∆X = 0 bzw. ∆Y = 0 wird keine Bewegungsanforderung in der jewei
+ligen Achse generiert, womit die Schrittfolge unmittelbar zur nächsten Achsenbewegung
+bzw. zum nachfolgenden Prozessschritt übergeht.
+Der Funktionsaufruf ist in zwei Varianten ausgeführt, die jeweils an den aktiven Mo
+dus (b_Merker_m bzw. b_Merker_ue) gebunden sind. In beiden Fällen werden als Ein
+gangsparameter die Sollwerte von Quell- und Zielplatz übergeben; die Ausgänge setzen
+die Richtungsflags:
+Die Ausgabeparameter sind in beiden Fällen identisch und werden den nachgeschalte
+ten GRAFCET-Verzweigungen zur Richtungswahl zugeführt:
+
+
+b_Fahrtrichtung_X ⇒
+
+Motor_X_rechts bei ∆X > 0
+Motor_X_links bei ∆X < 0
+
+
+b_Fahrtrichtung_Y ⇒
+
+Motor_Y_hoch
+bei ∆Y >0
+Motor_Y_runter bei ∆Y < 0
+Damit stellt die Positionsvergleichsfunktion die für die Verzweigungen in X- und Y-Richtung
+notwendigen Entscheidungsgrößen bereit und gewährleistet eine konsistente, zustand
+sabhängige Ansteuerung der Lineareinheiten. Die klare Trennung von Berechnung
+(∆X,∆Y) und Aktorik-Auswahl (Richtungsflags) erhöht die Wartbarkeit und unterstützt
+die modulare Erweiterbarkeit der Schrittkette.
+Automatisiertes Modell- Hochregallager
+38
+4 Implementierung eines Umlagerungsprozesses
+4.3.2 Schritt 10.1 im Kontext der Schrittkette
+Die in Abbildung 4.20 dargestellte GRAFCET-Struktur verdeutlicht die logische Verzwei
+gung innerhalb der Umlagerungsschrittkette. Nach dem Schritt Bereit_Zum_Verfahren_In_X
+(Schritt 9) erfolgt die Entscheidung über die Fahrtrichtung der X-Achse. Diese Entschei
+dung basiert auf dem Ergebnis der zuvor aufgerufenen Positionsvergleichsfunktion
+(Vergleiche_Fahrweg), die die Differenz zwischen Quell- und Zielposition berechnet
+und die Richtungsflags b_Fahrtrichtung_X und b_Fahrtrichtung_Y setzt.
+Die Verzweigung in Schritt 10 ist wie folgt aufgebaut:
+• Schritt 10.1– Motor_X_rechts: Wird das Flag b_Fahrtrichtung_X auf TRUE
+gesetzt, erfolgt die Ansteuerung des Motors für die Bewegung in positiver X
+Richtung.
+• Schritt 10.2– Motor_X_links: Ist das Flag b_Fahrtrichtung_X FALSE, wird der
+Motor für die Bewegung in negativer X-Richtung aktiviert.
+Die Umsetzung in der SPS-Logik ist in Abbildung 4.22 dargestellt. Hier wird die Schritt
+nummer über ein MOVE-Befehl gesetzt, sobald die Aktivierungsbedingungen erfüllt sind.
+Die logische Verknüpfung erfolgt über ein Set-Reset-Glied (SR), das den Schrittstatus
+verwaltet. Die Aktivierung von Schritt 10.1 ist somit direkt an die Fahrtrichtungsentschei
+dung gekoppelt, die aus der Positionsvergleichsfunktion resultiert.
+Abbildung 4.22: SPS-Implementierung für Schritt 10.1 (Motor_X_rechts)
+Wie in der Abbildung ersichtlich, wird die Aktivierung der Schrittnummer 10.1 durch
+die Transitionsbedingung T9_10A ausgelöst. Diese Bedingung wird erfüllt, sobald die
+Fahrtrichtung in positiver X-Achse erforderlich ist, wie zuvor durch die Positionsver
+gleichsfunktion bestimmt. Analog dazu wird bei aktiver Transitionsbedingung T9_10B die
+Schrittnummer 10.2 aktiviert, wodurch die Bewegung in negativer X-Achse erfolgt.
+Durch diese logische Struktur entsteht eine klare und funktionale Verzweigung inner
+halb der Schrittkette. Sie ermöglicht eine dynamische Auswahl des Prozesspfades
+Automatisiertes Modell- Hochregallager
+39
+4 Implementierung eines Umlagerungsprozesses
+in Abhängigkeit der berechneten Richtungsflags und trägt somit zur Flexibilität und
+Modularität des Steuerungsprogramms bei. Analog dazu wird mit Schritt 12.1 bzw. 12.2
+die Fahrtrichtung der y-Achse festgelegt.
+4.3.3 Lagerplatzmanagement im Umlagerungsprozess
+Das Lagerplatzmanagement stellt sicher, dass die Umlagerung nur auf freie Zielplätze
+erfolgt und die Bestandsdaten konsistent aktualisiert werden. Die Umsetzung erfolgt in
+zwei logischen Schritten, die in den folgenden Abbildungen dargestellt sind.
+Abbildung 4.23: Prüfung des Lagerplatzstatus und Setzen der Platzwahl
+Die erste Abbildung zeigt die Prüfung des Lagerplatzstatus im Kontext der Schrittkette.
+Sobald die Schrittnummer für die Umlagerung (i_Schrittketten_Nr_Umlagerung) den
+Wert 2 erreicht, wird die Platzwahl aus der Übersicht aktiviert. Hierbei wird überprüft, ob
+der Zielplatz im Datenbaustein DB_Lagerbestand als belegt oder frei gekennzeichnet ist.
+Ist der Status False, wird die Variable b_Platzwahl_abgeschlossen auf TRUE gesetzt
+und der Platz als frei markiert (b_Lagerplatz_belegt := FALSE). Andernfalls wird der
+Platz als belegt gekennzeichnet und die Platzwahl bleibt unvollständig. Diese Logik
+verhindert fehlerhafte Umlagerungen auf bereits belegte Positionen.
+Abbildung 4.24: Aktualisierung des Lagerbestands nach erfolgreicher Umlagerung
+Die zweite Abbildung zeigt die Aktualisierung des Lagerbestands nach erfolgreicher
+Automatisiertes Modell- Hochregallager
+40
+4 Implementierung eines Umlagerungsprozesses
+Umlagerung. Hierbei werden die Daten des Quellplatzes zurückgesetzt und die Ziel
+position mit den neuen Informationen beschrieben. Dies umfasst die Statusvariable
+(b_Status), die eindeutige Identifikationsnummer (di_UID_Teil), die Artikelnummer
+sowie den Zeitstempel. Die Logik unterscheidet zwischen manueller Umlagerung
+(b_manuelle_Umlagerung_aktiv) und Umlagerung aus der Übersicht (b_uebersicht_Umlagerung_aktiv
+wobei in beiden Fällen die Datenbankeinträge konsistent angepasst werden. Durch
+diese Vorgehensweise wird sichergestellt, dass die Bestandsdaten jederzeit aktuell sind
+und die Nachverfolgbarkeit der Umlagerungen gewährleistet bleibt.
+
+\subsubsection{Aufruf und Funktionsprinzip der Positionsvergleichsfunktion}
+Abbildung 4.21: Aufruf des Positionsvergleichs
+Zur Bestimmung der für die Umlagerung notwendigen Fahrwege wird eine Positions
+vergleichsfunktion (Vergleiche_Fahrweg) aufgerufen, welche aus den Sollwerten der
+Quell- (P1) und Zielposition (P2) die Differenzen in den kartesischen Achsen berechnet
+und daraus die jeweilige Fahrtrichtung ableitet. Der Aufruf erfolgt in Abhängigkeit des
+aktuellen Umlagerungskontextes (manueller Modus und Übersichts-Modus), wobei die
+Eingänge als Sollwertpaare für X und Y übergeben werden und die Ausgänge als
+Richtungsflags bereitgestellt werden.
+Automatisiertes Modell- Hochregallager
+37
+4 Implementierung eines Umlagerungsprozesses
+Formal seien die Sollwerte der Positionen gegeben durch
+P1 = (X1, Y1),
+P2 = (X2, Y2).
+Die Funktion berechnet die Restwege (Differenzen)
+∆X =X2−X1, ∆Y =Y2−Y1,
+und leitet hieraus die Richtungsentscheidung für die Verfahrbewegungen ab:
+
+
+b_Fahrtrichtung_X =
+
+TRUE falls ∆X > 0 (Fahrt nach rechts)
+FALSE falls ∆X < 0 (Fahrt nach links)
+
+
+b_Fahrtrichtung_Y =
+
+TRUE falls ∆Y > 0 (Fahrt nach oben)
+FALSE falls ∆Y < 0 (Fahrt nach unten)
+Für den Grenzfall ∆X = 0 bzw. ∆Y = 0 wird keine Bewegungsanforderung in der jewei
+ligen Achse generiert, womit die Schrittfolge unmittelbar zur nächsten Achsenbewegung
+bzw. zum nachfolgenden Prozessschritt übergeht.
+Der Funktionsaufruf ist in zwei Varianten ausgeführt, die jeweils an den aktiven Mo
+dus (b_Merker_m bzw. b_Merker_ue) gebunden sind. In beiden Fällen werden als Ein
+gangsparameter die Sollwerte von Quell- und Zielplatz übergeben; die Ausgänge setzen
+die Richtungsflags:
+Die Ausgabeparameter sind in beiden Fällen identisch und werden den nachgeschalte
+ten GRAFCET-Verzweigungen zur Richtungswahl zugeführt:
+
+
+b_Fahrtrichtung_X ⇒
+
+Motor_X_rechts bei ∆X > 0
+Motor_X_links bei ∆X < 0
+
+
+b_Fahrtrichtung_Y ⇒
+
+Motor_Y_hoch
+bei ∆Y >0
+Motor_Y_runter bei ∆Y < 0
+Damit stellt die Positionsvergleichsfunktion die für die Verzweigungen in X- und Y-Richtung
+notwendigen Entscheidungsgrößen bereit und gewährleistet eine konsistente, zustand
+sabhängige Ansteuerung der Lineareinheiten. Die klare Trennung von Berechnung
+(∆X,∆Y) und Aktorik-Auswahl (Richtungsflags) erhöht die Wartbarkeit und unterstützt
+die modulare Erweiterbarkeit der Schrittkette
+
+\subsubsection{Schritt 10.1 im Kontext Schrittkette}
+Die in Abbildung 4.20 dargestellte GRAFCET-Struktur verdeutlicht die logische Verzwei
+gung innerhalb der Umlagerungsschrittkette. Nach dem Schritt Bereit_Zum_Verfahren_In_X
+(Schritt 9) erfolgt die Entscheidung über die Fahrtrichtung der X-Achse. Diese Entschei
+dung basiert auf dem Ergebnis der zuvor aufgerufenen Positionsvergleichsfunktion
+(Vergleiche_Fahrweg), die die Differenz zwischen Quell- und Zielposition berechnet
+und die Richtungsflags b_Fahrtrichtung_X und b_Fahrtrichtung_Y setzt.
+Die Verzweigung in Schritt 10 ist wie folgt aufgebaut:
+• Schritt 10.1– Motor_X_rechts: Wird das Flag b_Fahrtrichtung_X auf TRUE
+gesetzt, erfolgt die Ansteuerung des Motors für die Bewegung in positiver X
+Richtung.
+• Schritt 10.2– Motor_X_links: Ist das Flag b_Fahrtrichtung_X FALSE, wird der
+Motor für die Bewegung in negativer X-Richtung aktiviert.
+Die Umsetzung in der SPS-Logik ist in Abbildung 4.22 dargestellt. Hier wird die Schritt
+nummer über ein MOVE-Befehl gesetzt, sobald die Aktivierungsbedingungen erfüllt sind.
+Die logische Verknüpfung erfolgt über ein Set-Reset-Glied (SR), das den Schrittstatus
+verwaltet. Die Aktivierung von Schritt 10.1 ist somit direkt an die Fahrtrichtungsentschei
+dung gekoppelt, die aus der Positionsvergleichsfunktion resultiert.
+Abbildung 4.22: SPS-Implementierung für Schritt 10.1 (Motor_X_rechts)
+Wie in der Abbildung ersichtlich, wird die Aktivierung der Schrittnummer 10.1 durch
+die Transitionsbedingung T9_10A ausgelöst. Diese Bedingung wird erfüllt, sobald die
+Fahrtrichtung in positiver X-Achse erforderlich ist, wie zuvor durch die Positionsver
+gleichsfunktion bestimmt. Analog dazu wird bei aktiver Transitionsbedingung T9_10B die
+Schrittnummer 10.2 aktiviert, wodurch die Bewegung in negativer X-Achse erfolgt.
+Durch diese logische Struktur entsteht eine klare und funktionale Verzweigung inner
+halb der Schrittkette. Sie ermöglicht eine dynamische Auswahl des Prozesspfades
+Automatisiertes Modell- Hochregallager
+39
+4 Implementierung eines Umlagerungsprozesses
+in Abhängigkeit der berechneten Richtungsflags und trägt somit zur Flexibilität und
+Modularität des Steuerungsprogramms bei. Analog dazu wird mit Schritt 12.1 bzw. 12.2
+die Fahrtrichtung der y-Achse festgelegt.
+
+
+\subsubsection{Lagerplatzmanagement im Umlagerungsprozess}
+Das Lagerplatzmanagement stellt sicher, dass die Umlagerung nur auf freie Zielplätze
+erfolgt und die Bestandsdaten konsistent aktualisiert werden. Die Umsetzung erfolgt in
+zwei logischen Schritten, die in den folgenden Abbildungen dargestellt sind.
+Abbildung 4.23: Prüfung des Lagerplatzstatus und Setzen der Platzwahl
+Die erste Abbildung zeigt die Prüfung des Lagerplatzstatus im Kontext der Schrittkette.
+Sobald die Schrittnummer für die Umlagerung (i_Schrittketten_Nr_Umlagerung) den
+Wert 2 erreicht, wird die Platzwahl aus der Übersicht aktiviert. Hierbei wird überprüft, ob
+der Zielplatz im Datenbaustein DB_Lagerbestand als belegt oder frei gekennzeichnet ist.
+Ist der Status False, wird die Variable b_Platzwahl_abgeschlossen auf TRUE gesetzt
+und der Platz als frei markiert (b_Lagerplatz_belegt := FALSE). Andernfalls wird der
+Platz als belegt gekennzeichnet und die Platzwahl bleibt unvollständig. Diese Logik
+verhindert fehlerhafte Umlagerungen auf bereits belegte Positionen.
+Abbildung 4.24: Aktualisierung des Lagerbestands nach erfolgreicher Umlagerung
+Die zweite Abbildung zeigt die Aktualisierung des Lagerbestands nach erfolgreicher
+Automatisiertes Modell- Hochregallager
+40
+4 Implementierung eines Umlagerungsprozesses
+Umlagerung. Hierbei werden die Daten des Quellplatzes zurückgesetzt und die Ziel
+position mit den neuen Informationen beschrieben. Dies umfasst die Statusvariable
+(b_Status), die eindeutige Identifikationsnummer (di_UID_Teil), die Artikelnummer
+sowie den Zeitstempel. Die Logik unterscheidet zwischen manueller Umlagerung
+(b_manuelle_Umlagerung_aktiv) und Umlagerung aus der Übersicht (b_uebersicht_Umlagerung_aktiv
+wobei in beiden Fällen die Datenbankeinträge konsistent angepasst werden. Durch
+diese Vorgehensweise wird sichergestellt, dass die Bestandsdaten jederzeit aktuell sind
+und die Nachverfolgbarkeit der Umlagerungen gewährleistet bleibt
+
+
+\subsection{Visualisierung auf dem HMI}
+
+Die Visualisierung des Umlagerungsprozesses wurde im bestehenden Stil des bisheri
+gen HMI-Layouts umgesetzt, um eine konsistente Benutzerführung und ein einheitliches
+Erscheinungsbild zu gewährleisten. Sämtliche grafischen Elemente, Farbschemata und
+Bedienelemente orientieren sich an der zuvor implementierten Struktur für Ein- und
+Auslagerungsprozesse. Ergänzend wurde das HMI um spezifische Funktionen für die
+Umlagerung erweitert. Dazu zählen die Anzeige des aktuellen Quell- und Zielplatzes,
+die Positionsmeldungen während der Verfahrbewegungen sowie die Möglichkeit zur
+direkten Auswahl der Umlagerungsposition im Menü Übersicht.
+Abbildung 4.25: Übersichtsdarstellung zur Auswahl des Umlagerplatzes im HMI
+Oben abgebildet ist die Übersicht des Hochregallagers mit den einzelnen Lagerplätzen,
+die in einer vertikalen Anordnung dargestellt sind. Die Platznummern (z.B. 11, 21,
+31, 41) setzen sich aus den X- und Y-Koordinaten zusammen , um eine schnelle
+Automatisiertes Modell- Hochregallager
+41
+4 Implementierung eines Umlagerungsprozesses
+Orientierung zu gewährleisten. Im Zentrum befindet sich ein Popup-Bereich für die
+Auswahl des Umlagerplatzes. Das Pop-Up wird geöffnet, sobald der Bediener der
+Anlage einen Lagerplatz anklickt und ihn dadurch auswählt.
+Abbildung 4.26: Popup-Fenster zur Anzeige von Produktinformationen und Eingabe des
+neuen Lagerplatzes
+Das Bild zeigt das Popup-Fenster, das zur Anzeige detaillierter Produktinformationen
+sowie zum Start des neuen Umlagerprozesses dient. Auf der linken Seite werden
+Statusinformationen des ausgewählten Lagerplatzes dargestellt, darunter der aktuelle
+Status, die Artikelnummer, das Material, die eindeutige Identifikationsnummer (UID)
+sowie ein Zeitstempel. Die rechte Seite des Fensters zeigt den zuvor in der Übersicht
+ausgewählten Koordinaten für die neue Zielposition (X- und Y-Koordinaten) sowie eine
+Schaltfläche zur Auslösung des Umlagerungsprozesses. Diese Struktur ermöglicht eine
+klare Trennung zwischen Informationsanzeige und Steuerungsfunktion.
+Automatisiertes Modell- Hochregallager
+42
+4 Implementierung eines Umlagerungsprozesses
+Abbildung 4.27: Manuelles Menü des Umlagerungsprozesses mit Anzeige der aktuellen
+Position
+Abgebildet ist die Hauptansicht für die Durchführung der Umlagerung. Hier werden die
+Quell- und Zielpositionen in separaten Eingabebereichen dargestellt: Der obere Bereich
+(Von) dient zur Eingabe der aktuellen Position (X-Soll, Y-Soll), während der untere
+Bereich (Nach) die Zielposition aufnimmt. Darunter befindet sich eine Schaltfläche zur
+Auslösung des Umlagerungsprozesses. Rechts ist eine schematische Darstellung der
+Anlage integriert, die den räumlichen Bezug zum Hochregallager verdeutlicht. Diese
+Ansicht ermöglicht eine intuitive Bedienung und stellt alle relevanten Parameter für die
+Umlagerung kompakt dar
+
+\fi

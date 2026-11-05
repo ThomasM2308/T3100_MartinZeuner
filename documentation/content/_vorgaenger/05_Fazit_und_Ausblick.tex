@@ -1,0 +1,110 @@
+\section{Fazit und Ausblick}
+\subsection{Fazit}
+Im Rahmen dieser Studienarbeit wurde das automatisierte Modell-Hochregallager der
+Dualen Hochschule Baden-Württemberg gezielt weiterentwickelt und um wesentliche
+funktionale sowie sicherheitstechnische Aspekte ergänzt. Ziel war es, bestehende Defizi
+te im Bereich der Sicherheit, der Programmstruktur und der Prozesslogik zu analysieren
+und durch geeignete technische Maßnahmen zu beheben. Die durchgeführten Arbei
+ten leisten einen wichtigen Beitrag zur funktionalen Erweiterung und zur praxisnahen
+Ausgestaltung des Systems.
+Ein zentraler Schwerpunkt der Arbeit lag auf der Integration einer berührungslos wir
+kenden Schutzeinrichtung in Form eines Lichtgatters. Durch die Implementierung der
+Lichtschranke in Verbindung mit einem IO-Link-fähigen Sensor konnte eine zuverläs
+sige Überwachung des Gefahrenbereichs realisiert werden. Die detaillierte Analyse
+der verfügbaren Prozesswerte sowie die gezielte Auswahl des Modus „Number of Be
+ams Occupied (NBO)“ ermöglichen eine klare Unterscheidung zwischen zulässigen
+Prozessbewegungen, wie dem Einfahren des Zylinders, und unzulässigen Eingriffen
+in den Arbeitsbereich. Dadurch wird eine situationsabhängige und zugleich robuste
+Sicherheitsabschaltung gewährleistet.
+Die sicherheitstechnische Logik wurde vollständig in die bestehende SPS-Architektur
+integriert und über einen eigenen Funktionsbaustein realisiert. Durch die zentrale
+Freigabevariable wird sichergestellt, dass sämtliche Aktoren des Systems nur dann
+angesteuert werden, wenn keine Störung vorliegt und der Gefahrenbereich frei ist.
+Dieses Vorgehen erhöht nicht nur die Sicherheit des Systems, sondern verbessert
+auch die Nachvollziehbarkeit und Wartbarkeit der Steuerungssoftware. Die Kopplung
+der Sicherheitsfunktion mit dem vorhandenen Störungsmanagement stellt sicher, dass
+sicherheitsrelevante Zustände eindeutig erkannt, verarbeitet und visualisiert werden.
+Ein weiterer wesentlicher Bestandteil der Arbeit war die Einführung eines Umlagerungs
+prozesses. Im Gegensatz zu den bereits vorhandenen Ein- und Auslagerungsfunktionen
+handelt es sich hierbei um einen rein internen logistischen Prozess, der zur Optimie
+rung der Lagerstruktur dient. Die Entwicklung einer eigenständigen Schrittkette erwies
+sich als notwendig, um die zusätzlichen Anforderungen hinsichtlich Bewegungslogik,
+Verzweigungen und Prozesssicherheit abzubilden. Durch die Kombination bestehender
+Grundlogiken mit neuen Entscheidungsstrukturen konnte ein flexibler und nachvollzieh
+barer Umlagerungsablauf realisiert werden.
+Darüber hinaus zeigt die Arbeit deutlich die Vorteile der textbasierten Programmierung
+in Structured Text (ST) gegenüber grafischen Programmiersprachen wie FUP. Insbeson
+dere bei komplexeren Abläufen, sicherheitsrelevanten Abfragen und mathematischen
+Vergleichen bietet ST eine deutlich höhere Übersichtlichkeit und Skalierbarkeit. Die
+Umstellung einzelner Funktionsbereiche auf ST trägt langfristig zu einer besseren Les
+barkeit, einfacheren Fehlersuche und verbesserten Erweiterbarkeit des Programms
+bei.
+Zusammenfassend lässt sich festhalten, dass die in dieser Studienarbeit umgesetzten
+Maßnahmen die funktionale Sicherheit, Prozessstabilität und didaktische Qualität des
+Modell-Hochregallagers deutlich verbessern. Das System bildet nun nicht nur grund
+legende logistische Prozesse ab, sondern berücksichtigt auch sicherheitstechnische
+Anforderungen, wie sie in realen industriellen Anlagen zwingend erforderlich sind. Da
+mit stellt das Hochregallager eine praxisnahe und zukunftsfähige Lernplattform für
+Studierende im Bereich der Automatisierungstechnik dar
+
+\subsection{Ausblick}
+
+Die im Rahmen dieser Studienarbeit umgesetzten Erweiterungen bilden eine stabile
+technische und konzeptionelle Grundlage für die weitere Entwicklung des automatisier
+ten Modell-Hochregallagers. Insbesondere durch die Integration der sicherheitsgerichte
+ten Lichtschranke, die Einführung des Umlagerungsprozesses sowie die zunehmende
+Nutzung der Programmiersprache Structured Text wurde das System sowohl funktional
+als auch strukturell deutlich verbessert. Aufbauend auf diesen Ergebnissen wird sich die
+darauffolgende Arbeit auf die Implementierung eines auftragsbasierten Materialflusses
+konzentrieren.
+Der zentrale Fokus der nächsten Entwicklungsstufe liegt auf der Einführung eines
+Auftragsmanagements mithilfe eines QR-Code-Readers. Ziel ist es, Ein- und Auslager
+prozesse nicht mehr ausschließlich manuell oder fest vorgegeben auszulösen, sondern
+diese auf Basis eindeutig definierter Aufträge automatisch zu steuern. Hierdurch soll
+das Hochregallager stärker an reale industrielle Anwendungen angelehnt werden, in
+denen Materialbewegungen in der Regel durch digitale Aufträge aus übergeordneten
+Systemen angestoßen werden.
+Im Rahmen der nächsten Arbeit soll ein QR-Reader als zusätzliche Identifikations- und
+Eingabeschnittstelle in das bestehende System integriert werden. Über den QR-Code
+sollen auftragsrelevante Informationen wie Lagerplatz, Material-ID, Prozessart (Einla
+gern, Auslagern oder Umlagern) sowie gegebenenfalls Prioritäten oder Zielpositionen
+erfasst werden. Die ausgelesenen Daten werden anschließend von der SPS verar
+beitet und in strukturierter Form an die Prozesssteuerung übergeben. Damit entsteht
+eine direkte Verbindung zwischen physischer Auftragserfassung und automatisierter
+Anlagensteuerung.
+Ein wesentlicher Bestandteil des Auftragsmanagements wird die Definition geeigneter
+Datenstrukturen innerhalb der SPS sein. Hierzu zählen unter anderem Auftragsobjekte,
+Warteschlangen sowie Statusinformationen zur Verfolgung des aktuellen Bearbeitungs
+stands. Durch die Verwendung strukturierter Datentypen in Structured Text können
+Aufträge klar definiert, verwaltet und sequenziell abgearbeitet werden. Dies ermöglicht
+eine saubere Trennung zwischen Auftragsebene und Bewegungs- bzw. Sicherheitslogik
+und erhöht die Modularität des Gesamtsystems.
+Darüber hinaus bietet ein auftragsbasiertes System die Möglichkeit, bestehende Pro
+zesse wie Einlagerung, Auslagerung und Umlagerung in einer übergeordneten Logik
+zusammenzuführen. Anstatt einzelne Funktionen separat auszulösen, kann der Anla
+genbetrieb künftig vollständig über Aufträge gesteuert werden. Dies eröffnet Potenzial
+für eine automatische Priorisierung von Aufträgen, eine flexible Reihenfolge der Abarbei
+tung sowie eine bessere Auslastung der Anlage. Insbesondere in Kombination mit dem
+bereits implementierten Umlagerungsprozess lassen sich so optimierte Lagerstrategien
+realisieren.
+Ein weiterer Aspekt der kommenden Arbeit betrifft die Erweiterung der Bedien- und
+Visualisierungsebene. Die über den QR-Reader eingelesenen Aufträge sollen auf
+dem HMI übersichtlich dargestellt werden, inklusive Informationen zum aktuellen Auf
+tragsstatus, zur Restbearbeitungszeit und zu möglichen Störungen. Dadurch wird die
+Transparenz für den Bediener erhöht und der Anlagenzustand jederzeit nachvollziehbar
+dargestellt. Ergänzend könnte eine Historie abgeschlossener Aufträge implementiert
+werden, um Prozessabläufe analysieren und optimieren zu können.
+Auch im Hinblick auf die Sicherheit ergeben sich neue Anforderungen. Das Auftrags
+management muss eng mit den bestehenden Sicherheitsfunktionen verknüpft werden,
+sodass Aufträge bei aktiven Störungen oder unterbrochenen Schutzfunktionen nicht
+gestartet oder automatisch pausiert werden. Dadurch wird sichergestellt, dass der
+auftragsbasierte Betrieb jederzeit den sicherheitstechnischen Anforderungen entspricht
+und keine gefährlichen Zustände entstehen.
+Zusammenfassend stellt die Implementierung eines QR-basierten Auftragsmanage
+ments einen konsequenten nächsten Schritt in der Weiterentwicklung des automatisier
+ten Modell-Hochregallagers dar. Sie ermöglicht eine realitätsnahe Abbildung moderner
+intralogistischer Prozesse und schafft die Grundlage für eine flexible, skalierbare und
+industrieorientierte Anlagensteuerung. Die Ergebnisse der vorliegenden Arbeit bilden
+hierfür eine solide Basis und ermöglichen es, das System in der folgenden Theoriephase
+gezielt um eine zentrale Funktion moderner Lagerlogistik zu erweitern
+

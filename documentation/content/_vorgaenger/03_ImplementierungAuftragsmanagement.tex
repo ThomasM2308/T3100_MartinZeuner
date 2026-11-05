@@ -1,0 +1,334 @@
+\section{Implementierung eines Auftragsmanagement in das Gesamtkonzept}
+
+Im aktuellen Ist-Zustand des Hochregallagers fehlt die vollständige Implementierung einer zentralen Auftragsverwaltung. Bisher werden Steuerungssignale oder Aufträge lediglich starr abgearbeitet, ohne dass eine dynamische Priorisierung, flexible Reihenfolgeanpassung oder Echtzeit-Statusüberwachung stattfindet. Es existiert keine übergeordnete Instanz, die Aufträge in einer zentralen Warteschlange verwaltet, deren Ausführbarkeit (Executable) prüft oder Auftragsarten (Ein-, Um- und Auslagerung) strukturiert aufbereitet.
+
+Die Logik des Ein-, Um- und Auslagerns ist somit unflexibel. Sobald ein Eingriff in den Prozess erfolgt – wie etwa das Veranlassen einer Lagersperre im Automatikbetrieb, der Wechsel in den Tippbetrieb oder das kurzfristige Vorziehen dringender Aufträge –, kann der Prozess nicht dynamisch geregelt werden. Da das Miniaturmodell eine reale Situation in der Intralogistik abbilden soll, stellt das Fehlen einer flexiblen Auftragssteuerung ein erhebliches Defizit dar.
+
+Um diesen Nachteil zu beheben, wird im Rahmen dieses Vorhabens eine zentrale Auftragsverwaltung inklusive einer visuellen Mensch-Maschine-Schnittstelle (HMI) und einem Python-basierten Backend implementiert. Diese ermöglicht es, Aufträge dynamisch anzulegen, in ihrer Priorität (nach oben/unten) zu verschieben, gezielt zu stornieren sowie die Ausführbarkeit der Folgeaufträge bei aktiver Lagersperre oder Störungen automatisch zu unterbrechen.
+
+\subsection{Zielsetzung der Arbeit und des Auftragsmanagements}
+
+Die bisherigen Arbeiten am Modell-Hochregallager der Dualen Hochschule Baden-Württemberg haben den physischen Grundbetrieb des Systems sowie grundlegende Abläufe zum Ein-, Aus- und Umlagern erfolgreich umgesetzt. In einer realistischen Industrieumgebung werden Lagerprozesse jedoch nicht durch manuelle Einzeleingaben gesteuert, sondern über ein strukturiertes Auftragsmanagement verwaltet. Das Hauptziel dieser Arbeit besteht daher in der Entwicklung und Implementierung eines zentralen Auftragsmanagements für das Hochregallager. Dieses System fungiert als überlagerte Steuerungsebene und trennt die Auftragserfassung klar von der unterlagerten Achs- und Bewegungssteuerung.  
+
+Im Rahmen der Umsetzung wird zunächst in der Programmiersprache Structured Text eine benutzerdefinierte Datenstruktur (STRUCT) entwickelt, die alle relevanten Auftragsdaten wie ID, Prozessart, Zielkoordinaten und Priorität bündelt. Diese Objekte werden in einer zentralen Warteschlange innerhalb der SPS gespeichert, um eingehende Aufträge geordnet und nach Priorität abzuarbeiten. Vor jedem Bewegungsablauf führt das System eine automatisierte Freigabeprüfung (Executable-Logik) durch. Dabei wird kontrolliert, ob das Quellfach belegt und das Zielfach frei ist. Gleichzeitig ist die Sicherheitslogik eingebunden, sodass bei einer Unterbrechung der Lichtschranke oder einem Not-Halt die Freigabe sofort entzogen und der Prozess sicher pausiert wird.  
+
+Die Auftragsdaten können flexibel über verschiedene Schnittstellen eingelesen werden, darunter ein QR-Code-Reader, manuelle HMI-Eingaben oder ein externes Python-Skript. Abschließend werden alle Auftragszustände, der Anlagenstatus und vorliegende Störungen übersichtlich auf dem HMI-Bediengerät visualisiert. Die durchgeführte Arbeit erweitert das Hochregallager zu einer praxisnahen, sicheren Gesamtanlage und schafft eine verlässliche Grundlage für den zukünftigen Lehr- und Forschungsbetrieb an der DHBW.  
+
+\subsection{Grundlagen des Auftragsmanagements}
+\iffalse
+Bedingungen für Vollautomatisiertes Hochregallager
+Datensatz des HRLs ist die Grundlage für Funktion.
+
+\fi
+
+Für den Betrieb eines vollautomatisierten Hochregallagers bildet der vollständige und konsistente Datensatz der Anlage die essenzielle Funktionsgrundlage[cite: 1, 3]. In modernen intralogistischen Anwendungen werden Materialflüsse nicht durch manuelle Einzeleingaben oder fest vorgegebene Routinen ausgelöst, sondern systematisch über ein übergeordnetes Auftragsmanagement gesteuert, um Prozesse realitätsnah und industrieorientiert abzubilden[cite: 1, 3]. Über digitale Schnittstellen werden dabei alle auftragsrelevanten Parameter — wie etwa Material-ID, Quell- und Zielkoordinaten, Prozessart sowie Prioritäten — erfasst und geordnet an die Steuerungsebene übergeben[cite: 1, 3].
+
+Ein zentraler Baustein des Auftragsmanagements liegt in der Definition geeigneter Datenstrukturen innerhalb der Speicherprogrammierbaren Steuerung[cite: 1, 3]. Durch den Einsatz von benutzerdefinierten, strukturierten Datentypen in der Programmiersprache Structured Text lassen sich Auftragsobjekte, Warteschlangen sowie detaillierte Statusinformationen zur Verfolgung des Bearbeitungsstands abbilden[cite: 1, 3]. Diese Strukturierung erlaubt es, ausstehende Aufträge klar zu definieren, dynamisch zu verwalten und sequenziell abzuarbeiten[cite: 1, 3]. Ein wesentlicher Vorteil dieser Architektur besteht in der sauberen mechatronischen Trennung zwischen der logischen Auftragsebene und der unterlagerten Bewegungs- und Sicherheitslogik, was die Modularität und Wartbarkeit des Gesamtsystems deutlich erhöht[cite: 1, 3].
+
+Darüber hinaus ermöglicht ein auftragsbasiertes Steuerungskonzept die Zusammenführung der Grundfunktionen — Einlagerung, Auslagerung und Umlagerung — unter einer einheitlichen Logik[cite: 1, 3]. Anstatt Funktionen isoliert anzusteuern, wird der gesamte Anlagenbetrieb über generierte Aufträge abgewickelt[cite: 1, 3]. Dies eröffnet erhebliche Potenziale für eine automatische Priorisierung, eine flexible Anpassung der Abarbeitungsreihenfolge sowie eine optimierte Gesamtauslastung der Anlage[cite: 1, 3]. Um einen verlässlichen Betrieb zu gewährleisten, wird das Auftragsmanagement direkt mit den sicherheitsgerichteten Komponenten der Anlage verknüpft, sodass Aufträge bei aktiven Störungen oder einer Unterbrechung von Schutzfunktionen unverzüglich pausiert oder gesperrt werden[cite: 1, 3].
+
+\subsection{Systemaufbau mit Python und SPS-Programm}
+
+
+Das Python-basierte Backend übernimmt die Aufgaben eines übergeordneten Leitsystems und dient als externe Schnittstelle zur Generierung und Verarbeitung von Lageraufträgen. Über Python werden externe Eingaben, wie beispielsweise die ausgelesenen Daten eines QR-Code-Readers oder Parameter überlagerter Softwaresysteme, erfasst, verarbeitet und in ein einheitliches Auftragsformat übersetzt. Das Programm kümmert sich um die dynamische Erzeugung von Aufträgen, die Anpassung von Prioritäten sowie die Bereitstellung der Datensätze über Kommunikationsschnittstellen an die Steuerung[cite: 1].
+
+Auf Ebene der Speicherprogrammierbaren Steuerung liegt der Fokus hingegen auf der echtzeitkritischen Speicherung, Validierung und physischen Koordinierung des Gesamtsystems[cite: 1, 2]. Das SPS-Programm speichert die eingehenden Aufträge in einer zentralen Warteschlange, welche als Array von benutzerdefinierten Datenstrukturen im Bausteinspeicher abgelegt ist[cite: 1]. Neben dieser Auftrags-Queue koordiniert die SPS kontinuierlich den aktuellen Belegungszustand der einzelnen Regalfächer sowie den Zustand der sicherheitsgerichteten Komponenten der Anlage[cite: 1]. Vor jeder Achsbewegung führt das SPS-Programm die automatisierte Freigabeprüfung durch, indem es kontrolliert, ob Quell- und Zielfächer korrekt belegt bzw. frei sind und ob Schutzfunktionen wie die Lichtschranke ununterbrochen signalisieren[cite: 1]. Erst nach erfolgreicher Validierung steuert die SPS die Sequenz der zwei physischen Achsen zur Ausführung des Ein-, Aus- oder Umlagerprozesses an und spiegelt den aktuellen Auftragsstatus live an das HMI-Bediengerät wider[cite: 1].
+
+
+\subsubsection{Konzept des Python-Programms}
+Ziel: Was soll hier erreicht werden?
+
+Ablaufplan - GRAPH SET
+
+\subsubsection{Konzept des SPS-Programms}
+Ziel: Was soll hier erreicht werden?
+
+Ablaufplan; GRAPH SET
+
+
+
+\subsection{Auftragshandling}
+\subsubsection{Anlegen von Aufträgen}
+\subsubsection{Prisorisierung von Aufträgen}
+\subsubsection{Ausführen von Aufträgen}
+
+
+\subsection{Implementieren des Auftragsmanagements}
+
+
+\subsubsection{Intersktion zwischen Python und SPS-Programm}
+
+
+\subsection{Visualisierung auf dem HMI}
+
+Es soll :
+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+|  HMI LAGERSTEUERUNG | OFFENE AUFTRÄGE                                                12.10.2026 - 14:32:10      |
++---------------------------------------------------+-------------------------------------------------------------+
+| OBEN LINKS: BETRIEBSMODUS & SICHERHEIT            | MITTE: AUFTRAGSQUEUE (OBERSTER = AKTUELLSTER)               |
+|                                                   |                                                             |
+|  +---------------------------------------------+  |  +-------------------------------------------------------+  |
+|  | [  AUTOMATIK  ]  |  ( Tippbetrieb )         |  |  | [ E ]  ID: AUF-2026-0891     Executable: JA [●]   |  |
+|  +---------------------------------------------+  |  |        Status: In Bearbeitung                        |  |
+|  | [X] LAGER SPERREN (Keine Folgeaufträge)     |  |  |        [ ▲ HOCH ]  [ ▼ RUNTER ]  [ 🗑 LÖSCHEN ]       |  |
+|  +---------------------------------------------+  |  +-------------------------------------------------------+  |
+|                                                   |  | [ U ]  ID: AUF-2026-0892     Executable: NEIN [○] |  |
+|  +---------------------------------------------+  |  |        Status: Wartet auf Quellplatz                 |  |
+|  | SICHERHEIT & NOT-AUS                        |  |  |        [ ▲ HOCH ]  [ ▼ RUNTER ]  [ 🗑 LÖSCHEN ]       |  |
+|  | • Not-Aus Status:   [ ENTRIEGELT / OK  ]    |  |  +-------------------------------------------------------+  |
+|  | • Sicherheitskreis: [ IN ORDNUNG (OK)  ]    |  |  | [ A ]  ID: AUF-2026-0893     Executable: JA [●]   |  |
+|  | • Schutztüren:      [ GESCHLOSSEN      ]    |  |  |        Status: Bereit                                |  |
+|  +---------------------------------------------+  |  |        [ ▲ HOCH ]  [ ▼ RUNTER ]  [ 🗑 LÖSCHEN ]       |  |
+|                                                   |  +-------------------------------------------------------+  |
++---------------------------------------------------+-------------------------------------------------------------+
+| UNTEN: AUFTRAGSANLAGE                                                                                           |
+|                                                                                                                 |
+|  [ + UMLAGERAUFTRAG ANLEGEN ]                              [ + AUSLAGERAUFTRAG ANLEGEN ]                         |
++-----------------------------------------------------------------------------------------------------------------+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+\section{Implementierung eines Lichtgatters in das Gesamtkonzept}
+
+Im aktuellen Ist-Zustand des Hochregallagers fehlt die vollständige Implementierung
+der Sicherheitslogik.
+Lediglich der Not-Aus-Schalter ist hardwareseitig verdrahtet und schaltet bei Betätigung
+die Zuleitung ab. Es existiert jedoch keine automatische Abschaltung im Gefahrenfall.
+Die Logik des Ein- und Auslagerns ist somit nicht gefahrenfrei. Sobald ein Eingriff in den
+Prozess erfolgt, kann dieser im aktuellen Zustand nicht automatisch gestoppt werden.
+Da das Miniaturmodell eine reale Situation in der Logistik abbilden soll, stellt dieser
+Punkt ein erhebliches Defizit dar.
+Es gibt verschiedene Möglichkeiten, um diesen Nachteil zu beheben. Die naheliegendste
+Option ist die Implementierung einer Lichtgatter-Funktion, um den Gefahrenbereich
+zuverlässig zu überwachen und den Betrieb im Störfall sicher zu unterbrechen. Durch
+ein vorheriges Projekt wurde bereits, ein Modell der Firma IFM[8], installiert.
+
+\subsection{Zielsetzung der Implementierung}
+Die Studienarbeiten der vergangenen Jahre haben das Hochregallager in einen Zustand
+gebracht, der wichtige Funktionen wie Ein- und Auslagern abbildet.
+Jedoch wurden hierbei, fälschlicherweise, die notwendigen Sicherheitsaspekte völlig
+außer Acht gelassen.
+In einer realen Umgebung, beispielsweise in Materiallagern mit Hochregalsystemen
+großer Industrieunternehmen, wäre eine solche Vorgehensweise undenkbar.
+Es muss jederzeit gewährleistet sein, dass Gefahren so gut wie möglich unter Kontrolle
+gehalten werden. Das bedeutet, im Fehlerfall muss jede gefährliche Bewegung sicher
+abgeschaltet werden.
+Dies stellt die zentrale Zielsetzung der Implementierung dar. In jedem Betriebsmodus
+muss sichergestellt sein, dass bei Erkennung einer Gefahr automatisch abgeschaltet
+wird.
+Dabei ist jedoch zu berücksichtigen, dass der Kolben des Zylinders, welcher die Mate
+rialien einlagert, kein Abschaltsignal auslösen darf. Dieser fährt nämlich unmittelbar in
+den Gatterbereich der Lichtschranke ein.
+Somit ist zunächst eine umfassende Analyse des Ist-Zustands sowie der verschiedenen
+Prozesswerte des Lichtgatters erforderlich.
+Erst im Anschluss kann die Implementierung der Sicherheitslogik erfolgen
+
+\subsection{Analyse der Paramerierung des Lichtgatters}
+Die Konfiguration des Lichtgatters ist entscheidend für die richtige Funktionsweise. Beim
+Modell von IFM[8] gibt es mehrere Möglichkeiten zur Parametrierung.
+Das Lichtgatter besitzt mehrere Lichtstrahlen, welche über einzelne Bits definiert sind.
+Sobald sich ein Objekt im Gatter befindet, werden mehrere dieser Lichtstrahlen gleich
+zeitig unterbrochen.
+Der Sensor des vorliegenden Lichtgatters hat im sogenannten Detektionsmodus
+(GTBO) den Wert 1. Das bedeutet, dass er schaltet, sobald ein Objekt die Strahlen
+unterbricht.
+Über IO-Link kann nun festgelegt werden, ab wie vielen unterbrochenen Strahlen der
+Sensor ein Schaltsignal ausgeben soll
+
+\subsubsection{Prozesswerte der Steuerung des Arbeitsverhaltens}
+Zur Steuerung des Verhaltens bei einer Unterbrechung stehen verschiedene Prozess
+werte zur Verfügung[7]:
+• FBO(First Beam Occupied)
+• LBO(Last Beam Occupied)
+• CBO(Central Beam Occupied)
+• NBO(Number of Beams Occupied)
+• NCBO(Number of Consecutive Beams Occupied)
+Im Betriebsmodus FBO schaltet der Sensor bereits beim ersten unterbrochenen Licht
+strahl. Das bedeutet, Objekte, die im unteren Bereich des Lichtgatters liegen, werden
+als erstes erfasst.
+Im Modus LBO geschieht genau das Gegenteil: Es wird beim letzten Lichtstrahl ge
+schaltet.
+Dieser Modus wird beispielsweise bei Endlagenerkennungen oder beim Auslagern
+verwendet– also immer dann, wenn das Austreten aus einem bestimmten Bereich
+überwacht werden soll.
+Der Modus CBO ist etwas komplexer: Hier wird der mittlere Lichtstrahl (bei mehreren
+zusammenhängenden Strahlen) überwacht. Tritt ein Objekt in das Lichtgatter ein, wird
+der zentrale Strahl als Referenzpunkt betrachtet. Bei mehreren Objekten wird immer
+vom größeren Objekt ausgegangen, also von dem, das mehr Strahlen gleichzeitig
+unterbricht– wie in Abbildung 3.13 zu sehen.
+Automatisiertes Modell- Hochregallager
+26
+3 Implementierung eines Lichtgatters in das Gesamtkonzept
+Anwendungsbeispiele sind z. B. Durchgänge oder Förderabschnitte, also überall dort,
+wo Objekte mittig erfasst werden sollen (Referenzpunkt: Mitte).
+Abbildung 3.13: Modus CBO; Quelle: [7]
+Die letzten beiden Modi, NBO und NCBO, beschäftigen sich mit der konkreten Anzahl
+der Lichtstrahlen, die unterbrochen werden.
+Der Unterschied der beiden Modi liegt darin, dass NBO die Gesamtanzahl der unterbro
+chenen Lichtstrahlen angibt, während NCBO die Anzahl der Strahlen beschreibt, die
+aufeinanderfolgend unterbrochen werden.
+Im Projekt wird der Modus NBO verwendet. Eine Abbildung soll die Funktionsweise
+noch einmal verdeutlichen (siehe Abbildung 3.14)
+
+\subsection{Komponentenübersicht und Systemaufbau}
+FürdieUmsetzungderSicherheitsfunktionwurdeeinSystemaufbaurealisiert,derdie
+LichtschrankedirektmiteinemIO-Link-MasterundderSPSverbindet.ImFolgenden
+werdendieeingesetztenKomponentensowiederenZusammenspiel innerhalbdes
+Gesamtsystemsbeschrieben.
+Komponente Hersteller/Typ Funktion Schnittstelle
+Lichtgitter / Licht
+schranke
+IFMOY5100(Infrarot) Erfassung von Objekten
+undÜberwachungdesGe
+fahrenbereichs
+IO-Link
+IO-LinkMaster IFMAL1100 Kommunikation zwischen
+IO-Link-Devices und der
+SPS
+PROFINET /
+IO-Link
+SPS SiemensS7-1500 Steuerungdesgesamten
+Systems,Verarbeitungder
+Sensorsignale
+PROFINET
+Netzteil24VDC SiemensSITOP/ver
+gleichbar
+Versorgung von IO-Link
+Master,Lichtschrankeund
+SPS
+24VDC
+Aktorik(Zylinder/Mo
+tor)
+Festo(pneumatisch) Ausführungder Ein- und
+Auslagerbewegung
+Digitale Aus
+gänge der
+SPS
+Tabelle4:ÜbersichtderverwendetenKomponentenimSystemaufbau
+InTabelle4sinddieeinzelnenKomponentendesHochregallagersrundumdieLicht
+schrankedargestellt.
+Diesemüssenoptimalmiteinanderinteragieren,umdiegewünschteFunktionalitätsi
+cherzustellen.
+DieLichtschrankeistvomTypOY5100undstammtvomHerstellerIFM.Eshandeltsich
+hierbeiumeinsteuerbaresLichtgitter,dasüberIO-LinkmitderSPSkommuniziert.
+
+\subsubsection{Systemaufbau}
+Die folgende Abbildung zeigt den strukturellen Aufbau des Gesamtsystems in verein
+fachter Form.
+SPS
+(Siemens S7-1500)
+Netzteil
+24V DC
+24V DC
+PROFINET
+IO-Link Master
+(IFM AL1100)
+IO-Link
+Lichtgitter
+(IFM OY5100)
+Signal / Reaktion
+Aktorik
+(Zylinder / Motor)
+Abbildung 3.15: Vertikaler Systemaufbau des Lichtgatter-Systems
+Im Diagramm 3.15 ist der Aufbau der einzelnen Komponenten grafisch dargestellt. Der
+IO-Link-Master dient hierbei als Schnittstelle zwischen SPS und Lichtgitter und steuert
+die Kommunikation über das im TIA Portal implementierte Programm.
+Im Fehlerfall werden gefährliche Bewegungen, die beispielsweise vom Zylinder oder
+den Motoren der Linearachsen ausgehen, automatisch gestoppt.
+Im folgenden Abschnitt wird die Implementierung dieser Sicherheitslogik in der SPS
+detailliert erläutert
+
+\subsection{Implementieren der Sicherheitslogik in die SPS}
+Die Sicherheitslogik wird, wie bereits erwähnt, in eine Siemens S7-1500 SPS einpro
+grammiert. Die Programmierung erfolgt mithilfe der Software TIA Portal.
+Für die Umsetzung der Arbeit wurde das bestehende Programm des Jahrgangs TEA
+22 als Grundlage verwendet. Zunächst wurde eine neue Program Organization Unit
+(POU) mit der Bezeichnung Lichtschranke erstellt.
+Im Anschluss erfolgte das Einbinden des Moduls OY5100 im Reiter Geräte und Netz
+werke. Der Adressbereich (frei wählbar) wurde so konfiguriert, dass eine eindeutige
+Zuordnung innerhalb des Projekts gewährleistet ist.
+Abbildung 3.16: Einbindung der IFM-Lichtschranke OY5100 im TIA Portal
+Die zugewiesenen Adressen werden für die verschiedenen Prozesswerte genutzt (siehe
+Kapitel 3.2.1).
+Als Vorbereitung auf die Programmierung wurde eine sogenannte Watchtable erstellt.
+Diese dient dazu, die einzelnen Prozesswerte des Lichtgatters während der Laufzeit zu
+überwachen und deren Verhalten zu analysieren.
+Die Prozesswerte liegen im Format WORD (2 Byte) vor und bilden die Anzahl der
+unterbrochenen Lichtstrahlen ab.
+Nach einer Reihe von Tests wurde festgestellt, dass der Kolben des Zylinders im Ar
+beitsbereich des Lichtgatters drei Strahlen gleichzeitig unterbricht. Hierfür erfolgte
+ein gezieltes Verfahren der Lineareinheit über alle vier Ebenen des Hochregallagers.
+So konnte überprüft werden, dass der Kolben in jeder Position konstant drei Strahlen
+abdeckt.
+Im weiteren Verlauf wurde diskutiert, welcher Prozesswert sich für die Sicherheitslogik
+am besten eignet. Es zeigte sich, dass der Modus NBO (Number of Beams Occupied)
+Automatisiertes Modell- Hochregallager
+30
+3 Implementierung eines Lichtgatters in das Gesamtkonzept
+die Summe aller unterbrochenen Lichtstrahlen angibt (siehe Kapitel 3.2.1). Daher ist
+dieser Prozesswert optimal geeignet, um eine zuverlässige Abschaltung über das Licht
+gatter zu realisieren.
+Nach der Diskussion wurde, für die Realisierung der Abfrage, ein neuer FB (Freigabe-Lichtschranke-FB24) aufgebaut in SCL. Im Diagramm 3.17 ist der Zusammenhang
+zwischen den einzelnen Modi und der Freigabe dargestellt.
+FB
+Handbetrieb
+Signalaustausch
+FB24
+Freigabe
+Lichtschranke
+Status / Freigabe
+FB
+Prozesssteuerung
+(Ein-/Auslagerung)
+Rückmeldung / Fehler
+FB
+Störungen
+Abbildung 3.17: Einbindung des Bausteins FB24 Freigabe\_Lichtschranke in das
+Gesamtsystem
+Der Baustein FB24 Freigabe\_Lichtschranke ist ein zentraler Bestandteil der Sicher
+heitsarchitektur.
+Ohne ihn wäre ein sicheres Abschalten im Fehlerfall nicht möglich. Die Prozesssteue
+rung wird durch die Freigabe in jedem Schritt überwacht.
+Durch die Einbindung in den FB11 Strungen erfolgt eine Überwachung sämtlicher
+Ausgänge über die Variable b\_Freigabe. Diese wird gesetzt, sobald keine Störungen
+aktiv sind und die Freigabe durch das Lichtgitter gegeben ist.
+Automatisiertes Modell- Hochregallager
+31
+3 Implementierung eines Lichtgatters in das Gesamtkonzept
+Abbildung 3.18: Setzen der Variable b\_Freigabe in FB11 Strungen
+Jene Variable in Abbildung 3.18 wurde bereits in vorherigen Projekten verwendet.
+Sie wird im Block FB\_Ausgnge eingesetzt, als zusätzliche invertierte Rücksetzbedin
+gung. Somit ist ein fehlerfreier Betriebsmodus der einzelnen Aktoren gewährleistet.
+
+
+\subsubsection{Logische Abschaltbedienungen der Lichtschranke}
+
+In Abbildung 3.19 ist der Ablauf der Sicherheitsabschaltung grafisch dargestellt. Sobald
+der Prozesswert NBO größer als 3 ist, wird die Aktorik abgeschaltet. Das bedeutet,
+dass eine sofortige Abschaltung erfolgt, sobald zusätzlich zum Zylinder eine Hand oder
+ein anderes Objekt detektiert wird– also ein weiterer Lichtstrahl unterbrochen ist.
+
+
+\subsection{Visualisierung auf dem HMI}
+In diesem Kapitel wurde die Implementierung einer sicherheitsgerichteten Lichtschranke
+in das bestehende Hochregallager-System beschrieben. Dabei erfolgte zunächst die
+Analyse der Prozesswerte des IFM-Lichtgatters sowie die Auswahl des geeigneten
+Betriebsmodus zur sicheren Erkennung von Objekten im Gefahrenbereich. Anschlie
+ßend wurde der vollständige Systemaufbau erläutert und die Anbindung über den
+IO-Link-Master an die Siemens-SPS umgesetzt. Die daraus resultierende Sicherheitslo
+gik ermöglicht es, gefährliche Bewegungen im Fehlerfall automatisch zu stoppen und
+so die funktionale Sicherheit des Systems zu gewährleisten.
+Die Visualisierung der Sicherheitszustände erfolgt über den integrierten Störungsbau
+stein des HMI-Panels, wodurch Unterbrechungen und Fehlermeldungen automatisch
+angezeigt werden. Eine Erweiterung dieser Funktion um eine gezielte Anzeige des
+Anlagenzustands (z.B. „Normalbetrieb“, „Sicherer Halt“) bietet zusätzliches Potenzial
+zur Verbesserung der Bedienerfreundlichkeit und Systemtransparenz.
+Damit ist die sicherheitstechnische Basis des Hochregallagers geschaffen, auf der im
+folgenden Kapitel weitere Funktionen und Erweiterungen aufgebaut werden können
+
