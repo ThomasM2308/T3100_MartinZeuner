@@ -81,6 +81,7 @@
     </requires>
     <requires type="editable">
       <file>content/literature.bib</file>
+      <file>content/_vorgaenger/literature_vorgaenger.bib</file>
     </requires>
   </external>
 </requests>
