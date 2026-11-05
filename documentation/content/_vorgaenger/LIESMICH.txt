@@ -1,0 +1,3 @@
+Dieser Ordner enthält die LaTeX-Quellen der Vorgängerarbeiten (Schaal & Zorko) bzw. der Vorlage.
+Sie werden NICHT mehr in Projektarbeit.tex eingebunden und dienen nur als Referenz.
+Keine Passagen übernehmen oder umschreiben – Inhalte nur zitieren (Eigenständigkeitserklärung).
