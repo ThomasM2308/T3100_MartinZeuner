@@ -35,6 +35,15 @@
 %     laut Datenblatt prüfen, Reserve für PNOZ berücksichtigen)
 %   - Motoren: maxon motor (Swiss Made), Aufdruck „41.040.038-00.00-118“ → Datenblatt/Nennstrom
 %     beim Hersteller recherchieren oder Strom messen (für Abgleich mit Kontaktbelastbarkeit PNOZ)
+%   - Versorgung der Motoren vermutlich ebenfalls aus der SPS-Laststromversorgung (PM 70 W) → prüfen;
+%     dann Gesamtstrom (SPS + Motoren + Ventil + PNOZ) gegen Nennstrom des Netzteils abgleichen
+%   - Belegung ergänzt: A2 = 0 V (Minus), dort auch Minus des Druckluftventils
+%                       33/34 = schaltet das Druckluftventil (24 V über PNOZ) → Druckluft nur bei
+%                               geschlossenem Sicherheitskreis
+%                       42 = TODO
+%   - Prüfen in 4.3: Ist der stromlose Zustand des Ventils ein sicherer Zustand? Ventiltyp
+%     (z. B. 3/2- oder 5/2-Wegeventil, monostabil?) und Verhalten des Zylinders bei Abschaltung
+%     (fährt er ein/aus? bleibt Restdruck?) aus Datenblatt/Versuch ermitteln
 
 \subsection{Anforderungen an den neuen Montageort}
 % ZIEL:    Kriterien, nach denen der neue Ort gewählt wurde.
