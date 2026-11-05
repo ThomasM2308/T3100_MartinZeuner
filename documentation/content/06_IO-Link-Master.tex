@@ -11,6 +11,29 @@
 %          - angeschlossene Devices: Port 1 DTI515, Port 2 OY5100; PROFINET- und Versorgungsleitung
 % QUELLEN: Datenblatt AL1100, Vorgänger-T3100 (Abb. Portbelegung)
 % UMFANG:  ca. 1 Seite
+%
+% MATERIAL AUS DEM INTERVIEW (05.11.2026) – Umbau ist bereits erfolgt, Fotos folgen:
+%   Mechanik Regalbediengerät:
+%   - untere Achse links/rechts (horizontal), mit Schleppkette
+%   - darauf zweite Achse hoch/runter (vertikal); an ihr ist der Druckluftzylinder befestigt
+%     (fährt ein/aus, legt Klotz/Palette ins Fach)
+%   - RFID-Lesekopf vorne am Zylinder (erkennt, welches Material gerade bewegt wird)
+%   Alter Zustand:
+%   - IO-Link-Master saß auf der verfahrbaren Einheit (Horizontalachse)
+%   - dadurch liefen alle Leitungen des Masters (Versorgung, Netzwerk, Lichtgitter, RFID) durch die
+%     Schleppkette; später kamen noch die Lichtgitter-Leitungen dazu
+%   - Folge: zu viele Kabel und zu viel Gewicht → Modell konnte nicht mehr sauber verfahren,
+%     obwohl eigentlich nur eine kleine Leitung (RFID) mitfahren muss
+%   Neuer Zustand:
+%   - Master fest montiert nahe den Lichtgittern (genaue Position: TODO, Foto)
+%   - nur noch die kleine RFID-Leitung läuft durch die Schleppkette hoch zum Zylinder
+%   Leitungen am Master:
+%   - 1 Leitung mit Y-Aufteilung auf 2 → Lichtgitter (Sender/Empfänger)
+%   - 1 Leitung Versorgungsspannung
+%   - 1 Leitung Netzwerk (PROFINET)
+%   - 1 Leitung RFID-Lesekopf
+%   (Port-Zuordnung prüfen; Angabe „Power over Ethernet“ klären – vermutlich getrennte
+%    M12-Versorgungs- und Netzwerkleitung)
 
 \subsection{Auswahl des neuen Montageorts}
 % INHALT:  - Kriterien: feste Position, Leitungslängen zu den Devices (Grenze IO-Link → Quelle),
