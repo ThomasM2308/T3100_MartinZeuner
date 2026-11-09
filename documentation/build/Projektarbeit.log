@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.30)  9 NOV 2026 17:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.30)  9 NOV 2026 17:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1854,34 +1854,33 @@ Package pdftex.def Info: logos/logo_dhbw.png  used on input line 146.
 [35 <./images/pnoz_anschlussplan.png>]
 File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
-Package pdftex.def Info: logos/logo_dhbw.png  used on input line 170.
+Package pdftex.def Info: logos/logo_dhbw.png  used on input line 166.
 (pdftex.def)             Requested size: 85.08328pt x 35.56593pt.
  [36]
-Underfull \hbox (badness 3471) in paragraph at lines 192--192
+Underfull \hbox (badness 3471) in paragraph at lines 184--184
 []\T1/lmr/m/n/12 Motor stoppt, kei-ne Be-we-gung
  []
 
 
-Underfull \hbox (badness 3471) in paragraph at lines 193--193
+Underfull \hbox (badness 3471) in paragraph at lines 185--185
 []\T1/lmr/m/n/12 Motor stoppt, kei-ne Be-we-gung
  []
 
 
-Underfull \hbox (badness 3646) in paragraph at lines 194--194
+Underfull \hbox (badness 3646) in paragraph at lines 186--186
 []\T1/lmr/m/n/12 Pneumatik bei be-tä-tig-tem
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 196--196
+Underfull \hbox (badness 10000) in paragraph at lines 188--188
 []\T1/lmr/m/n/12 Normalbetrieb nach dem
  []
 
-)
 File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
-Package pdftex.def Info: logos/logo_dhbw.png  used on input line 283.
+Package pdftex.def Info: logos/logo_dhbw.png  used on input line 198.
 (pdftex.def)             Requested size: 85.08328pt x 35.56593pt.
- [37]
+[37])
 File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
 Package pdftex.def Info: logos/logo_dhbw.png  used on input line 283.
@@ -2136,7 +2135,7 @@ Here is how much of TeX's memory you used:
  1143 hyphenation exceptions out of 8191
  108i,24n,110p,11284b,2371s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on c:\Users\h0109030\Documents\GitHub\T3100_MartinZeuner\documentation\build\Projektarbeit.pdf (56 pages, 5807240 bytes).
+Output written on c:\Users\h0109030\Documents\GitHub\T3100_MartinZeuner\documentation\build\Projektarbeit.pdf (56 pages, 5807374 bytes).
 PDF statistics:
  675 PDF objects out of 1000 (max. 8388607)
  163 named destinations out of 1000 (max. 500000)

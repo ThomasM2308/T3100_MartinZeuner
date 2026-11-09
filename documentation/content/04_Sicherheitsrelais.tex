@@ -142,7 +142,7 @@ Die Verdrahtung wird Klemme für Klemme mit der Betriebsanleitung \cite{pilz_pno
 
 Aus der Verdrahtung ergeben sich drei Funktionen:
 
-Durch die Brücke zwischen S12 und S34 ist vermutlich ein automatischer Start eingestellt. Nach dem Entriegeln des Not-Halts schließen die Sicherheitskontakte dann ohne separate Quittierung. Die Betriebsanleitung weist darauf hin, dass in diesem Fall Maßnahmen gegen einen unerwarteten Wiederanlauf vorzusehen sind \cite{pilz_pnoz_s4}. %Todo Was wird heir gemacht?
+Durch die Brücke zwischen S12 und S34 ist ein automatischer Start eingestellt. Nach dem Entriegeln des Not-Halts schließen die Sicherheitskontakte dann ohne separate Quittierung. Die Betriebsanleitung weist darauf hin, dass in diesem Fall Maßnahmen gegen einen unerwarteten Wiederanlauf vorzusehen sind \cite{pilz_pnoz_s4}. %Todo Was wird heir gemacht?
 
 
 Jeder Motor wird nur über einen Sicherheitskontakt getrennt. Der Eingangskreis vom Not-Halttaster ist zweikanalig ausgeführt, die Abschaltung der einzelnen Motoren dagegen einkanalig, aber über redundante Sicherheitskontakte.
@@ -152,10 +152,6 @@ Die Sicherheitskontakte sind bei 24\,V DC für induktive Lasten (DC-13) mit bis 
 Die Befunde werden mit dem Betreuer besprochen. Die Verdrahtung bleibt zunächst unverändert.
 
 \subsection{Montage am neuen Ort}
-% INHALT:  - Vorgehen Schritt für Schritt inkl. Sicherheitsmaßnahmen
-%          - Aufbau auf der Hutschiene (Foto/Skizze), Leitungsführung, Klemmen/Kennzeichnung
-%          - Fotos vorher/nachher als Gegenüberstellung
-% UMFANG:  ca. 1 Seite
 
 Die Umsetzung des Sicherheitsrelais erfolgt in den folgenden Arbeitsschritten:
 
@@ -171,14 +167,10 @@ Die Umsetzung des Sicherheitsrelais erfolgt in den folgenden Arbeitsschritten:
   \item Die Verdrahtung wird anhand von Tabelle~\ref{tab:pnoz_klemmen} kontrolliert, bevor die Anlage wieder eingeschaltet wird.
 \end{enumerate}
 
-Durch den neuen Montageort sitzt das Relais an einer festen Position neben den übrigen Steuerungskomponenten, und die provisorische Befestigung am Prototyp entfällt.
+Durch den neuen Montageort sitzt das Relais an einer festen Position neben den übrigen Steuerungskomponentenund kann in folgeprojekten Problemlos mit einer Schutzbeschaltung erweitert werden. Durch diesen Eingriff wirkt die Anlage deutlich aufgeräumter und professioneller. 
 % TODO: Foto nach dem Umbau ergänzen (Gegenüberstellung vorher/nachher).
 
 \subsection{Funktionsprüfung}
-% INHALT:  - einfacher Funktionstest nach dem Umsetzen: funktioniert die Anlage wie vorher?
-%            (Not-Halt drücken → Motoren stoppen; entriegeln → Anlage wieder betriebsbereit)
-%          - kurz festhalten: Datum, wer, Ergebnis (kleine Tabelle mit 2–3 Zeilen reicht)
-% UMFANG:  ca. 0,25 Seiten
 
 Nach dem Umbau wird die Sicherheitsfunktion geprüft. Tabelle~\ref{tab:pnoz_test} enthält die vorgesehenen Prüfschritte.
 
@@ -200,4 +192,7 @@ Nach dem Umbau wird die Sicherheitsfunktion geprüft. Tabelle~\ref{tab:pnoz_test
 \subsection{Fazit}
 % INHALT:  Relais umgesetzt und geprüft? Offene Befunde/Empfehlungen, Überleitung zu Kapitel 5
 
-Das Sicherheitsrelais wird an einen geeigneten Montageplatz neben dem Switch versetzt und die bestehende Verdrahtung geprüft. Die Prüfung liefert Befunde zur Startart, zur Redundanz und zur Kontaktbelastung, die als Empfehlungen festgehalten werden. Eine Rückmeldung des Relaiszustands an die SPS ist nicht Teil dieser Arbeit und wird im Ausblick aufgegriffen. Das folgende Kapitel beschreibt die Umstellung des QR-Code-Scanners auf Ethernet.
+Das Sicherheitsrelais wurde an einen geeigneten Montageplatz neben dem Switch versetzt und die bestehende Verdrahtung geprüft. 
+Teilweise wurden Abweichungen von der Betriebsanleitung festgestellt. Diese wurden aufgefüfrt und können in zukünftigen Arbeiten umgesetzt werden.
+
+Eine Rückmeldung des Relaiszustands an die SPS ist nicht Teil dieser Arbeit und wird ebenfalls im Ausblick aufgegriffen. Das folgende Kapitel beschreibt die Umstellung des QR-Code-Scanners auf Ethernet.
