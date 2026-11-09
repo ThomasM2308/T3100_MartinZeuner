@@ -54,6 +54,7 @@
 
 % KI-Rohfassung (Claude, 09.11.2026) auf Basis der Autorenangaben und der Betriebsanleitung; prüfen,
 % überarbeiten und im KI-Anhang offenlegen. Stand: Umbau noch nicht ausgeführt, Ergebnisse als TODO.
+
 Das Sicherheitsrelais PILZ PNOZ s4 (24\,V DC, 2{,}5\,W, Bestellnummer: TODO) ist am Prototyp auf einer Hutschiene befestigt, auf der kein Platz mehr vorhanden ist (vgl. Abbildung~\ref{fig:pnoz_ist_position}). Die Montage ist provisorisch und die Leitungen sind ungeordnet geführt (vgl. Abbildung~\ref{fig:pnoz_ist_montage}).
 
 Die Motoren werden von der SPS über Koppelrelais angesteuert. Die Sicherheitskontakte des PNOZ s4 sind nachträglich in die Plusleitungen zwischen Koppelrelais und Motoren eingefügt worden. Der Kontakt 13/14 trennt den Motor der horizontalen Achse, der Kontakt 23/24 den Motor der vertikalen Achse. Über den Kontakt 33/34 wird das Druckluftventil auf dem Bauteilträger mit 24\,V versorgt (vgl. Abbildung~\ref{fig:ventil}). Der Not-Halt-Taster bleibt am Hochregallager montiert (vgl. Abbildung~\ref{fig:not_halt}).
@@ -82,13 +83,6 @@ Im Rahmen dieser Arbeit wird das Relais versetzt und die bestehende Verdrahtung 
   \label{fig:not_halt}
 \end{figure}
 
-% TODO: Foto prüfen: Zeigt es das Ventil auf dem Bauteilträger?
-\begin{figure}[H]
-  \centering
-  \includegraphics[height=0.4\textheight]{images/druckluftventil_zylinder.jpg}
-  \caption{Magnetventil (Bosch, 24\,V DC) \quelle{(eigene Aufnahme, 11/2026)}}
-  \label{fig:ventil}
-\end{figure}
 
 \subsection{Anforderungen an den neuen Montageort}
 % ZIEL:    Kriterien, nach denen der neue Ort gewählt wurde.
@@ -100,10 +94,9 @@ Im Rahmen dieser Arbeit wird das Relais versetzt und die bestehende Verdrahtung 
 
 Als neuer Montageort wird die Hutschiene auf dem Bauteilträger rechts neben dem Switch gewählt. Die Betriebsanleitung fordert eine Montage auf einer 35-mm-Hutschiene \cite{pilz_pnoz_s4}. Der Platz muss eine übersichtliche Leitungsführung und einen guten Zugang zu den Klemmen ermöglichen.
 
-Die Betriebsanleitung sieht außerdem den Einbau in einen Schaltschrank mit mindestens Schutzart IP54 vor \cite{pilz_pnoz_s4}. Der offene Bauteilträger erfüllt diese Vorgabe nicht. Diese Abweichung wird mit dem Betreuer abgestimmt.
-% TODO: Ergebnis der Abstimmung ergänzen.
+Die Betriebsanleitung sieht außerdem den Einbau in einen Schaltschrank mit mindestens Schutzart IP54 vor \cite{pilz_pnoz_s4}. Der offene Bauteilträger erfüllt diese Vorgabe nicht. Diese Abweichung wird toleriert, da die Analge als prototyp betrieben wird. Beim Betrieb in dem Labor ist nicht mit Spritzwasser oder Staub zu rechnen. 
 
-Durch die neue Position werden längere Leitungen zum Not-Halt-Taster und zu den Motoren benötigt. Dafür sind zwei fünfadrige Leitungen mit je 3\,m Länge vorgesehen. Vier Adern verbinden jeweils den Not-Halt beziehungsweise die Kontakte 13/14 und 23/24, eine Ader bleibt als Reserve frei.
+Durch die neue Position werden längere Leitungen zum Not-Halt-Taster und zu den Motoren benötigt. Dafür sind zwei fünfadrige Leitungen mit je 3\,m Länge vorgesehen. Vier Adern verbinden jeweils den Not-Halt beziehungsweise die Kontakte 13/14 und 23/24.
 % TODO: Leitungstyp und Querschnitt ergänzen (zulässig laut Anleitung: 0,25--2,5 mm², Kupfer, 75 °C).
 
 \subsection{Prüfung der bestehenden Verdrahtung}
