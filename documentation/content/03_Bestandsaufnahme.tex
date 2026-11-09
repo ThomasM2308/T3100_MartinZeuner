@@ -130,11 +130,31 @@ SPS, HMI und IO-Link-Master sind über den Switch im Subnetz 192.168.0.0/24 verb
 Aus dem beschriebenen Ausgangszustand ergibt sich in drei Bereichen Handlungsbedarf: Das Sicherheitsrelais ist nicht an einem dafür vorgesehenen Montageplatz befestigt, der QR-Scanner setzt einen direkt angeschlossenen Laptop voraus, und durch die Position des IO-Link-Masters auf der verfahrbaren Einheit ist die Schleppkette mit den zugehörigen Leitungen überfüllt. Im folgenden Abschnitt werden daraus Anforderungen abgeleitet.
 
 \subsection{Identifizierte Schwachstellen und Anforderungen}
-% ZIEL:    Aus dem Ist-Zustand Schwachstellen identifizieren und sagen warum das gemacht werden ableiten.
-% INHALT:  - Tabelle: Schwachstelle → Anforderung → Kapitel
-%            z. B. automatischer Wiederanlauf → überwachter Start (Kap. 4)
-%                  Scanner an Laptop/COM-Port → Netzwerkanbindung, Reconnect (Kap. 5)
-%                  Masse auf Schleppkette → feste Montage (Kap. 6)
+% Sprachlich überarbeitete Fassung des Autorentextes (Claude, 09.11.2026); im KI-Anhang offenlegen.
+Aus dem in Abschnitt~3.1 beschriebenen Ausgangszustand ergeben sich drei Schwachstellen, die im Rahmen dieser Arbeit behoben werden. Tabelle~\ref{tab:schwachstellen} fasst sie zusammen.
+
+Der QR-Scanner ist per RS232 an einen Laptop angebunden. Da diese Schnittstelle nur noch an älteren Laptops vorhanden ist, hängt der Betrieb des Scanners von einem entsprechenden Gerät ab. Der Scanner wird deshalb über einen RS232-Ethernet-Konverter in das Netzwerk der Anlage eingebunden. Nach einer Unterbrechung der Verbindung soll sich das Python-Programm selbstständig erneut verbinden (vgl. Kapitel~5).
+
+Der IO-Link-Master ist auf der horizontal verfahrbaren Einheit montiert, sodass die zugehörigen Leitungen in und neben der Schleppkette geführt werden. Diese Leitungen sind so steif, dass der Motor der vertikalen Achse viel Kraft aufbringen muss und die Achse nicht mehr geräuscharm verfahren kann.
+% TODO: Prüfen, ob wirklich die vertikale Achse betroffen ist; die Schleppkette gehört laut Kapitel 6 zur Horizontalachse.
+Durch das Versetzen des IO-Link-Masters wird die Anzahl der Leitungen in der Schleppkette verringert (vgl. Kapitel~6).
+
+Das Sicherheitsrelais ist bisher nicht an einem dafür vorgesehenen Montageplatz befestigt. Es wird daher an einen geeigneten Montageplatz versetzt (vgl. Kapitel~4).
+
+Über die drei Maßnahmen hinaus wird ein geordneter Aufbau der Anlage angestrebt. Geräte werden an den dafür vorgesehenen Montageplätzen befestigt und Leitungen ordentlich verlegt, wodurch der Prototyp übersichtlicher wird.
+
+\begin{table}[H]
+  \centering
+  \caption{Schwachstellen und abgeleitete Anforderungen}
+  \label{tab:schwachstellen}
+  \begin{tabular}{|p{5.4cm}|p{6.4cm}|l|}
+    \hline
+    \textbf{Schwachstelle} & \textbf{Anforderung} & \textbf{Kapitel} \\ \hline
+    QR-Scanner über RS232 von einem Laptop abhängig & Anbindung über Ethernet, selbstständiger Wiederaufbau der Verbindung & 5 \\ \hline
+    Schleppkette durch Leitungen zum IO-Link-Master überfüllt & Weniger Leitungen in der Schleppkette durch Versetzen des Masters & 6 \\ \hline
+    Sicherheitsrelais nicht an einem vorgesehenen Montageplatz & Befestigung an einem geeigneten Montageplatz & 4 \\ \hline
+  \end{tabular}
+\end{table}
 % UMFANG:  ca. 1 Seite
 
 \subsection{Vorgehen}
