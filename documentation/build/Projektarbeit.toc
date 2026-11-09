@@ -17,30 +17,31 @@
 \contentsline {subsubsection}{\numberline {2.2.8}Lichtschranken in sicherheitsrelevanten Anlagen}{25}{subsubsection.2.2.8}%
 \contentsline {section}{\numberline {3}Bestandsaufnahme und Planung}{27}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Ist-Zustand der Anlage}{27}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Identifizierte Schwachstellen und Anforderungen}{30}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Vorgehen}{30}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Umsetzung des Sicherheitsrelais}{31}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Ausgangssituation}{31}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Anforderungen an den neuen Montageort}{33}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Prüfung der bestehenden Verdrahtung}{33}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Montage am neuen Ort}{34}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}Funktionsprüfung}{34}{subsection.4.5}%
-\contentsline {subsection}{\numberline {4.6}Fazit}{34}{subsection.4.6}%
-\contentsline {section}{\numberline {5}Umstellung des QR-Code-Scanners auf Ethernet}{35}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Ist-Analyse der bestehenden Anbindung}{35}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Variantenvergleich}{37}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Netzwerkkonzept}{37}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Konfiguration von Scanner und Konverter}{37}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Anpassung der Python-Anwendung}{37}{subsection.5.5}%
-\contentsline {subsection}{\numberline {5.6}Test und Inbetriebnahme}{37}{subsection.5.6}%
-\contentsline {subsection}{\numberline {5.7}Fazit}{37}{subsection.5.7}%
-\contentsline {section}{\numberline {6}Versetzen des IO-Link-Masters}{38}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Analyse der Ausgangssituation}{38}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Auswahl des neuen Montageorts}{41}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Umbau}{41}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Inbetriebnahme und Test}{41}{subsection.6.4}%
-\contentsline {subsection}{\numberline {6.5}Fazit}{41}{subsection.6.5}%
-\contentsline {section}{\numberline {7}Fazit und Ausblick}{42}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Fazit}{42}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Ausblick}{42}{subsection.7.2}%
+\contentsline {subsection}{\numberline {3.2}Identifizierte Schwachstellen und Anforderungen}{31}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Vorgehen}{32}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Neupositionierung des Sicherheitsrelais}{33}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Ausgangssituation}{33}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Anforderungen an den neuen Montageort}{35}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Prüfung der bestehenden Verdrahtung}{35}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Montage am neuen Ort}{36}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Funktionsprüfung}{36}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Fazit}{36}{subsection.4.6}%
+\contentsline {section}{\numberline {5}Umstellung des QR-Code-Scanners auf Ethernet}{37}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Ist-Analyse der bestehenden Anbindung}{37}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Variantenvergleich}{39}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Netzwerkkonzept}{39}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Konfiguration von Scanner und Konverter}{39}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Anpassung der Python-Anwendung}{39}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Test und Inbetriebnahme}{39}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Fazit}{39}{subsection.5.7}%
+\contentsline {section}{\numberline {6}Versetzen des IO-Link-Masters}{40}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Analyse der Ausgangssituation}{40}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Auswahl des neuen Montageorts}{43}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Umbau}{43}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Inbetriebnahme und Test}{43}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Fazit}{43}{subsection.6.5}%
+\contentsline {section}{\numberline {7}Fazit und Ausblick}{44}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Fazit}{44}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Ausblick}{44}{subsection.7.2}%
+\contentsline {section}{\nonumberline Literatur}{III}{section*.37}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

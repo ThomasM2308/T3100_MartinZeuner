@@ -64,18 +64,18 @@ Die Anlage besteht aus dem Prototyp des Hochregallagers und einem daneben angeor
 \begin{figure}[H]
   \centering
   \includegraphics[width=\imgbig]{images/anlage_gesamtansicht.jpg}
-  \caption{Modell-Hochregallager (links) und Steuerungsgestell (rechts) \quelle{(eigene Aufnahme, 11/2026)}}
+  \caption{Modell-Hochregallager (links) und Bauteilträger (rechts) \quelle{(eigene Aufnahme, 11/2026)}}
   \label{fig:anlage_gesamt}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[height=0.4\textheight]{images/regalbediengeraet_vertikalachse.jpg}
-  \caption{Regalbediengerät mit Vertikalachse (Motor M2) und Spindelantrieb \quelle{(eigene Aufnahme, 11/2026)}}
+  \caption{Regalbediengerät mit Vertikal- und Horizontalachse \quelle{(eigene Aufnahme, 11/2026)}}
   \label{fig:rbg_vertikal}
 \end{figure}
 
-Die Komponenten der Anlagensteuerung sind in Tabelle~\ref{tab:komponenten_gestell} zusammengefasst. Im oberen Bereich des Bauteilträgers sind die Wartungseinheit der Druckluftversorgung und das HMI (Human-Machine Interface) angeordnet. Darunter befinden sich die SPS mit ihren Baugruppen, die Laststromversorgung für das Gesamtsystem und der Switch.
+Im oberen Bereich des Bauteilträgers sind die Wartungseinheit der Druckluftversorgung und das HMI (Human-Machine Interface) angeordnet. Darunter befinden sich die SPS mit ihren Baugruppen und der Switch. Als Netzteil für den Protoyp wurde bislang die Laststromversorgung Siemens PM 70 W, also das Netzteil der SPS verwendet. 
 
 \begin{figure}[H]
   \centering
@@ -109,15 +109,14 @@ Aus dem beschriebenen Ausgangszustand ergibt sich in drei Bereichen Handlungsbed
 % Sprachlich überarbeitete Fassung des Autorentextes (Claude, 09.11.2026); im KI-Anhang offenlegen.
 Aus dem in Abschnitt~3.1 beschriebenen Ausgangszustand ergeben sich drei Schwachstellen, die im Rahmen dieser Arbeit behoben werden. Tabelle~\ref{tab:schwachstellen} fasst sie zusammen.
 
-Der QR-Scanner ist per RS232 an einen Laptop angebunden. Da diese Schnittstelle nur noch an älteren Laptops vorhanden ist, hängt der Betrieb des Scanners von einem entsprechenden Gerät ab. Der Scanner wird deshalb über einen RS232-Ethernet-Konverter in das Netzwerk der Anlage eingebunden. Nach einer Unterbrechung der Verbindung soll sich das Python-Programm selbstständig erneut verbinden (vgl. Kapitel~5).
+Der \textbf{QR-Scanner} muss per RS232 an einen Laptop angebunden sein. Da diese Schnittstelle nur noch an älteren Laptops vorhanden ist, hängt der Betrieb des Scanners von einem veralteten Gerät ab.
+Der Scanner wird deshalb über einen RS232-Ethernet-Konverter in das Netzwerk der Anlage eingebunden. Wenn der Scanner dann netzwerktauglich ist, so kann er über einen freien Port am Switch in das Anlagennetzwerk hinzugefügt werden, ohne das man auf eine zusätzliche Schnittstelle angewiesen ist. 
 
-Der IO-Link-Master ist auf der horizontal verfahrbaren Einheit montiert, sodass die zugehörigen Leitungen in und neben der Schleppkette geführt werden. Diese Leitungen sind so steif, dass der Motor der vertikalen Achse viel Kraft aufbringen muss und die Achse nicht mehr geräuscharm verfahren kann.
-% TODO: Prüfen, ob wirklich die vertikale Achse betroffen ist; die Schleppkette gehört laut Kapitel 6 zur Horizontalachse.
-Durch das Versetzen des IO-Link-Masters wird die Anzahl der Leitungen in der Schleppkette verringert (vgl. Kapitel~6).
+Der \textbf{IO-Link-Master} ist auf der horizontal verfahrbaren Einheit montiert, sodass die zugehörigen Leitungen in einer Schleppkette geführt werden. Da der Prototyp im Laufe der Zeit immer weiter an Baugruppen gewachsen ist, wurde auch die Anzahl an zu verlegenden Kabeln immer größer. Die Anzahl an Kabeln wurde durch die Vorgängerarbeit so hoch, das Kabel auch neben der Schleppkette verlegt werden mussen. Diese vielen Leitungen waren so steif, dass der Motor der horizontalen Achse viel Kraft aufbringen muss und die Achse zu verfahren kann. Diese hohen Kräfte macheten sich durch eine starke Geräuschentwicklung bemerkbar. Durch das Versetzen des IO-Link-Masters an einen festen Montageplatz wird die Anzahl der Leitungen in der Schleppkette verringert, sodass die Achse leichter verfahren werden kann und die Geräuschentwicklung reduziert wird.
 
-Das Sicherheitsrelais ist bisher nicht an einem dafür vorgesehenen Montageplatz befestigt. Es wird daher an einen geeigneten Montageplatz versetzt (vgl. Kapitel~4).
+Das \textbf{Sicherheitsrelais} ist bisher nicht an einem dafür vorgesehenen Montageplatz befestigt. Es wird daher an einen geeigneten Montageplatz versetzt.
 
-Über die drei Maßnahmen hinaus wird ein geordneter Aufbau der Anlage angestrebt. Geräte werden an den dafür vorgesehenen Montageplätzen befestigt und Leitungen ordentlich verlegt, wodurch der Prototyp übersichtlicher wird.
+Über die drei Maßnahmen hinaus wird ein geordneter Aufbau der Anlage angestrebt. Geräte werden an den dafür vorgesehenen Montageplätzen befestigt und Leitungen ordentlich verlegt, wodurch der Prototyp übersichtlicher und anschaulicher wird.
 
 \begin{table}[H]
   \centering

@@ -16,5 +16,43 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \datalist[entry]{anyt/global//global/global/global}
+    \entry{schaal_zorko_t3200}{thesis}{}{}
+      \name{author}{2}{}{%
+        {{hash=95716aab13ea614c0b22b601dfab6eb0}{%
+           family={Schaal},
+           familyi={S\bibinitperiod},
+           given={TODO},
+           giveni={T\bibinitperiod}}}%
+        {{hash=cd4f9944a7a03aff84e878078fdeb98b}{%
+           family={Zorko},
+           familyi={Z\bibinitperiod},
+           given={TODO},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Duale Hochschule Baden-Württemberg Ravensburg, Campus Friedrichshafen}%
+      }
+      \strng{namehash}{6d079d1c8d701bb8aa38b6c7e20cca08}
+      \strng{fullhash}{6d079d1c8d701bb8aa38b6c7e20cca08}
+      \strng{fullhashraw}{6d079d1c8d701bb8aa38b6c7e20cca08}
+      \strng{bibnamehash}{6d079d1c8d701bb8aa38b6c7e20cca08}
+      \strng{authorbibnamehash}{6d079d1c8d701bb8aa38b6c7e20cca08}
+      \strng{authornamehash}{6d079d1c8d701bb8aa38b6c7e20cca08}
+      \strng{authorfullhash}{6d079d1c8d701bb8aa38b6c7e20cca08}
+      \strng{authorfullhashraw}{6d079d1c8d701bb8aa38b6c7e20cca08}
+      \field{labelalpha}{SZ26}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{TODO Titel vom Deckblatt}
+      \field{type}{Projektarbeit T3200}
+      \field{year}{2026}
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
 
