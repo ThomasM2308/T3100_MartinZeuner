@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.30)  9 NOV 2026 13:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.30)  9 NOV 2026 13:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1855,19 +1855,32 @@ Underfull \hbox (badness 3471) in paragraph at lines 182--182
 []\T1/lmr/m/n/12 Motor stoppt, kei-ne Be-we-gung
  []
 
+content/04_Sicherheitsrelais.tex:183: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.183 ...Not-Halt bei fahrender vertikaler Achse &
+                                                   Motor stoppt, keine Beweg...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
 
-Underfull \hbox (badness 3471) in paragraph at lines 183--183
-[]\T1/lmr/m/n/12 Motor stoppt, kei-ne Be-we-gung
- []
-
-
-Underfull \hbox (badness 3646) in paragraph at lines 184--184
-[]\T1/lmr/m/n/12 Pneumatik bei be-t‰-tig-tem
- []
+content/04_Sicherheitsrelais.tex:184: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.184 ... Not-Halt & Druckluftkreis ist drucklos &
+                                                   Erwartung erf√ºllt\\ \hline
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 186--186
 []\T1/lmr/m/n/12 Normalbetrieb nach dem
+ []
+
+
+Overfull \hbox (202.34256pt too wide) in paragraph at lines 179--188
+ [][] 
  []
 
 )
@@ -2124,13 +2137,13 @@ Package logreq Info: Writing requests to 'Projektarbeit.run.xml'.
 Here is how much of TeX's memory you used:
  30799 strings out of 467867
  591498 string characters out of 5416882
- 1668128 words of memory out of 5000000
+ 1668116 words of memory out of 5000000
  59134 multiletter control sequences out of 15000+600000
  685489 words of font info for 74 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,24n,110p,11284b,2371s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on c:\Users\h0109030\Documents\GitHub\T3100_MartinZeuner\documentation\build\Projektarbeit.pdf (55 pages, 6110257 bytes).
+Output written on c:\Users\h0109030\Documents\GitHub\T3100_MartinZeuner\documentation\build\Projektarbeit.pdf (55 pages, 6110189 bytes).
 PDF statistics:
  658 PDF objects out of 1000 (max. 8388607)
  154 named destinations out of 1000 (max. 500000)
