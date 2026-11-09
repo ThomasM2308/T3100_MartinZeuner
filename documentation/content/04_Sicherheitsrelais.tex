@@ -52,6 +52,14 @@
 %     (z. B. 3/2- oder 5/2-Wegeventil, monostabil?) und Verhalten des Zylinders bei Abschaltung
 %     (fährt er ein/aus? bleibt Restdruck?) aus Datenblatt/Versuch ermitteln
 
+% KI-Rohfassung (Claude, 09.11.2026) auf Basis der Autorenangaben und der Betriebsanleitung; prüfen,
+% überarbeiten und im KI-Anhang offenlegen. Stand: Umbau noch nicht ausgeführt, Ergebnisse als TODO.
+Das Sicherheitsrelais PILZ PNOZ s4 ist am Prototyp auf einer Hutschiene befestigt, welche nicht für die Montage des Sicherheitsrelais geeignet ist. Die Montage ist provisorisch und die Leitungen sind ungeordnet geführt. Durch die Motage auf dem Bauteilträger wirde die Anlage übersichtlicher und die Leitungsführung verbessert. 
+
+Die Motoren werden von der SPS über Koppelrelais angesteuert. Die Sicherheitskontakte des PNOZ s4 sind nachträglich in die Plusleitungen zwischen Koppelrelais und Motoren eingefügt worden. Der Kontakt 13/14 trennt den Motor der horizontalen Achse, der Kontakt 23/24 den Motor der vertikalen Achse. Somit sind die Motoren, wenn das Sicherheitsrelais auslöst nicht mehr verfahrbar. Über den Kontakt 33/34 wird das Druckluftventil auf dem Bauteilträger mit 24\,V versorgt (vgl. Abbildung~\ref{fig:ventil}). Der Not-Halt-Taster ist direkt am Hochregallager montiert (vgl. Abbildung~\ref{fig:not_halt}).
+
+Im Rahmen dieser Arbeit wird das Relais versetzt und die bestehende Verdrahtung geprüft. Das Verschaltungsprinzip und die Sicherheitsfunktion bleiben dabei unverändert. Auffälligkeiten werden dokumentiert.
+
 % --- Abbildungen (Auswahl aus Fotos vom 05.11.2026; im Text mit \ref{} referenzieren) ---
 \begin{figure}[H]
   \centering
@@ -74,6 +82,14 @@
   \label{fig:not_halt}
 \end{figure}
 
+% TODO: Foto prüfen: Zeigt es das Ventil auf dem Bauteilträger? Nein es zeigt die schlechte Kabelführung an der Schleppkette mit sehr vielen kabeln.
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=0.4\textheight]{images/druckluftventil_zylinder.jpg}
+  \caption{Magnetventil (Bosch, 24\,V DC) \quelle{(eigene Aufnahme, 11/2026)}}
+  \label{fig:ventil}
+\end{figure}
+
 \subsection{Anforderungen an den neuen Montageort}
 % ZIEL:    Kriterien, nach denen der neue Ort gewählt wurde.
 % INHALT:  - Steuerungsgestell neben dem Prototyp (dort auch SPS, Switch, Konverter)
@@ -81,6 +97,14 @@
 %          - Zugänglichkeit, saubere Leitungsführung, Zugentlastung, Kennzeichnung
 %          - Leitungslängen zu Not-Halt und Motoren
 % UMFANG:  ca. 0,5–1 Seite
+
+Als neuer Montageort wird die Hutschiene auf dem Bauteilträger rechts neben dem Switch gewählt. Die Betriebsanleitung fordert eine Montage auf einer 35-mm-Hutschiene \cite{pilz_pnoz_s4}. Der Platz muss eine übersichtliche Leitungsführung und einen guten Zugang zu den Klemmen ermöglichen.
+
+Die Betriebsanleitung sieht außerdem den Einbau in einen Schaltschrank mit mindestens Schutzart IP54 vor \cite{pilz_pnoz_s4}. Der offene Bauteilträger erfüllt diese Vorgabe nicht. Diese Abweichung wird mit dem Betreuer abgestimmt.
+% TODO: Ergebnis der Abstimmung ergänzen.
+
+Durch die neue Position werden längere Leitungen zum Not-Halt-Taster und zu den Motoren benötigt. Dafür sind zwei fünfadrige Leitungen mit je 3\,m Länge vorgesehen. Vier Adern verbinden die jeweiligen Schalter des Not-Halts. Vier weitere Adern eines Kabels verbinden die Kontakte 13/14 und 23/24 zu den motoren und den Koppelrelais.
+% TODO: Leitungstyp und Querschnitt ergänzen (zulässig laut Anleitung: 0,25--2,5 mm², Kupfer, 75 °C).
 
 \subsection{Prüfung der bestehenden Verdrahtung}
 % ZIEL:    Nachweis, dass das Relais korrekt angeschlossen ist – bzw. dokumentierte Abweichungen.
@@ -94,20 +118,40 @@
 % UMFANG:  ca. 1,5 Seiten
 % HINWEIS: Klemmenfunktionen nur aus dem Handbuch belegen, nicht aus dem Gedächtnis.
 
-% --- Abbildungen (Auswahl aus Fotos vom 05.11.2026; im Text mit \ref{} referenzieren) ---
-\begin{figure}[H]
-  \centering
-  \includegraphics[height=0.4\textheight]{images/druckluftventil_zylinder.jpg}
-  \caption{Magnetventil (Bosch, 24\,V DC) am Druckluftzylinder des Regalbediengeräts \quelle{(eigene Aufnahme, 11/2026)}}
-  \label{fig:ventil}
-\end{figure}
+Die Verdrahtung wird Klemme für Klemme mit der Betriebsanleitung \cite{pilz_pnoz_s4} verglichen. Tabelle~\ref{tab:pnoz_klemmen} zeigt das Ergebnis.
 
-\begin{figure}[H]
+\begin{table}[H]
   \centering
-  \includegraphics[width=\imgbig]{images/steuerungsgestell_rueckseite.jpg}
-  \caption{Rückseite des Steuerungsgestells, geplanter Bereich für PNOZ und CBX100 \quelle{(eigene Aufnahme, 11/2026)}}
-  \label{fig:gestell_hinten}
-\end{figure}
+  \caption{Vergleich der Ist-Belegung des PNOZ s4 mit der Betriebsanleitung (vorläufig, am Gerät zu bestätigen)}
+  \label{tab:pnoz_klemmen}
+  \begin{tabular}{|p{1.7cm}|p{4.2cm}|p{4.2cm}|p{3.5cm}|}
+    \hline
+    \textbf{Klemme} & \textbf{Ist-Belegung} & \textbf{Funktion laut Anleitung} & \textbf{Bewertung} \\ \hline
+    A1, A2 & 24\,V, 0\,V & Versorgung & korrekt \\ \hline
+    S11/S12, S21/S22 & Not-Halt, zweikanalig & Eingangskreis Kanal 1 und 2 & korrekt \\ \hline
+    S34 & mit S12 gebrückt & Start-/Rückführkreis & Befund: Startart \\ \hline
+    13/14 & Motor horizontale Achse & Sicherheitskontakt & Befund: Belastung, Redundanz \\ \hline
+    23/24 & Motor vertikale Achse & Sicherheitskontakt & Befund: Belastung, Redundanz \\ \hline
+    33/34 & 24\,V, Druckluftventil & Sicherheitskontakt & korrekt \\ \hline
+    41/42 & 41 an 24\,V, 42 offen & Hilfskontakt, nur für Meldungen & ohne Funktion \\ \hline
+    Y32 & nicht belegt & Halbleiterausgang, nur für Meldungen & ohne Funktion \\ \hline
+  \end{tabular}
+\end{table}
+
+Aus dem Vergleich ergeben sich vier Befunde:
+
+\textbf{Startart:} Durch die Brücke zwischen S12 und S34 ist vermutlich ein automatischer Start eingestellt. Nach dem Entriegeln des Not-Halts schließen die Sicherheitskontakte dann ohne separate Quittierung. Die Betriebsanleitung weist darauf hin, dass in diesem Fall Maßnahmen gegen einen unerwarteten Wiederanlauf vorzusehen sind \cite{pilz_pnoz_s4}.
+% TODO: Stellung des Drehschalters „mode“ am Gerät ablesen und ergänzen.
+
+\textbf{Redundanz:} Jeder Motor wird nur über einen Sicherheitskontakt getrennt. Der Eingangskreis ist zweikanalig ausgeführt, die Abschaltung der einzelnen Motoren dagegen einkanalig.
+
+\textbf{Kontaktbelastung und Absicherung:} Die Sicherheitskontakte sind bei 24\,V DC für induktive Lasten (DC-13) mit bis zu 5\,A ausgelegt, abhängig von der Gerätevariante \cite{pilz_pnoz_s4}. Bei induktiven Lasten fordert die Anleitung eine geeignete Schutzbeschaltung. Eine Schutzbeschaltung und eine Kontaktabsicherung sind bisher nicht dokumentiert.
+% TODO: Motorstrom messen und mit dem Grenzwert vergleichen; Absicherung am Gerät prüfen.
+
+\textbf{Versorgung:} Das Netzteil liefert laut Datenblatt 3\,A. Ob dieser Strom für alle Verbraucher einschließlich der Motoren ausreicht, wird durch eine Strommessung im Fahrbetrieb geprüft.
+% TODO: Messergebnis ergänzen.
+
+Die Befunde werden mit dem Betreuer besprochen. Die Verdrahtung bleibt zunächst unverändert.
 
 \subsection{Montage am neuen Ort}
 % INHALT:  - Vorgehen Schritt für Schritt inkl. Sicherheitsmaßnahmen
@@ -115,11 +159,35 @@
 %          - Fotos vorher/nachher als Gegenüberstellung
 % UMFANG:  ca. 1 Seite
 
+Vor dem Umbau wird die Anlage freigeschaltet, gegen Wiedereinschalten gesichert und die Spannungsfreiheit festgestellt. Der Ist-Zustand wird mit Fotos und Klemmenbelegung dokumentiert, die Leitungen werden gekennzeichnet.
+
+Anschließend wird das Relais vom Prototyp gelöst und auf der Hutschiene rechts neben dem Switch montiert. Die neuen Leitungen werden zum Not-Halt-Taster und zu den Motorkreisen verlegt und entsprechend der dokumentierten Belegung angeschlossen. Die Leitungen werden zugentlastet und beschriftet.
+% TODO: Foto nach dem Umbau ergänzen (Gegenüberstellung vorher/nachher).
+
 \subsection{Funktionsprüfung}
 % INHALT:  - einfacher Funktionstest nach dem Umsetzen: funktioniert die Anlage wie vorher?
 %            (Not-Halt drücken → Motoren stoppen; entriegeln → Anlage wieder betriebsbereit)
 %          - kurz festhalten: Datum, wer, Ergebnis (kleine Tabelle mit 2–3 Zeilen reicht)
 % UMFANG:  ca. 0,25 Seiten
 
+Nach dem Umbau wird die Sicherheitsfunktion geprüft. Tabelle~\ref{tab:pnoz_test} enthält die vorgesehenen Prüfschritte.
+
+\begin{table}[H]
+  \centering
+  \caption{Funktionsprüfung des Sicherheitsrelais (Datum, Prüfende: TODO)}
+  \label{tab:pnoz_test}
+  \begin{tabular}{|p{5.2cm}|p{6.2cm}|l|}
+    \hline
+    \textbf{Prüfschritt} & \textbf{Erwartung} & \textbf{Ergebnis} \\ \hline
+    Not-Halt bei fahrender horizontaler Achse & Motor stoppt, keine Bewegung trotz Fahrbefehl & TODO \\ \hline
+    Not-Halt bei fahrender vertikaler Achse & Motor stoppt, keine Bewegung trotz Fahrbefehl & TODO \\ \hline
+    Pneumatik bei betätigtem Not-Halt & Druckluftkreis ist drucklos & TODO \\ \hline
+    Not-Halt entriegeln & Verhalten wird dokumentiert, keine unerwartete Bewegung & TODO \\ \hline
+    Normalbetrieb nach dem Umbau & Ein- und Auslagern wie vor dem Umbau & TODO \\ \hline
+  \end{tabular}
+\end{table}
+
 \subsection{Fazit}
 % INHALT:  Relais umgesetzt und geprüft? Offene Befunde/Empfehlungen, Überleitung zu Kapitel 5
+
+Das Sicherheitsrelais wird an einen geeigneten Montageplatz neben dem Switch versetzt und die bestehende Verdrahtung geprüft. Die Prüfung liefert Befunde zur Startart, zur Redundanz, zur Kontaktbelastung und zur Versorgung, die als Empfehlungen festgehalten werden. Eine Rückmeldung des Relaiszustands an die SPS ist nicht Teil dieser Arbeit und wird im Ausblick aufgegriffen. Das folgende Kapitel beschreibt die Umstellung des QR-Code-Scanners auf Ethernet.

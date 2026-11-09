@@ -19,6 +19,28 @@
 
 \refsection{0}
   \datalist[entry]{anyt/global//global/global/global}
+    \entry{pilz_pnoz_s4}{manual}{}{}
+      \list{organization}{1}{%
+        {Pilz GmbH \& Co. KG}%
+      }
+      \field{labelalpha}{26}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{note}{Dokumentnummer 21396-EN-23}
+      \field{title}{PNOZ s4 Operating Manual}
+      \field{urlday}{9}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{year}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.pilz.com/download/open/OM_PNOZ_s4_21396-EN-23.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.pilz.com/download/open/OM_PNOZ_s4_21396-EN-23.pdf
+      \endverb
+    \endentry
     \entry{schaal_zorko_t3200}{thesis}{}{}
       \name{author}{2}{}{%
         {{hash=95716aab13ea614c0b22b601dfab6eb0}{%
