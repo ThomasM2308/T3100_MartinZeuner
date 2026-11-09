@@ -22,7 +22,7 @@
 \contentsline {section}{\numberline {4}Neupositionierung des Sicherheitsrelais}{32}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Ausgangssituation}{32}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Anforderungen an den neuen Montageort}{34}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Prüfung der bestehenden Verdrahtung}{35}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.3}Prüfung der bestehenden Verdrahtung}{34}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Montage am neuen Ort}{36}{subsection.4.4}%
 \contentsline {subsection}{\numberline {4.5}Funktionsprüfung}{36}{subsection.4.5}%
 \contentsline {subsection}{\numberline {4.6}Fazit}{37}{subsection.4.6}%
@@ -43,5 +43,5 @@
 \contentsline {section}{\numberline {7}Fazit und Ausblick}{45}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Fazit}{45}{subsection.7.1}%
 \contentsline {subsection}{\numberline {7.2}Ausblick}{45}{subsection.7.2}%
-\contentsline {section}{\nonumberline Literatur}{III}{section*.36}%
+\contentsline {section}{\nonumberline Literatur}{III}{section*.35}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

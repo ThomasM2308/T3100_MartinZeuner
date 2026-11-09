@@ -63,8 +63,8 @@ Im Rahmen dieser Arbeit wird das Relais versetzt und die bestehende Verdrahtung 
 % --- Abbildungen (Auswahl aus Fotos vom 05.11.2026; im Text mit \ref{} referenzieren) ---
 \begin{figure}[H]
   \centering
-  \includegraphics[height=0.4\textheight, trim=6cm 1cm 3cm 0cm, clip]{images/pnoz_ist_position_regal.jpg}
-  \caption{Provisorische Position des PNOZ s4 am Prototyp (Ist-Zustand) \quelle{(eigene Aufnahme, 11/2026)}}
+  \includegraphics[height=0.4\textheight, trim=6cm 16cm 6cm 1cm, clip]{images/pnoz_ist_position_regal.jpg}
+  \caption{Montage des PNOZ s4 auf Rückseite des Hochregallagers \quelle{(eigene Aufnahme, 11/2026)}}
   \label{fig:pnoz_ist_position}
 \end{figure}
 
@@ -82,13 +82,6 @@ Im Rahmen dieser Arbeit wird das Relais versetzt und die bestehende Verdrahtung 
   \label{fig:not_halt}
 \end{figure}
 
-% TODO: Foto prüfen: Zeigt es das Ventil auf dem Bauteilträger? Nein es zeigt die schlechte Kabelführung an der Schleppkette mit sehr vielen kabeln.
-\begin{figure}[H]
-  \centering
-  \includegraphics[height=0.4\textheight]{images/druckluftventil_zylinder.jpg}
-  \caption{Magnetventil (Bosch, 24\,V DC) \quelle{(eigene Aufnahme, 11/2026)}}
-  \label{fig:ventil}
-\end{figure}
 
 \subsection{Anforderungen an den neuen Montageort}
 % ZIEL:    Kriterien, nach denen der neue Ort gewählt wurde.
@@ -179,8 +172,8 @@ Nach dem Umbau wird die Sicherheitsfunktion geprüft. Tabelle~\ref{tab:pnoz_test
   \begin{tabular}{|p{5.2cm}|p{6.2cm}|l|}
     \hline
     \textbf{Prüfschritt} & \textbf{Erwartung} & \textbf{Ergebnis} \\ \hline
-    Not-Halt bei fahrender horizontaler Achse & Motor stoppt, keine Bewegung trotz Fahrbefehl & Erwartung erfüllt
-    Not-Halt bei fahrender vertikaler Achse & Motor stoppt, keine Bewegung trotz Fahrbefehl & Erwartung erfüllt
+    Not-Halt bei fahrender horizontaler Achse & Motor stoppt, keine Bewegung trotz Fahrbefehl & Erwartung erfüllt\\ \hline
+    Not-Halt bei fahrender vertikaler Achse & Motor stoppt, keine Bewegung trotz Fahrbefehl & Erwartung erfüllt\\ \hline
     Pneumatik bei betätigtem Not-Halt & Druckluftkreis ist drucklos & Erwartung erfüllt\\ \hline
     Not-Halt entriegeln & Verhalten wird dokumentiert, keine unerwartete Bewegung & Erwartung erfüllt \\ \hline
     Normalbetrieb nach dem Umbau & Ein- und Auslagern wie vor dem Umbau & Erwartung erfüllt \\ \hline
