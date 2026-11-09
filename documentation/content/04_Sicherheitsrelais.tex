@@ -55,7 +55,7 @@
 % KI-Rohfassung (Claude, 09.11.2026) auf Basis der Autorenangaben und der Betriebsanleitung; prüfen,
 % überarbeiten und im KI-Anhang offenlegen. Stand: Umbau noch nicht ausgeführt, Ergebnisse als TODO.
 
-Das Sicherheitsrelais PILZ PNOZ s4 (24\,V DC, 2{,}5\,W, Bestellnummer: TODO) ist am Prototyp auf einer Hutschiene befestigt, auf der kein Platz mehr vorhanden ist (vgl. Abbildung~\ref{fig:pnoz_ist_position}). Die Montage ist provisorisch und die Leitungen sind ungeordnet geführt (vgl. Abbildung~\ref{fig:pnoz_ist_montage}).
+Das Sicherheitsrelais PILZ PNOZ s4  ist am Prototyp auf einer Hutschiene befestigt. Auf der  Hutschiene sind bereits die Relais für die Motoren montiert. Deshalb ist die Hutschiene bereits gut bestückt. Demnach ist für das Sicherheitsrelais an diesem Ort kein geeigneter Platz verfügbar. Ebenfalls ist die Kabelverlegung am Sicherheitsrelais nur provisorisch und nicht elegant gelöst. Die Montage ist provisorisch und die Leitungen sind ungeordnet geführt (vgl. Abbildung~\ref{fig:pnoz_ist_montage}).
 
 Die Motoren werden von der SPS über Koppelrelais angesteuert. Die Sicherheitskontakte des PNOZ s4 sind nachträglich in die Plusleitungen zwischen Koppelrelais und Motoren eingefügt worden. Der Kontakt 13/14 trennt den Motor der horizontalen Achse, der Kontakt 23/24 den Motor der vertikalen Achse. Über den Kontakt 33/34 wird das Druckluftventil auf dem Bauteilträger mit 24\,V versorgt (vgl. Abbildung~\ref{fig:ventil}). Der Not-Halt-Taster bleibt am Hochregallager montiert (vgl. Abbildung~\ref{fig:not_halt}).
 
@@ -64,24 +64,24 @@ Im Rahmen dieser Arbeit wird das Relais versetzt und die bestehende Verdrahtung 
 % --- Abbildungen (Auswahl aus Fotos vom 05.11.2026; im Text mit \ref{} referenzieren) ---
 \begin{figure}[H]
   \centering
-  \includegraphics[height=0.4\textheight]{images/pnoz_ist_position_regal.jpg}
-  \caption{Provisorische Position des PNOZ s4 am Prototyp (Ist-Zustand) \quelle{(eigene Aufnahme, 11/2026)}}
+  \includegraphics[height=0.4\textheight, trim=8cm 10cm 0cm 0cm, clip]{images/pnoz_ist_position_regal.jpg}
+  \caption{Bisherige Montage des PNOZ s4 auf Rückseite des Prototyps \quelle{(eigene Aufnahme, 11/2026)}}
   \label{fig:pnoz_ist_position}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\imgbig]{images/pnoz_ist_montage.jpg}
+  \includegraphics[width=\imgbig, trim=1cm 0cm 0cm 2cm, clip]{images/pnoz_ist_montage.jpg}
   \caption{PNOZ s4 neben den Koppelrelais K1--K4, Ist-Verdrahtung mit Verbindungsklemme \quelle{(eigene Aufnahme, 11/2026)}}
   \label{fig:pnoz_ist_montage}
 \end{figure}
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\imgbig]{images/not_halt_taster.jpg}
-  \caption{Not-Halt-Taster am Hochregallager (Draufsicht) \quelle{(eigene Aufnahme, 11/2026)}}
-  \label{fig:not_halt}
-\end{figure}
+%\begin{figure}[H]
+  %\centering
+  %\includegraphics[width=\imgbig]{images/not_halt_taster.jpg}
+  %\caption{Not-Halt-Taster am Hochregallager (Draufsicht) \quelle{(eigene Aufnahme, 11/2026)}}
+  %\label{fig:not_halt}
+%\end{figure}
 
 
 \subsection{Anforderungen an den neuen Montageort}
@@ -92,12 +92,13 @@ Im Rahmen dieser Arbeit wird das Relais versetzt und die bestehende Verdrahtung 
 %          - Leitungslängen zu Not-Halt und Motoren
 % UMFANG:  ca. 0,5–1 Seite
 
-Als neuer Montageort wird die Hutschiene auf dem Bauteilträger rechts neben dem Switch gewählt. Die Betriebsanleitung fordert eine Montage auf einer 35-mm-Hutschiene \cite{pilz_pnoz_s4}. Der Platz muss eine übersichtliche Leitungsführung und einen guten Zugang zu den Klemmen ermöglichen.
+Als neuer Montageort wird die Hutschiene auf dem Bauteilträger rechts neben dem Switch gewählt. Die Betriebsanleitung fordert eine Montage auf einer 35-mm-Hutschiene \cite{pilz_pnoz_s4}. Der Platz sollte eine übersichtliche Leitungsführung und einen guten Zugang zu den Klemmen ermöglichen.
 
-Die Betriebsanleitung sieht außerdem den Einbau in einen Schaltschrank mit mindestens Schutzart IP54 vor \cite{pilz_pnoz_s4}. Der offene Bauteilträger erfüllt diese Vorgabe nicht. Diese Abweichung wird toleriert, da die Analge als prototyp betrieben wird. Beim Betrieb in dem Labor ist nicht mit Spritzwasser oder Staub zu rechnen. 
+Die Betriebsanleitung sieht außerdem den Einbau in einen Schaltschrank mit mindestens Schutzart IP54 vor \cite{pilz_pnoz_s4}. 
+Der offene Bauteilträger erfüllt diese Vorgabe nicht. Diese Abweichung wird toleriert, da die Analge als prototyp betrieben wird. Beim Betrieb in dem Labor ist nicht mit Spritzwasser oder Staub zu rechnen. 
 
-Durch die neue Position werden längere Leitungen zum Not-Halt-Taster und zu den Motoren benötigt. Dafür sind zwei fünfadrige Leitungen mit je 3\,m Länge vorgesehen. Vier Adern verbinden jeweils den Not-Halt beziehungsweise die Kontakte 13/14 und 23/24.
-% TODO: Leitungstyp und Querschnitt ergänzen (zulässig laut Anleitung: 0,25--2,5 mm², Kupfer, 75 °C).
+Durch die neue Position werden längere Leitungen zum Not-Halt-Taster und zu den Motoren benötigt. Dafür sind zwei fünfadrige Leitungen mit je 3\,m Länge vorgesehen. Vier Adern verbinden jeweils die Schaltkontakte des Not-Halts. Zwei weitere Adern verbinden die Kontakte 13/14 mit Relais und dem Vertikalmotor. Die Kontakte und 23/24 sind an weitere Adern angeschlossen und verbinden Relais und den Horizontalmotor.
+
 
 \subsection{Prüfung der bestehenden Verdrahtung}
 % ZIEL:    Nachweis, dass das Relais korrekt angeschlossen ist – bzw. dokumentierte Abweichungen.
@@ -112,6 +113,14 @@ Durch die neue Position werden längere Leitungen zum Not-Halt-Taster und zu den
 % HINWEIS: Klemmenfunktionen nur aus dem Handbuch belegen, nicht aus dem Gedächtnis.
 
 Die Verdrahtung wird Klemme für Klemme mit der Betriebsanleitung \cite{pilz_pnoz_s4} verglichen. Tabelle~\ref{tab:pnoz_klemmen} zeigt das Ergebnis.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{images/pnoz_anschlussplan.png}
+  \caption{Verschaltungsplan des Sicherheitsrelais \quelle{(E-Plan, 11/2026)}}
+  \label{fig:pnoz_anschlussplan}
+\end{figure}
+
 
 \begin{table}[H]
   \centering
@@ -131,15 +140,14 @@ Die Verdrahtung wird Klemme für Klemme mit der Betriebsanleitung \cite{pilz_pno
   \end{tabular}
 \end{table}
 
-Aus dem Vergleich ergeben sich drei Befunde:
+Aus der Verdrahtung ergeben sich drei Funktionen:
 
-\textbf{Startart:} Durch die Brücke zwischen S12 und S34 ist vermutlich ein automatischer Start eingestellt. Nach dem Entriegeln des Not-Halts schließen die Sicherheitskontakte dann ohne separate Quittierung. Die Betriebsanleitung weist darauf hin, dass in diesem Fall Maßnahmen gegen einen unerwarteten Wiederanlauf vorzusehen sind \cite{pilz_pnoz_s4}.
-% TODO: Stellung des Drehschalters „mode“ am Gerät ablesen und ergänzen.
+Durch die Brücke zwischen S12 und S34 ist vermutlich ein automatischer Start eingestellt. Nach dem Entriegeln des Not-Halts schließen die Sicherheitskontakte dann ohne separate Quittierung. Die Betriebsanleitung weist darauf hin, dass in diesem Fall Maßnahmen gegen einen unerwarteten Wiederanlauf vorzusehen sind \cite{pilz_pnoz_s4}. %Todo Was wird heir gemacht?
 
-\textbf{Redundanz:} Jeder Motor wird nur über einen Sicherheitskontakt getrennt. Der Eingangskreis ist zweikanalig ausgeführt, die Abschaltung der einzelnen Motoren dagegen einkanalig.
 
-\textbf{Kontaktbelastung und Absicherung:} Die Sicherheitskontakte sind bei 24\,V DC für induktive Lasten (DC-13) mit bis zu 5\,A ausgelegt, abhängig von der Gerätevariante \cite{pilz_pnoz_s4}. Bei induktiven Lasten fordert die Anleitung eine geeignete Schutzbeschaltung. Eine Schutzbeschaltung und eine Kontaktabsicherung sind bisher nicht dokumentiert.
-% TODO: Motorstrom messen und mit dem Grenzwert vergleichen; Absicherung am Gerät prüfen.
+Jeder Motor wird nur über einen Sicherheitskontakt getrennt. Der Eingangskreis vom Not-Halttaster ist zweikanalig ausgeführt, die Abschaltung der einzelnen Motoren dagegen einkanalig, aber über redundante Sicherheitskontakte.
+
+Die Sicherheitskontakte sind bei 24\,V DC für induktive Lasten (DC-13) mit bis zu 5\,A ausgelegt, abhängig von der Gerätevariante \cite{pilz_pnoz_s4}. Bei induktiven Lasten fordert die Anleitung eine geeignete Schutzbeschaltung. Diese Schutzbeschaltung ist bisher nicht umgesetzt. Auch deshalb ist die Platzierung des Relais an einem geeigneten Montageort sinnvoll. So kann in einer ZUkünftigen Arbeit die Schutzbeschaltung umgesetzt werden.
 
 Die Befunde werden mit dem Betreuer besprochen. Die Verdrahtung bleibt zunächst unverändert.
 
