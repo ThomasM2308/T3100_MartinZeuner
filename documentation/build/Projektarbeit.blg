@@ -1,9 +1,9 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
 [0] Config.pm:331> INFO - Logfile is 'build/Projektarbeit.blg'
-[112] biber-MSWIN64:342> INFO - === 
-[172] Biber.pm:421> INFO - Reading 'build/Projektarbeit.bcf'
-[290] Biber.pm:1002> INFO - Found 0 citekeys in bib section 0
-[301] bbl.pm:676> INFO - Writing 'build/Projektarbeit.bbl' with encoding 'UTF-8'
-[301] bbl.pm:779> INFO - Output to build/Projektarbeit.bbl
-[302] Biber.pm:132> WARN - The file 'build/Projektarbeit.bcf' does not contain any citations!
-[302] Biber.pm:134> INFO - WARNINGS: 1
+[154] biber-MSWIN64:342> INFO - === 
+[224] Biber.pm:421> INFO - Reading 'build/Projektarbeit.bcf'
+[363] Biber.pm:1002> INFO - Found 0 citekeys in bib section 0
+[379] bbl.pm:676> INFO - Writing 'build/Projektarbeit.bbl' with encoding 'UTF-8'
+[380] bbl.pm:779> INFO - Output to build/Projektarbeit.bbl
+[381] Biber.pm:132> WARN - The file 'build/Projektarbeit.bcf' does not contain any citations!
+[381] Biber.pm:134> INFO - WARNINGS: 1
