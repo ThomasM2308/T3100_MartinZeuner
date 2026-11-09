@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.30)  9 NOV 2026 08:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.30)  9 NOV 2026 12:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1751,73 +1751,58 @@ Package pdftex.def Info: logos/logo_dhbw.png  used on input line 279.
 <images/anlage_gesamtansicht.jpg, id=297, 1405.25pt x 1053.9375pt>
 File: images/anlage_gesamtansicht.jpg Graphic file (type jpg)
 <use images/anlage_gesamtansicht.jpg>
-Package pdftex.def Info: images/anlage_gesamtansicht.jpg  used on input line 66.
+Package pdftex.def Info: images/anlage_gesamtansicht.jpg  used on input line 67.
 (pdftex.def)             Requested size: 341.43307pt x 256.07002pt.
 <images/regalbediengeraet_vertikalachse.jpg, id=298, 1405.25pt x 1053.9375pt>
 File: images/regalbediengeraet_vertikalachse.jpg Graphic file (type jpg)
 <use images/regalbediengeraet_vertikalachse.jpg>
-Package pdftex.def Info: images/regalbediengeraet_vertikalachse.jpg  used on input line 73.
+Package pdftex.def Info: images/regalbediengeraet_vertikalachse.jpg  used on input line 74.
 (pdftex.def)             Requested size: 352.04068pt x 264.03754pt.
 File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
-Package pdftex.def Info: logos/logo_dhbw.png  used on input line 77.
+Package pdftex.def Info: logos/logo_dhbw.png  used on input line 78.
 (pdftex.def)             Requested size: 85.08328pt x 35.56593pt.
  [27 <./images/anlage_gesamtansicht.jpg>]
 <images/steuerungsgestell_vorderseite.jpg, id=305, 1405.25pt x 1053.9375pt>
 File: images/steuerungsgestell_vorderseite.jpg Graphic file (type jpg)
 <use images/steuerungsgestell_vorderseite.jpg>
-Package pdftex.def Info: images/steuerungsgestell_vorderseite.jpg  used on input line 82.
+Package pdftex.def Info: images/steuerungsgestell_vorderseite.jpg  used on input line 83.
 (pdftex.def)             Requested size: 341.43307pt x 256.07002pt.
 File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
-Package pdftex.def Info: logos/logo_dhbw.png  used on input line 86.
+Package pdftex.def Info: logos/logo_dhbw.png  used on input line 87.
 (pdftex.def)             Requested size: 85.08328pt x 35.56593pt.
  [28 <./images/regalbediengeraet_vertikalachse.jpg>]
-<images/sps_baugruppen.jpg, id=310, 1053.9375pt x 1405.25pt>
-File: images/sps_baugruppen.jpg Graphic file (type jpg)
-<use images/sps_baugruppen.jpg>
-Package pdftex.def Info: images/sps_baugruppen.jpg  used on input line 89.
-(pdftex.def)             Requested size: 198.03091pt x 264.03754pt.
-<images/switch_router_sps.jpg, id=311, 1405.25pt x 1053.9375pt>
-File: images/switch_router_sps.jpg Graphic file (type jpg)
-<use images/switch_router_sps.jpg>
-Package pdftex.def Info: images/switch_router_sps.jpg  used on input line 96.
-(pdftex.def)             Requested size: 341.43307pt x 256.07002pt.
 File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
-Package pdftex.def Info: logos/logo_dhbw.png  used on input line 101.
+Package pdftex.def Info: logos/logo_dhbw.png  used on input line 96.
 (pdftex.def)             Requested size: 85.08328pt x 35.56593pt.
- [29 <./images/steuerungsgestell_vorderseite.jpg> <./images/sps_baugruppen.jpg>]
-File: logos/logo_dhbw.png Graphic file (type png)
-<use logos/logo_dhbw.png>
-Package pdftex.def Info: logos/logo_dhbw.png  used on input line 112.
-(pdftex.def)             Requested size: 85.08328pt x 35.56593pt.
- [30 <./images/switch_router_sps.jpg>]
-Underfull \hbox (badness 1082) in paragraph at lines 130--130
+ [29 <./images/steuerungsgestell_vorderseite.jpg>]
+Underfull \hbox (badness 1082) in paragraph at lines 119--119
 \T1/lmr/m/n/12 nem vor-ge-se-he-nen Mon-ta-ge-
  []
 
 
-Underfull \hbox (badness 1584) in paragraph at lines 130--130
+Underfull \hbox (badness 1584) in paragraph at lines 119--119
 []\T1/lmr/m/n/12 Befestigung an ei-nem ge-eig-ne-ten
  []
 
 File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
-Package pdftex.def Info: logos/logo_dhbw.png  used on input line 134.
+Package pdftex.def Info: logos/logo_dhbw.png  used on input line 123.
 (pdftex.def)             Requested size: 85.08328pt x 35.56593pt.
-[31])
+[30])
 File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
 Package pdftex.def Info: logos/logo_dhbw.png  used on input line 281.
 (pdftex.def)             Requested size: 85.08328pt x 35.56593pt.
- [32] (content/04_Sicherheitsrelais.tex
-<images/pnoz_ist_position_regal.jpg, id=338, 1053.9375pt x 1405.25pt>
+ [31] (content/04_Sicherheitsrelais.tex
+<images/pnoz_ist_position_regal.jpg, id=328, 1053.9375pt x 1405.25pt>
 File: images/pnoz_ist_position_regal.jpg Graphic file (type jpg)
 <use images/pnoz_ist_position_regal.jpg>
 Package pdftex.def Info: images/pnoz_ist_position_regal.jpg  used on input line 58.
 (pdftex.def)             Requested size: 198.03091pt x 264.03754pt.
-<images/pnoz_ist_montage.jpg, id=339, 1405.25pt x 1053.9375pt>
+<images/pnoz_ist_montage.jpg, id=329, 1405.25pt x 1053.9375pt>
 File: images/pnoz_ist_montage.jpg Graphic file (type jpg)
 <use images/pnoz_ist_montage.jpg>
 Package pdftex.def Info: images/pnoz_ist_montage.jpg  used on input line 65.
@@ -1826,13 +1811,13 @@ File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
 Package pdftex.def Info: logos/logo_dhbw.png  used on input line 69.
 (pdftex.def)             Requested size: 85.08328pt x 35.56593pt.
- [33 <./images/pnoz_ist_position_regal.jpg>]
-<images/not_halt_taster.jpg, id=344, 1405.25pt x 1053.9375pt>
+ [32 <./images/pnoz_ist_position_regal.jpg>]
+<images/not_halt_taster.jpg, id=335, 1405.25pt x 1053.9375pt>
 File: images/not_halt_taster.jpg Graphic file (type jpg)
 <use images/not_halt_taster.jpg>
 Package pdftex.def Info: images/not_halt_taster.jpg  used on input line 72.
 (pdftex.def)             Requested size: 341.43307pt x 256.07002pt.
-<images/druckluftventil_zylinder.jpg, id=345, 1053.9375pt x 1405.25pt>
+<images/druckluftventil_zylinder.jpg, id=336, 1053.9375pt x 1405.25pt>
 File: images/druckluftventil_zylinder.jpg Graphic file (type jpg)
 <use images/druckluftventil_zylinder.jpg>
 Package pdftex.def Info: images/druckluftventil_zylinder.jpg  used on input line 100.
@@ -1841,8 +1826,8 @@ File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
 Package pdftex.def Info: logos/logo_dhbw.png  used on input line 104.
 (pdftex.def)             Requested size: 85.08328pt x 35.56593pt.
- [34 <./images/pnoz_ist_montage.jpg> <./images/not_halt_taster.jpg>]
-<images/steuerungsgestell_rueckseite.jpg, id=352, 1405.25pt x 1053.9375pt>
+ [33 <./images/pnoz_ist_montage.jpg> <./images/not_halt_taster.jpg>]
+<images/steuerungsgestell_rueckseite.jpg, id=343, 1405.25pt x 1053.9375pt>
 File: images/steuerungsgestell_rueckseite.jpg Graphic file (type jpg)
 <use images/steuerungsgestell_rueckseite.jpg>
 Package pdftex.def Info: images/steuerungsgestell_rueckseite.jpg  used on input line 107.
@@ -1851,18 +1836,18 @@ File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
 Package pdftex.def Info: logos/logo_dhbw.png  used on input line 111.
 (pdftex.def)             Requested size: 85.08328pt x 35.56593pt.
- [35 <./images/druckluftventil_zylinder.jpg>])
+ [34 <./images/druckluftventil_zylinder.jpg>])
 File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
 Package pdftex.def Info: logos/logo_dhbw.png  used on input line 283.
 (pdftex.def)             Requested size: 85.08328pt x 35.56593pt.
- [36 <./images/steuerungsgestell_rueckseite.jpg>] (content/05_QR-Scanner.tex
-<images/scanner_matrix200_front.jpg, id=364, 1053.9375pt x 1405.25pt>
+ [35 <./images/steuerungsgestell_rueckseite.jpg>] (content/05_QR-Scanner.tex
+<images/scanner_matrix200_front.jpg, id=354, 1053.9375pt x 1405.25pt>
 File: images/scanner_matrix200_front.jpg Graphic file (type jpg)
 <use images/scanner_matrix200_front.jpg>
 Package pdftex.def Info: images/scanner_matrix200_front.jpg  used on input line 35.
 (pdftex.def)             Requested size: 198.03091pt x 264.03754pt.
-<images/scanner_matrix200_typenschild.jpg, id=365, 1405.25pt x 1053.9375pt>
+<images/scanner_matrix200_typenschild.jpg, id=355, 1405.25pt x 1053.9375pt>
 File: images/scanner_matrix200_typenschild.jpg Graphic file (type jpg)
 <use images/scanner_matrix200_typenschild.jpg>
 Package pdftex.def Info: images/scanner_matrix200_typenschild.jpg  used on input line 42.
@@ -1871,13 +1856,13 @@ File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
 Package pdftex.def Info: logos/logo_dhbw.png  used on input line 46.
 (pdftex.def)             Requested size: 85.08328pt x 35.56593pt.
- [37 <./images/scanner_matrix200_front.jpg>]
-<images/cbx100_anschluesse.jpg, id=371, 1405.25pt x 1053.9375pt>
+ [36 <./images/scanner_matrix200_front.jpg>]
+<images/cbx100_anschluesse.jpg, id=362, 1405.25pt x 1053.9375pt>
 File: images/cbx100_anschluesse.jpg Graphic file (type jpg)
 <use images/cbx100_anschluesse.jpg>
 Package pdftex.def Info: images/cbx100_anschluesse.jpg  used on input line 49.
 (pdftex.def)             Requested size: 341.43307pt x 256.07002pt.
-<images/sps_cm_ptp_rs232.jpg, id=372, 1053.9375pt x 1405.25pt>
+<images/sps_cm_ptp_rs232.jpg, id=363, 1053.9375pt x 1405.25pt>
 File: images/sps_cm_ptp_rs232.jpg Graphic file (type jpg)
 <use images/sps_cm_ptp_rs232.jpg>
 Package pdftex.def Info: images/sps_cm_ptp_rs232.jpg  used on input line 56.
@@ -1886,18 +1871,18 @@ File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
 Package pdftex.def Info: logos/logo_dhbw.png  used on input line 60.
 (pdftex.def)             Requested size: 85.08328pt x 35.56593pt.
- [38 <./images/scanner_matrix200_typenschild.jpg> <./images/cbx100_anschluesse.jpg>])
+ [37 <./images/scanner_matrix200_typenschild.jpg> <./images/cbx100_anschluesse.jpg>])
 File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
 Package pdftex.def Info: logos/logo_dhbw.png  used on input line 285.
 (pdftex.def)             Requested size: 85.08328pt x 35.56593pt.
- [39 <./images/sps_cm_ptp_rs232.jpg>] (content/06_IO-Link-Master.tex
-<images/schleppkette_leitungen.jpg, id=384, 1053.9375pt x 1405.25pt>
+ [38 <./images/sps_cm_ptp_rs232.jpg>] (content/06_IO-Link-Master.tex
+<images/schleppkette_leitungen.jpg, id=375, 1053.9375pt x 1405.25pt>
 File: images/schleppkette_leitungen.jpg Graphic file (type jpg)
 <use images/schleppkette_leitungen.jpg>
 Package pdftex.def Info: images/schleppkette_leitungen.jpg  used on input line 48.
 (pdftex.def)             Requested size: 198.03091pt x 264.03754pt.
-<images/iolink_master_position.jpg, id=385, 1053.9375pt x 1405.25pt>
+<images/iolink_master_position.jpg, id=376, 1053.9375pt x 1405.25pt>
 File: images/iolink_master_position.jpg Graphic file (type jpg)
 <use images/iolink_master_position.jpg>
 Package pdftex.def Info: images/iolink_master_position.jpg  used on input line 55.
@@ -1906,13 +1891,13 @@ File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
 Package pdftex.def Info: logos/logo_dhbw.png  used on input line 59.
 (pdftex.def)             Requested size: 85.08328pt x 35.56593pt.
- [40 <./images/schleppkette_leitungen.jpg>]
-<images/iolink_master_al1100.jpg, id=391, 1053.9375pt x 1405.25pt>
+ [39 <./images/schleppkette_leitungen.jpg>]
+<images/iolink_master_al1100.jpg, id=382, 1053.9375pt x 1405.25pt>
 File: images/iolink_master_al1100.jpg Graphic file (type jpg)
 <use images/iolink_master_al1100.jpg>
 Package pdftex.def Info: images/iolink_master_al1100.jpg  used on input line 62.
 (pdftex.def)             Requested size: 198.03091pt x 264.03754pt.
-<images/iolink_y_verteiler_lichtgitter.jpg, id=392, 1053.9375pt x 1405.25pt>
+<images/iolink_y_verteiler_lichtgitter.jpg, id=383, 1053.9375pt x 1405.25pt>
 File: images/iolink_y_verteiler_lichtgitter.jpg Graphic file (type jpg)
 <use images/iolink_y_verteiler_lichtgitter.jpg>
 Package pdftex.def Info: images/iolink_y_verteiler_lichtgitter.jpg  used on input line 69.
@@ -1921,8 +1906,8 @@ File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
 Package pdftex.def Info: logos/logo_dhbw.png  used on input line 73.
 (pdftex.def)             Requested size: 85.08328pt x 35.56593pt.
- [41 <./images/iolink_master_position.jpg> <./images/iolink_master_al1100.jpg>]
-<images/rfid_lesekopf_zylinder.jpg, id=399, 1053.9375pt x 1405.25pt>
+ [40 <./images/iolink_master_position.jpg> <./images/iolink_master_al1100.jpg>]
+<images/rfid_lesekopf_zylinder.jpg, id=390, 1053.9375pt x 1405.25pt>
 File: images/rfid_lesekopf_zylinder.jpg Graphic file (type jpg)
 <use images/rfid_lesekopf_zylinder.jpg>
 Package pdftex.def Info: images/rfid_lesekopf_zylinder.jpg  used on input line 76.
@@ -1932,17 +1917,17 @@ File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
 Package pdftex.def Info: logos/logo_dhbw.png  used on input line 287.
 (pdftex.def)             Requested size: 85.08328pt x 35.56593pt.
- [42 <./images/iolink_y_verteiler_lichtgitter.jpg> <./images/rfid_lesekopf_zylinder.jpg>]
+ [41 <./images/iolink_y_verteiler_lichtgitter.jpg> <./images/rfid_lesekopf_zylinder.jpg>]
 File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
 Package pdftex.def Info: logos/logo_dhbw.png  used on input line 287.
 (pdftex.def)             Requested size: 85.08328pt x 35.56593pt.
- [43] (content/07_Fazit_und_Ausblick.tex)
+ [42] (content/07_Fazit_und_Ausblick.tex)
 File: logos/logo_dhbw.png Graphic file (type png)
 <use logos/logo_dhbw.png>
 Package pdftex.def Info: logos/logo_dhbw.png  used on input line 289.
 (pdftex.def)             Requested size: 85.08328pt x 35.56593pt.
- [44] (content/102_NutzungKünstlicherIntelligenzen.tex
+ [43] (content/102_NutzungKünstlicherIntelligenzen.tex
 Overfull \hbox (11.74983pt too wide) in paragraph at lines 4--5
 [][][][][][] 
  []
@@ -2098,17 +2083,17 @@ Package logreq Info: Writing requests to 'Projektarbeit.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30808 strings out of 467867
- 592028 string characters out of 5416882
- 1668230 words of memory out of 5000000
- 59146 multiletter control sequences out of 15000+600000
+ 30790 strings out of 467867
+ 591506 string characters out of 5416882
+ 1668056 words of memory out of 5000000
+ 59131 multiletter control sequences out of 15000+600000
  678432 words of font info for 72 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,24n,110p,11284b,2371s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/h0109030/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
-Output written on c:\Users\h0109030\Documents\GitHub\T3100_MartinZeuner\documentation\build\Projektarbeit.pdf (54 pages, 6822028 bytes).
+Output written on c:\Users\h0109030\Documents\GitHub\T3100_MartinZeuner\documentation\build\Projektarbeit.pdf (53 pages, 6333526 bytes).
 PDF statistics:
- 629 PDF objects out of 1000 (max. 8388607)
- 153 named destinations out of 1000 (max. 500000)
- 541 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 619 PDF objects out of 1000 (max. 8388607)
+ 150 named destinations out of 1000 (max. 500000)
+ 531 words of extra memory for PDF output out of 10000 (max. 10000000)
 
