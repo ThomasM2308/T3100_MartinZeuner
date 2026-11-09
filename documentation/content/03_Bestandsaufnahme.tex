@@ -15,10 +15,7 @@
 %          - Fotos „vorher“
 % QUELLEN: eigene Aufnahme (Datum!), Vorgängerarbeiten, Code T3200
 % UMFANG:  ca. 1,5 Seiten
-%
-% -----------------------------------------------------------------------------------------------------
-% MATERIAL AUS DEM INTERVIEW (05.11.2026) – Stichpunkte, vor dem Ausformulieren prüfen
-% -----------------------------------------------------------------------------------------------------
+
 % Aufbau Steuerungsgestell (neben dem Prototyp):
 %   - Alu-Gestell mit Einschubplatten, 2 Einschubbereiche; Hersteller vermutlich Christiani (prüfen)
 %   - oben links: Druckluft-/Wartungseinheit (versorgt den Zylinder am Regalbediengerät)
@@ -60,11 +57,9 @@
 % Hinweis: Im SPS-Baugruppenträger steckt ein CM PtP RS232 BA – Option, den Scanner direkt an der
 % SPS zu betreiben (Variantenvergleich Kap. 5 / Ausblick; würde TIA-Änderungen erfordern)
 
-% KI-ROHFASSUNG (Claude, 09.11.2026): von den Autoren inhaltlich prüfen, überarbeiten und im
-% KI-Anhang offenlegen.
-Dieser Abschnitt dokumentiert den Zustand der Anlage zu Projektbeginn. Er beruht auf einer eigenen Aufnahme im November 2026, dem vorhandenen TIA-Projekt sowie den Vorgängerarbeiten \cite{schaal_zorko_t3100,schaal_zorko_t3200}.
+Dieser Abschnitt dokumentiert den Zustand der Anlage zu Projektbeginn.
 
-Die Anlage besteht aus dem Prototyp des Hochregallagers und einem daneben angeordneten Steuerungsgestell (vgl. Abbildung~\ref{fig:anlage_gesamt}). Das Regalbediengerät wird durch je einen Motor horizontal und vertikal entlang des Regals verfahren (vgl. Abbildung~\ref{fig:rbg_vertikal}). Zum Einlagern fährt ein Druckluftzylinder aus, das Regalbediengerät senkt sich leicht ab und der Zylinder fährt wieder ein, sodass das Lagergut im Regalfach verbleibt. Das Lagergut wird über den RFID-Lesekopf ifm DTI515 identifiziert. Der Bereich vor dem Regal wird von dem messenden Lichtgitter ifm OY5100 erfasst.
+Die Anlage besteht aus dem Prototyp des Hochregallagers und einem daneben angeordneten Bauteilträger (vgl. Abbildung~\ref{fig:anlage_gesamt}). Das Regalbediengerät wird durch je einen Motor horizontal und vertikal entlang des Regals verfahren (vgl. Abbildung~\ref{fig:rbg_vertikal}). Zum Einlagern fährt ein Druckluftzylinder aus, das Regalbediengerät senkt sich leicht ab und der Zylinder fährt wieder ein, sodass das Lagergut im Regalfach verbleibt. Das Lagergut kann über einen RFID-Lesekopf ifm DTI515 identifiziert werden. Der Bereich vor dem Regal wird von dem messenden Lichtgitter ifm OY5100 erfasst und schaltet im Fehlerfall die Anlage ab.
 
 \begin{figure}[H]
   \centering
@@ -80,26 +75,7 @@ Die Anlage besteht aus dem Prototyp des Hochregallagers und einem daneben angeor
   \label{fig:rbg_vertikal}
 \end{figure}
 
-Die Komponenten der Anlagensteuerung sind in Tabelle~\ref{tab:komponenten_gestell} zusammengefasst. Im oberen Bereich des Steuerungsgestells sind die Wartungseinheit der Druckluftversorgung und das HMI (Human-Machine Interface) angeordnet (vgl. Abbildung~\ref{fig:gestell_vorne}). Darunter befinden sich die SPS mit ihren Baugruppen (vgl. Abbildung~\ref{fig:sps_baugruppen}), die Laststromversorgung und der Switch (vgl. Abbildung~\ref{fig:switch_sps}).
-
-\begin{table}[H]
-  \centering
-  \caption{Komponenten und Netzwerkadressen im Ausgangszustand (TIA-Projekt und eigene Aufnahme, 11/2026)}
-  \label{tab:komponenten_gestell}
-  \begin{tabular}{|l|l|l|l|}
-    \hline
-    \textbf{Komponente} & \textbf{Typ} & \textbf{IP-Adresse} & \textbf{Ort} \\ \hline
-    SPS (PLC\_1)        & CPU 1511-1 PN                & 192.168.0.20 & Gestell unten links \\ \hline
-    Kommunikationsmodul & CM PtP RS232 BA              & --           & SPS-Baugruppenträger \\ \hline
-    Laststromversorgung & Siemens PM 70 W (TODO Typ)   & --           & Gestell, neben der SPS \\ \hline
-    HMI (HMI\_2)        & MTP1500 Unified Comfort      & 192.168.0.2  & Gestell oben rechts \\ \hline
-    Switch              & SCALANCE X005 (TODO prüfen)  & --           & Gestell unten rechts \\ \hline
-    Wartungseinheit     & TODO                         & --           & Gestell oben links \\ \hline
-    IO-Link-Master      & ifm AL1100                   & 192.168.0.4  & Prototyp, horizontal mitfahrend \\ \hline
-    Sicherheitsrelais   & PILZ PNOZ s4, 24 V DC        & --           & Prototyp, provisorisch \\ \hline
-    QR-Scanner          & Datalogic Matrix 200 + CBX100 & -- (RS232 am Laptop) & TODO \\ \hline
-  \end{tabular}
-\end{table}
+Die Komponenten der Anlagensteuerung sind in Tabelle~\ref{tab:komponenten_gestell} zusammengefasst. Im oberen Bereich des Bauteilträgers sind die Wartungseinheit der Druckluftversorgung und das HMI (Human-Machine Interface) angeordnet. Darunter befinden sich die SPS mit ihren Baugruppen, die Laststromversorgung für das Gesamtsystem und der Switch.
 
 \begin{figure}[H]
   \centering
@@ -127,7 +103,7 @@ Die Motoren werden von der SPS über die Koppelrelais K1 bis K4 angesteuert. Das
 
 SPS, HMI und IO-Link-Master sind über den Switch im Subnetz 192.168.0.0/24 verbunden. Der IO-Link-Master ifm AL1100 ist per PROFINET an die SPS angebunden. An Port~1 ist der RFID-Lesekopf und an Port~2 das Lichtgitter angeschlossen, die Ports~3 und~4 sind frei. Der Master ist auf der horizontal verfahrbaren Einheit montiert. Der QR-Scanner Datalogic Matrix 200 ist über die Anschlussbox CBX100 per RS232 mit einem Laptop verbunden, auf dem das Python-Programm der Vorgängerarbeit ausgeführt wird \cite{schaal_zorko_t3200}. Das Programm tauscht über die Bibliothek Snap7 Daten mit der SPS aus.
 
-Aus dem beschriebenen Ausgangszustand ergibt sich in drei Bereichen Handlungsbedarf: Das Sicherheitsrelais ist nicht an einem dafür vorgesehenen Montageplatz befestigt, der QR-Scanner setzt einen direkt angeschlossenen Laptop voraus, und durch die Position des IO-Link-Masters auf der verfahrbaren Einheit ist die Schleppkette mit den zugehörigen Leitungen überfüllt. Im folgenden Abschnitt werden daraus Anforderungen abgeleitet.
+Aus dem beschriebenen Ausgangszustand ergibt sich in drei Bereichen Handlungsbedarf: Das Sicherheitsrelais ist nicht an einem dafür vorgesehenen Montageplatz befestigt, der QR-Scanner setzt einen direkt angeschlossenen Laptop mit veralteter RS232 Buchse voraus, und durch die Position des IO-Link-Masters auf der verfahrbaren Einheit ist die Schleppkette mit den zugehörigen Leitungen überfüllt. Im folgenden Abschnitt werden die benötigten Veränderungen beschrieben.
 
 \subsection{Identifizierte Schwachstellen und Anforderungen}
 % Sprachlich überarbeitete Fassung des Autorentextes (Claude, 09.11.2026); im KI-Anhang offenlegen.
