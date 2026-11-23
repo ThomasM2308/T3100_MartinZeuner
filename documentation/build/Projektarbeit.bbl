@@ -41,6 +41,778 @@
       \verb https://www.pilz.com/download/open/OM_PNOZ_s4_21396-EN-23.pdf
       \endverb
     \endentry
+    \entry{adi_rs232_2001}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=a12ff886a2379a9ee6efaa9acfb54df4}{%
+           family={{Analog Devices}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{a12ff886a2379a9ee6efaa9acfb54df4}
+      \strng{fullhash}{a12ff886a2379a9ee6efaa9acfb54df4}
+      \strng{fullhashraw}{a12ff886a2379a9ee6efaa9acfb54df4}
+      \strng{bibnamehash}{a12ff886a2379a9ee6efaa9acfb54df4}
+      \strng{authorbibnamehash}{a12ff886a2379a9ee6efaa9acfb54df4}
+      \strng{authornamehash}{a12ff886a2379a9ee6efaa9acfb54df4}
+      \strng{authorfullhash}{a12ff886a2379a9ee6efaa9acfb54df4}
+      \strng{authorfullhashraw}{a12ff886a2379a9ee6efaa9acfb54df4}
+      \field{labelalpha}{Ana01}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{29}
+      \field{month}{3}
+      \field{title}{Fundamentals of {RS-232} Serial Communications}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{year}{2001}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.analog.com/en/resources/technical-articles/fundamentals-of-rs232-serial-communications.html
+      \endverb
+      \verb{url}
+      \verb https://www.analog.com/en/resources/technical-articles/fundamentals-of-rs232-serial-communications.html
+      \endverb
+    \endentry
+    \entry{bghm_nothalt}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=5641044208f392fdce0d988adf4978ef}{%
+           family={{Berufsgenossenschaft Holz und Metall}},
+           familyi={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{5641044208f392fdce0d988adf4978ef}
+      \strng{fullhash}{5641044208f392fdce0d988adf4978ef}
+      \strng{fullhashraw}{5641044208f392fdce0d988adf4978ef}
+      \strng{bibnamehash}{5641044208f392fdce0d988adf4978ef}
+      \strng{authorbibnamehash}{5641044208f392fdce0d988adf4978ef}
+      \strng{authornamehash}{5641044208f392fdce0d988adf4978ef}
+      \strng{authorfullhash}{5641044208f392fdce0d988adf4978ef}
+      \strng{authorfullhashraw}{5641044208f392fdce0d988adf4978ef}
+      \field{labelalpha}{Ber}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Stillsetzen im Notfall (Not-Halt / Not-Aus)}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.bghm.de/arbeitsschuetzer/themen/maschinen/not-halt/not-aus
+      \endverb
+      \verb{url}
+      \verb https://www.bghm.de/arbeitsschuetzer/themen/maschinen/not-halt/not-aus
+      \endverb
+    \endentry
+    \entry{rfc1122}{report}{}{}
+      \name{editor}{1}{}{%
+        {{hash=05cac6577f13fc0793c9202abb0a6f1a}{%
+           family={Braden},
+           familyi={B\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Internet Engineering Task Force}%
+      }
+      \strng{namehash}{05cac6577f13fc0793c9202abb0a6f1a}
+      \strng{fullhash}{05cac6577f13fc0793c9202abb0a6f1a}
+      \strng{fullhashraw}{05cac6577f13fc0793c9202abb0a6f1a}
+      \strng{bibnamehash}{05cac6577f13fc0793c9202abb0a6f1a}
+      \strng{editorbibnamehash}{05cac6577f13fc0793c9202abb0a6f1a}
+      \strng{editornamehash}{05cac6577f13fc0793c9202abb0a6f1a}
+      \strng{editorfullhash}{05cac6577f13fc0793c9202abb0a6f1a}
+      \strng{editorfullhashraw}{05cac6577f13fc0793c9202abb0a6f1a}
+      \field{labelalpha}{Bra89}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{editor}
+      \field{labeltitlesource}{title}
+      \field{month}{10}
+      \field{number}{1122}
+      \field{title}{Requirements for Internet Hosts -- Communication Layers}
+      \field{type}{RFC}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{year}{1989}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.17487/RFC1122
+      \endverb
+      \verb{urlraw}
+      \verb https://www.rfc-editor.org/rfc/rfc1122.html
+      \endverb
+      \verb{url}
+      \verb https://www.rfc-editor.org/rfc/rfc1122.html
+      \endverb
+    \endentry
+    \entry{cisco_switching}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=e7a0a20878b9ace66e080da0fa1eb97f}{%
+           family={{Cisco Systems}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{e7a0a20878b9ace66e080da0fa1eb97f}
+      \strng{fullhash}{e7a0a20878b9ace66e080da0fa1eb97f}
+      \strng{fullhashraw}{e7a0a20878b9ace66e080da0fa1eb97f}
+      \strng{bibnamehash}{e7a0a20878b9ace66e080da0fa1eb97f}
+      \strng{authorbibnamehash}{e7a0a20878b9ace66e080da0fa1eb97f}
+      \strng{authornamehash}{e7a0a20878b9ace66e080da0fa1eb97f}
+      \strng{authorfullhash}{e7a0a20878b9ace66e080da0fa1eb97f}
+      \strng{authorfullhashraw}{e7a0a20878b9ace66e080da0fa1eb97f}
+      \field{labelalpha}{Cis}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Abschnitt Understanding Layer 2 Ethernet Switching}
+      \field{title}{Configuring {LAN} Ports for Layer 2 Switching}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.cisco.com/en/US/docs/general/Test/dwerblo/broken_guide/layer2.html
+      \endverb
+      \verb{url}
+      \verb https://www.cisco.com/en/US/docs/general/Test/dwerblo/broken_guide/layer2.html
+      \endverb
+    \endentry
+    \entry{datalogic_cbx100_grundlagen}{manual}{}{}
+      \name{author}{1}{}{%
+        {{hash=1df8db06ffa8af0bfd48bdd03f0d5f72}{%
+           family={{Datalogic}},
+           familyi={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{1df8db06ffa8af0bfd48bdd03f0d5f72}
+      \strng{fullhash}{1df8db06ffa8af0bfd48bdd03f0d5f72}
+      \strng{fullhashraw}{1df8db06ffa8af0bfd48bdd03f0d5f72}
+      \strng{bibnamehash}{1df8db06ffa8af0bfd48bdd03f0d5f72}
+      \strng{authorbibnamehash}{1df8db06ffa8af0bfd48bdd03f0d5f72}
+      \strng{authornamehash}{1df8db06ffa8af0bfd48bdd03f0d5f72}
+      \strng{authorfullhash}{1df8db06ffa8af0bfd48bdd03f0d5f72}
+      \strng{authorfullhashraw}{1df8db06ffa8af0bfd48bdd03f0d5f72}
+      \field{labelalpha}{Dat}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{CBX100}: Installation Manual}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://cdn.datalogic.com/Download?iddwnfile=20061
+      \endverb
+      \verb{url}
+      \verb https://cdn.datalogic.com/Download?iddwnfile=20061
+      \endverb
+    \endentry
+    \entry{ifa_report_2025}{report}{}{}
+      \name{author}{1}{}{%
+        {{hash=4b055ab7f40b95f7d0dd375542bfd5ff}{%
+           family={{Deutsche Gesetzliche Unfallversicherung e. V.}},
+           familyi={D\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {DGUV}%
+      }
+      \strng{namehash}{4b055ab7f40b95f7d0dd375542bfd5ff}
+      \strng{fullhash}{4b055ab7f40b95f7d0dd375542bfd5ff}
+      \strng{fullhashraw}{4b055ab7f40b95f7d0dd375542bfd5ff}
+      \strng{bibnamehash}{4b055ab7f40b95f7d0dd375542bfd5ff}
+      \strng{authorbibnamehash}{4b055ab7f40b95f7d0dd375542bfd5ff}
+      \strng{authornamehash}{4b055ab7f40b95f7d0dd375542bfd5ff}
+      \strng{authorfullhash}{4b055ab7f40b95f7d0dd375542bfd5ff}
+      \strng{authorfullhashraw}{4b055ab7f40b95f7d0dd375542bfd5ff}
+      \field{labelalpha}{Deu25}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{5}
+      \field{number}{1/2025}
+      \field{subtitle}{Anwendung der DIN EN ISO 13849}
+      \field{title}{Funktionale Sicherheit von Maschinensteuerungen}
+      \field{type}{IFA Report}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://publikationen.dguv.de/widgets/pdf/download/article/5091
+      \endverb
+      \verb{url}
+      \verb https://publikationen.dguv.de/widgets/pdf/download/article/5091
+      \endverb
+    \endentry
+    \entry{rfc9293}{report}{}{}
+      \name{editor}{1}{}{%
+        {{hash=eff1d6e4dc522328e3ceeed671666aad}{%
+           family={Eddy},
+           familyi={E\bibinitperiod},
+           given={Wesley},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Internet Engineering Task Force}%
+      }
+      \strng{namehash}{eff1d6e4dc522328e3ceeed671666aad}
+      \strng{fullhash}{eff1d6e4dc522328e3ceeed671666aad}
+      \strng{fullhashraw}{eff1d6e4dc522328e3ceeed671666aad}
+      \strng{bibnamehash}{eff1d6e4dc522328e3ceeed671666aad}
+      \strng{editorbibnamehash}{eff1d6e4dc522328e3ceeed671666aad}
+      \strng{editornamehash}{eff1d6e4dc522328e3ceeed671666aad}
+      \strng{editorfullhash}{eff1d6e4dc522328e3ceeed671666aad}
+      \strng{editorfullhashraw}{eff1d6e4dc522328e3ceeed671666aad}
+      \field{labelalpha}{Edd22}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{editor}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{number}{9293}
+      \field{title}{Transmission Control Protocol ({TCP})}
+      \field{type}{RFC}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.17487/RFC9293
+      \endverb
+      \verb{urlraw}
+      \verb https://www.rfc-editor.org/rfc/rfc9293.html
+      \endverb
+      \verb{url}
+      \verb https://www.rfc-editor.org/rfc/rfc9293.html
+      \endverb
+    \endentry
+    \entry{ifm_iolink_technik}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=a823c7a5627302f0232dbe282bd8add6}{%
+           family={{ifm electronic gmbh}},
+           familyi={i\bibinitperiod}}}%
+      }
+      \strng{namehash}{a823c7a5627302f0232dbe282bd8add6}
+      \strng{fullhash}{a823c7a5627302f0232dbe282bd8add6}
+      \strng{fullhashraw}{a823c7a5627302f0232dbe282bd8add6}
+      \strng{bibnamehash}{a823c7a5627302f0232dbe282bd8add6}
+      \strng{authorbibnamehash}{a823c7a5627302f0232dbe282bd8add6}
+      \strng{authornamehash}{a823c7a5627302f0232dbe282bd8add6}
+      \strng{authorfullhash}{a823c7a5627302f0232dbe282bd8add6}
+      \strng{authorfullhashraw}{a823c7a5627302f0232dbe282bd8add6}
+      \field{extraname}{1}
+      \field{labelalpha}{ifm}
+      \field{sortinit}{i}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{extraalpha}{1}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Erfahren Sie mehr über die {IO-Link}-Technologie}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.ifm.com/ch/de/shared/io-link/technology/io-link-in-detail
+      \endverb
+      \verb{url}
+      \verb https://www.ifm.com/ch/de/shared/io-link/technology/io-link-in-detail
+      \endverb
+    \endentry
+    \entry{ifm_oy5100}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=a823c7a5627302f0232dbe282bd8add6}{%
+           family={{ifm electronic gmbh}},
+           familyi={i\bibinitperiod}}}%
+      }
+      \strng{namehash}{a823c7a5627302f0232dbe282bd8add6}
+      \strng{fullhash}{a823c7a5627302f0232dbe282bd8add6}
+      \strng{fullhashraw}{a823c7a5627302f0232dbe282bd8add6}
+      \strng{bibnamehash}{a823c7a5627302f0232dbe282bd8add6}
+      \strng{authorbibnamehash}{a823c7a5627302f0232dbe282bd8add6}
+      \strng{authornamehash}{a823c7a5627302f0232dbe282bd8add6}
+      \strng{authorfullhash}{a823c7a5627302f0232dbe282bd8add6}
+      \strng{authorfullhashraw}{a823c7a5627302f0232dbe282bd8add6}
+      \field{extraname}{2}
+      \field{labelalpha}{ifm}
+      \field{sortinit}{i}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{extraalpha}{2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{OY5100}: Messendes Lichtgitter}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.ifm.com/de/de/product/OY5100
+      \endverb
+      \verb{url}
+      \verb https://www.ifm.com/de/de/product/OY5100
+      \endverb
+    \endentry
+    \entry{ifm_al1100_datenblatt_2024}{manual}{}{}
+      \name{author}{1}{}{%
+        {{hash=a823c7a5627302f0232dbe282bd8add6}{%
+           family={{ifm electronic gmbh}},
+           familyi={i\bibinitperiod}}}%
+      }
+      \strng{namehash}{a823c7a5627302f0232dbe282bd8add6}
+      \strng{fullhash}{a823c7a5627302f0232dbe282bd8add6}
+      \strng{fullhashraw}{a823c7a5627302f0232dbe282bd8add6}
+      \strng{bibnamehash}{a823c7a5627302f0232dbe282bd8add6}
+      \strng{authorbibnamehash}{a823c7a5627302f0232dbe282bd8add6}
+      \strng{authornamehash}{a823c7a5627302f0232dbe282bd8add6}
+      \strng{authorfullhash}{a823c7a5627302f0232dbe282bd8add6}
+      \strng{authorfullhashraw}{a823c7a5627302f0232dbe282bd8add6}
+      \field{extraname}{3}
+      \field{labelalpha}{ifm24}
+      \field{sortinit}{i}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{27}
+      \field{month}{8}
+      \field{number}{AL1100-01, DE-DE}
+      \field{title}{{AL1100}: IO-Link-Master mit PROFINET-Schnittstelle}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://media.ifm.com/dam/a467641c-10b1-44d2-9b2d-12189897a724/Original/AL1100-01_DE-DE.pdf
+      \endverb
+      \verb{url}
+      \verb https://media.ifm.com/dam/a467641c-10b1-44d2-9b2d-12189897a724/Original/AL1100-01_DE-DE.pdf
+      \endverb
+    \endentry
+    \entry{igus_befuellung}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=629d37e8050f40e18fe31d0718dd9824}{%
+           family={{igus GmbH}},
+           familyi={i\bibinitperiod}}}%
+      }
+      \strng{namehash}{629d37e8050f40e18fe31d0718dd9824}
+      \strng{fullhash}{629d37e8050f40e18fe31d0718dd9824}
+      \strng{fullhashraw}{629d37e8050f40e18fe31d0718dd9824}
+      \strng{bibnamehash}{629d37e8050f40e18fe31d0718dd9824}
+      \strng{authorbibnamehash}{629d37e8050f40e18fe31d0718dd9824}
+      \strng{authornamehash}{629d37e8050f40e18fe31d0718dd9824}
+      \strng{authorfullhash}{629d37e8050f40e18fe31d0718dd9824}
+      \strng{authorfullhashraw}{629d37e8050f40e18fe31d0718dd9824}
+      \field{labelalpha}{igu}
+      \field{sortinit}{i}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Verlegung von Leitungen und Schläuchen in Energieketten}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.igus.de/energieketten/wiki/befuellungsregel
+      \endverb
+      \verb{url}
+      \verb https://www.igus.de/energieketten/wiki/befuellungsregel
+      \endverb
+    \endentry
+    \entry{iolink_system_2018}{manual}{}{}
+      \name{author}{1}{}{%
+        {{hash=e7527ef55598947f7dbab13973fd4edb}{%
+           family={{IO-Link Firmengemeinschaft}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{e7527ef55598947f7dbab13973fd4edb}
+      \strng{fullhash}{e7527ef55598947f7dbab13973fd4edb}
+      \strng{fullhashraw}{e7527ef55598947f7dbab13973fd4edb}
+      \strng{bibnamehash}{e7527ef55598947f7dbab13973fd4edb}
+      \strng{authorbibnamehash}{e7527ef55598947f7dbab13973fd4edb}
+      \strng{authornamehash}{e7527ef55598947f7dbab13973fd4edb}
+      \strng{authorfullhash}{e7527ef55598947f7dbab13973fd4edb}
+      \strng{authorfullhashraw}{e7527ef55598947f7dbab13973fd4edb}
+      \field{labelalpha}{IO-18}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{3}
+      \field{number}{10.391}
+      \field{subtitle}{Technologie und Anwendung}
+      \field{title}{{IO-Link} Systembeschreibung}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.profibus.com/fileadmin/media/downloadsection/technical_description_&_books/IO-Link_Systembeschreibung_dt_2018.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.profibus.com/fileadmin/media/downloadsection/technical_description_&_books/IO-Link_Systembeschreibung_dt_2018.pdf
+      \endverb
+    \endentry
+    \entry{usr410s_quickstart}{manual}{}{}
+      \name{author}{1}{}{%
+        {{hash=2ad9827f3263f3d4875a39fe56f7fe6f}{%
+           family={{Jinan USR IOT Technology Limited}},
+           familyi={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{2ad9827f3263f3d4875a39fe56f7fe6f}
+      \strng{fullhash}{2ad9827f3263f3d4875a39fe56f7fe6f}
+      \strng{fullhashraw}{2ad9827f3263f3d4875a39fe56f7fe6f}
+      \strng{bibnamehash}{2ad9827f3263f3d4875a39fe56f7fe6f}
+      \strng{authorbibnamehash}{2ad9827f3263f3d4875a39fe56f7fe6f}
+      \strng{authornamehash}{2ad9827f3263f3d4875a39fe56f7fe6f}
+      \strng{authorfullhash}{2ad9827f3263f3d4875a39fe56f7fe6f}
+      \strng{authorfullhashraw}{2ad9827f3263f3d4875a39fe56f7fe6f}
+      \field{extraname}{1}
+      \field{labelalpha}{Jin}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extraalpha}{1}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Werkseinstellungen (IP-Adresse, Betriebsart, Port, Baudrate, Zeichenrahmen, Anmeldung). Version und Datum im Dokument nicht angegeben.}
+      \field{title}{Quick Start Guide: {RS232/485} Serial To Ethernet Converter, Model {USR-TCP232-410s}}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://cdn.shopify.com/s/files/1/1386/3791/files/User_Manual_USR-TCP232-410S_Quick_Start_Guide.pdf
+      \endverb
+      \verb{url}
+      \verb https://cdn.shopify.com/s/files/1/1386/3791/files/User_Manual_USR-TCP232-410S_Quick_Start_Guide.pdf
+      \endverb
+    \endentry
+    \entry{usr410s_grundlagen}{manual}{}{}
+      \name{author}{1}{}{%
+        {{hash=2ad9827f3263f3d4875a39fe56f7fe6f}{%
+           family={{Jinan USR IOT Technology Limited}},
+           familyi={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{2ad9827f3263f3d4875a39fe56f7fe6f}
+      \strng{fullhash}{2ad9827f3263f3d4875a39fe56f7fe6f}
+      \strng{fullhashraw}{2ad9827f3263f3d4875a39fe56f7fe6f}
+      \strng{bibnamehash}{2ad9827f3263f3d4875a39fe56f7fe6f}
+      \strng{authorbibnamehash}{2ad9827f3263f3d4875a39fe56f7fe6f}
+      \strng{authornamehash}{2ad9827f3263f3d4875a39fe56f7fe6f}
+      \strng{authorfullhash}{2ad9827f3263f3d4875a39fe56f7fe6f}
+      \strng{authorfullhashraw}{2ad9827f3263f3d4875a39fe56f7fe6f}
+      \field{extraname}{2}
+      \field{labelalpha}{Jin}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extraalpha}{2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Herstellerbeispiel zur Funktionsweise; keine Festlegung der tatsächlich eingesetzten Geräte- oder Firmwarevariante.}
+      \field{title}{{USR-TCP232-410s} User Manual}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{version}{V1.1.1.02}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.pusr.com/uploads/20230925/cc816d60345d688cbda902742c6aeafb.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.pusr.com/uploads/20230925/cc816d60345d688cbda902742c6aeafb.pdf
+      \endverb
+    \endentry
+    \entry{pilz_pnoz_s4_grundlagen}{manual}{}{}
+      \name{author}{1}{}{%
+        {{hash=561de6642eaea403ce5fe9545e46613b}{%
+           family={{Pilz GmbH \& Co. KG}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{561de6642eaea403ce5fe9545e46613b}
+      \strng{fullhash}{561de6642eaea403ce5fe9545e46613b}
+      \strng{fullhashraw}{561de6642eaea403ce5fe9545e46613b}
+      \strng{bibnamehash}{561de6642eaea403ce5fe9545e46613b}
+      \strng{authorbibnamehash}{561de6642eaea403ce5fe9545e46613b}
+      \strng{authornamehash}{561de6642eaea403ce5fe9545e46613b}
+      \strng{authorfullhash}{561de6642eaea403ce5fe9545e46613b}
+      \strng{authorfullhashraw}{561de6642eaea403ce5fe9545e46613b}
+      \field{labelalpha}{Pil20}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{7}
+      \field{note}{Für die Funktionsgrundlagen herangezogene Ausgabe; die zur verbauten Bestellnummer gehörende aktuelle Anleitung ist für die Umsetzung abzugleichen.}
+      \field{number}{21396-EN-17}
+      \field{title}{{PNOZ s4}: Operating Manual}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.pilz.com/download/open/PNOZ_s4_Operat_Man_21396-EN-17.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.pilz.com/download/open/PNOZ_s4_Operat_Man_21396-EN-17.pdf
+      \endverb
+    \endentry
+    \entry{pi_profinet_2018}{manual}{}{}
+      \name{author}{1}{}{%
+        {{hash=922a48f2602fcb04a32a45362f102411}{%
+           family={{PROFIBUS Nutzerorganisation e. V.}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{922a48f2602fcb04a32a45362f102411}
+      \strng{fullhash}{922a48f2602fcb04a32a45362f102411}
+      \strng{fullhashraw}{922a48f2602fcb04a32a45362f102411}
+      \strng{bibnamehash}{922a48f2602fcb04a32a45362f102411}
+      \strng{authorbibnamehash}{922a48f2602fcb04a32a45362f102411}
+      \strng{authornamehash}{922a48f2602fcb04a32a45362f102411}
+      \strng{authorfullhash}{922a48f2602fcb04a32a45362f102411}
+      \strng{authorfullhashraw}{922a48f2602fcb04a32a45362f102411}
+      \field{labelalpha}{PRO18}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{11}
+      \field{number}{4.132}
+      \field{subtitle}{Technology and Application}
+      \field{title}{{PROFINET} System Description}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://sea.profibus.com/fileadmin/media/downloadsection/technical_description_&_books/PROFINET_System_Description_engl_2018_Update.pdf
+      \endverb
+      \verb{url}
+      \verb https://sea.profibus.com/fileadmin/media/downloadsection/technical_description_&_books/PROFINET_System_Description_engl_2018_Update.pdf
+      \endverb
+    \endentry
+    \entry{python_socket_api}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=c7b5508dc5e59a2846d22617276cc27c}{%
+           family={{Python Software Foundation}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{fullhash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{fullhashraw}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{bibnamehash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{authorbibnamehash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{authornamehash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{authorfullhash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{authorfullhashraw}{c7b5508dc5e59a2846d22617276cc27c}
+      \field{extraname}{1}
+      \field{labelalpha}{Pyt}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extraalpha}{1}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Python 3.13, Funktionen sendall, recv und settimeout}
+      \field{title}{socket -- Low-level networking interface}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://docs.python.org/3.13/library/socket.html
+      \endverb
+      \verb{url}
+      \verb https://docs.python.org/3.13/library/socket.html
+      \endverb
+    \endentry
+    \entry{python_socket_howto}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=c7b5508dc5e59a2846d22617276cc27c}{%
+           family={{Python Software Foundation}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{fullhash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{fullhashraw}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{bibnamehash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{authorbibnamehash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{authornamehash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{authorfullhash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{authorfullhashraw}{c7b5508dc5e59a2846d22617276cc27c}
+      \field{extraname}{2}
+      \field{labelalpha}{Pyt}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extraalpha}{2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Socket Programming {HOWTO}}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://docs.python.org/3/howto/sockets.html
+      \endverb
+      \verb{url}
+      \verb https://docs.python.org/3/howto/sockets.html
+      \endverb
+    \endentry
+    \entry{rfc1918}{report}{}{}
+      \name{author}{5}{}{%
+        {{hash=c63903e455e8262215f3fe7e23d5925b}{%
+           family={Rekhter},
+           familyi={R\bibinitperiod},
+           given={Yakov},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=e4c4766eac593c50a9e9103071b7e558}{%
+           family={Moskowitz},
+           familyi={M\bibinitperiod},
+           given={Bob},
+           giveni={B\bibinitperiod}}}%
+        {{hash=f48e8a65bd72d8d71da83b722ce8f11a}{%
+           family={Karrenberg},
+           familyi={K\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=f3518afe474ddd9a9699c2bae38ff8dc}{%
+           family={Groot},
+           familyi={G\bibinitperiod},
+           given={Geert\bibnamedelima Jan},
+           giveni={G\bibinitperiod\bibinitdelim J\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+        {{hash=12e1a2168e1cb3146b07e03d850a3d7b}{%
+           family={Lear},
+           familyi={L\bibinitperiod},
+           given={Eliot},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Internet Engineering Task Force}%
+      }
+      \strng{namehash}{f9e400cb327d4b4162fe263dbd124046}
+      \strng{fullhash}{d1a1d51e6618ca3d70631cfbae039453}
+      \strng{fullhashraw}{d1a1d51e6618ca3d70631cfbae039453}
+      \strng{bibnamehash}{f9e400cb327d4b4162fe263dbd124046}
+      \strng{authorbibnamehash}{f9e400cb327d4b4162fe263dbd124046}
+      \strng{authornamehash}{f9e400cb327d4b4162fe263dbd124046}
+      \strng{authorfullhash}{d1a1d51e6618ca3d70631cfbae039453}
+      \strng{authorfullhashraw}{d1a1d51e6618ca3d70631cfbae039453}
+      \field{labelalpha}{Rek+96}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{2}
+      \field{number}{1918}
+      \field{title}{Address Allocation for Private Internets}
+      \field{type}{RFC}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{year}{1996}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.17487/RFC1918
+      \endverb
+      \verb{urlraw}
+      \verb https://www.rfc-editor.org/rfc/rfc1918.html
+      \endverb
+      \verb{url}
+      \verb https://www.rfc-editor.org/rfc/rfc1918.html
+      \endverb
+    \endentry
+    \entry{vorgaenger_grundlagen_archiv}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=9d12c76ecae9b2848c283c193dbc1cc2}{%
+           family={{Schaal und Zorko}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Projektarchiv T3100\_MartinZeuner}%
+      }
+      \strng{namehash}{9d12c76ecae9b2848c283c193dbc1cc2}
+      \strng{fullhash}{9d12c76ecae9b2848c283c193dbc1cc2}
+      \strng{fullhashraw}{9d12c76ecae9b2848c283c193dbc1cc2}
+      \strng{bibnamehash}{9d12c76ecae9b2848c283c193dbc1cc2}
+      \strng{authorbibnamehash}{9d12c76ecae9b2848c283c193dbc1cc2}
+      \strng{authornamehash}{9d12c76ecae9b2848c283c193dbc1cc2}
+      \strng{authorfullhash}{9d12c76ecae9b2848c283c193dbc1cc2}
+      \strng{authorfullhashraw}{9d12c76ecae9b2848c283c193dbc1cc2}
+      \field{labelalpha}{Sch}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Autorenzuordnung gemäß LIESMICH.txt im Archiv. Zitiert wird der tatsächlich eingesehene Textauszug, nicht eine bibliografisch ungeprüfte Gesamtausgabe.}
+      \field{title}{Grundlagen: archivierter LaTeX-Text der Vorgängerarbeit}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://github.com/ThomasM2308/T3100_MartinZeuner/blob/9604b21dc88902bc46f62b4037c712ae342cfcb7/documentation/content/_vorgaenger/02_Grundlagen.tex
+      \endverb
+      \verb{url}
+      \verb https://github.com/ThomasM2308/T3100_MartinZeuner/blob/9604b21dc88902bc46f62b4037c712ae342cfcb7/documentation/content/_vorgaenger/02_Grundlagen.tex
+      \endverb
+    \endentry
+    \entry{siemens_zyklus_2014}{manual}{}{}
+      \name{author}{1}{}{%
+        {{hash=bb85ee2f18e5585401e17ed32ff948f6}{%
+           family={{Siemens AG}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{fullhash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{fullhashraw}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{bibnamehash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{authorbibnamehash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{authornamehash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{authorfullhash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{authorfullhashraw}{bb85ee2f18e5585401e17ed32ff948f6}
+      \field{labelalpha}{Sie14}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{2}
+      \field{number}{A5E03461504-02}
+      \field{subtitle}{Function Manual}
+      \field{title}{{SIMATIC S7-1500}: Cycle and response times}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://cache.industry.siemens.com/dl/files/558/59193558/att_112303/v1/s71500_cycle_and_reaction_times_function_manual_en-US_en-US.pdf
+      \endverb
+      \verb{url}
+      \verb https://cache.industry.siemens.com/dl/files/558/59193558/att_112303/v1/s71500_cycle_and_reaction_times_function_manual_en-US_en-US.pdf
+      \endverb
+    \endentry
     \entry{schaal_zorko_t3200}{thesis}{}{}
       \name{author}{2}{}{%
         {{hash=95716aab13ea614c0b22b601dfab6eb0}{%
@@ -73,6 +845,42 @@
       \field{title}{TODO Titel vom Deckblatt}
       \field{type}{Projektarbeit T3200}
       \field{year}{2026}
+    \endentry
+    \entry{ti_rs232_2002}{manual}{}{}
+      \name{author}{1}{}{%
+        {{hash=67e54b1ee931f3f4bddfefa5fbde5fd8}{%
+           family={{Texas Instruments}},
+           familyi={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{67e54b1ee931f3f4bddfefa5fbde5fd8}
+      \strng{fullhash}{67e54b1ee931f3f4bddfefa5fbde5fd8}
+      \strng{fullhashraw}{67e54b1ee931f3f4bddfefa5fbde5fd8}
+      \strng{bibnamehash}{67e54b1ee931f3f4bddfefa5fbde5fd8}
+      \strng{authorbibnamehash}{67e54b1ee931f3f4bddfefa5fbde5fd8}
+      \strng{authornamehash}{67e54b1ee931f3f4bddfefa5fbde5fd8}
+      \strng{authorfullhash}{67e54b1ee931f3f4bddfefa5fbde5fd8}
+      \strng{authorfullhashraw}{67e54b1ee931f3f4bddfefa5fbde5fd8}
+      \field{labelalpha}{Tex02}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{9}
+      \field{number}{SLLA037A}
+      \field{subtitle}{Design Notes}
+      \field{title}{Interface Circuits for {TIA/EIA-232-F}}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{year}{2002}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.ti.com/lit/an/slla037a/slla037a.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.ti.com/lit/an/slla037a/slla037a.pdf
+      \endverb
     \endentry
   \enddatalist
 \endrefsection
