@@ -1,0 +1,55 @@
+% !TeX root = ../Projektarbeit.tex
+% Ergänzende Unterlagen zu Kapitel 5, redaktioneller Stand 25.11.2026.
+\section{Ergänzende Unterlagen zur Scanneranbindung}
+\label{sec:anhang_qr}
+
+\subsection{Übersicht der Inbetriebnahmeprüfungen}
+\label{sec:anhang_qr_tests}
+
+Tabelle~\ref{tab:qr_test} fasst die in Abschnitt~\ref{sec:qr_test} beschriebenen Versuche vom 23.11.2026 zusammen. Die Ergebnisse beziehen sich auf die während dieser Inbetriebnahme geprüften Fälle. Die noch offenen Prüffälle sind ausdrücklich von den dokumentierten Ergebnissen getrennt. Angaben zu Wiederholungszahl und Dauer sind für einen abschließenden Prüfnachweis zu ergänzen.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Prüffälle der Scanneranbindung und dokumentierter Bearbeitungsstand}
+  \label{tab:qr_test}
+  \small
+  \begin{tabular}{|p{0.04\textwidth}|p{0.25\textwidth}|p{0.27\textwidth}|p{0.29\textwidth}|}
+    \hline
+    {\raggedright \textbf{Nr.}\par} & {\raggedright \textbf{Prüffall}\par} & {\raggedright \textbf{Prüfziel}\par} & {\raggedright \textbf{Ergebnis / Stand}\par} \\ \hline
+    {\raggedright 1\par} & {\raggedright Referenzscan über RS232\par} & {\raggedright Code empfangen und Auftrag übergeben\par} & {\raggedright erfolgreich nach Anpassung der Referenzlösung\par} \\ \hline
+    {\raggedright 2\par} & {\raggedright Scan über Konverter bei 115\,200\,Bd\par} & {\raggedright Lesbare Scannerdaten empfangen\par} & {\raggedright unlesbares Zeichen; abweichende Baudrate festgestellt\par} \\ \hline
+    {\raggedright 3\par} & {\raggedright Scan über Konverter bei 19\,200\,Bd\par} & {\raggedright Code vollständig empfangen\par} & {\raggedright erfüllt\par} \\ \hline
+    {\raggedright 4\par} & {\raggedright Unbekannter Code\par} & {\raggedright Kein Auftrag; Übernahmebit bleibt zurückgesetzt\par} & {\raggedright erfüllt\par} \\ \hline
+    {\raggedright 5\par} & {\raggedright Auslagern eines belegten Platzes\par} & {\raggedright Auslagerung; CPU bleibt in RUN\par} & {\raggedright zunächst STOP; nach Korrektur in FB~6 erfüllt\par} \\ \hline
+    {\raggedright 6\par} & {\raggedright Auslagern eines leeren Platzes\par} & {\raggedright HMI-Meldung; nicht gestarteter Auftrag nach 20\,s verworfen\par} & {\raggedright erfüllt\par} \\ \hline
+    {\raggedright 7\par} & {\raggedright Netzwerkleitung am Konverter unterbrechen und wieder anschließen\par} & {\raggedright Selbstständiger Wiederaufbau; anschließender Scan möglich\par} & {\raggedright \textcolor{red}{offen: noch durchzuführen}\par} \\ \hline
+    {\raggedright 8\par} & {\raggedright Dauerbetrieb mit mehreren Aufträgen\par} & {\raggedright Zuverlässige Verarbeitung im festgelegten Testumfang\par} & {\raggedright \textcolor{red}{offen: Umfang festlegen und Test durchführen}\par} \\ \hline
+  \end{tabular}
+\end{table}
+
+\clearpage
+\subsection{Ausschnitt der TCP-Empfangsschleife}
+\label{sec:anhang_qr_code}
+
+Listing~\ref{lst:qr_read} zeigt einen Ausschnitt der Empfangsschleife aus dem Modul \texttt{Scanner\_TCP.py}. Es veranschaulicht die Verarbeitung des Empfangspuffers, die Ersatzabgrenzung durch eine Empfangspause und die Unterscheidung zwischen einem Empfangstimeout und einer geschlossenen Verbindung. Die aufgerufenen Hilfsfunktionen und der vollständige Verbindungsaufbau sind nicht enthalten; der Ausschnitt ist daher kein eigenständig ausführbares Programm. Die Interpretation der Datensätze und die Grenzen der Ziffernauswertung werden in Abschnitt~\ref{sec:qr_python} erläutert.
+
+\begin{python}[caption={Kern der Empfangsschleife in \texttt{Scanner\_TCP.py} (gekürzt)}, label={lst:qr_read}]
+roh = self._telegramm_aus_puffer()          # Datensatz bis CR/LF vorhanden?
+if roh is None and self.puffer and letzter_empfang \
+        and time.time() - letzter_empfang > RUHEZEIT:
+    roh, self.puffer = self.puffer, b""     # kein Abschlusszeichen: Ruhezeit
+if roh is not None:
+    data = self._bereinigen(roh)            # Steuerzeichen entfernen
+    if data:
+        digits = "".join(c for c in data if c.isdigit())
+        return digits if digits else data   # Ziffern oder Klartext
+    continue
+try:
+    chunk = self.sock.recv(1024)
+    if chunk == b"":                        # Gegenstelle geschlossen
+        self.schliessen(); continue         # -> Reconnect im naechsten Durchlauf
+    self.puffer += chunk
+    letzter_empfang = time.time()
+except socket.timeout:
+    pass                                    # kein Abbruch, nur keine Daten
+\end{python}

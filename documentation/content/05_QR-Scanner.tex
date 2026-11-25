@@ -1,26 +1,20 @@
 % !TeX root = ../Projektarbeit.tex
-% =====================================================================================================
-% Kapitel 5: Umstellung des QR-Code-Scanners auf Ethernet                       Zielumfang: ca. 6 Seiten
-% -----------------------------------------------------------------------------------------------------
-% KI-Rohfassung (Claude, 23.11.2026) auf Basis der Inbetriebnahme am 23.11.2026 (Terminalausgaben,
-% TIA-Diagnosepuffer, Python-Code mit Kennzeichnung T3X00) und der Gerüstnotizen vom 05.11.2026.
-% Vor der Abgabe fachlich prüfen, eigenständig überarbeiten und im KI-Anhang offenlegen.
-% Rot markierte [TODO]-Stellen sind noch nicht belegte bzw. noch nicht gemessene Angaben.
-% Prüfnotizen und Herkunft der Angaben: ../review/QR-Scanner_Pruefnotizen.md
-% =====================================================================================================
+% Redaktioneller Stand: 25.11.2026. Sprachliche und strukturelle Überarbeitung
+% mit ChatGPT auf Grundlage der Rohfassung vom 23.11.2026.
+% Herkunft der Projektangaben und offene Nachweise:
+% ../review/QR-Scanner_Pruefnotizen.md. Keine zusätzlichen Versuche durchgeführt.
 
 \section{Umstellung des QR-Code-Scanners auf Ethernet}
 \label{sec:qr}
 
-Dieses Kapitel beschreibt die Einbindung des QR-Code-Scanners in das Anlagennetz über einen RS232-Ethernet-Konverter. Ausgangspunkt ist eine Referenzinbetriebnahme der bestehenden RS232-Lösung. Darauf folgen die Auswahl der Anbindungsvariante, das Netzwerkkonzept, die Konfiguration des Konverters, die Anpassung der Python-Anwendung und die Tests. Die Grundlagen zu RS232, TCP/IP und seriellen Geräteservern sind in den Abschnitten~\ref{sec:grundlagen_rs232} bis~\ref{sec:grundlagen_konverter} beschrieben.
+Die Umstellung der Scanneranbindung soll den Datenaustausch zwischen Lesegerät und Python-Anwendung unabhängig von einer lokalen seriellen Schnittstelle des Rechners ermöglichen. Dazu wird die bestehende RS232-Verbindung über einen Konverter in das Ethernet-Netz der Anlage eingebunden. Die Verarbeitung der gelesenen Codes und die Übergabe der Auslageraufträge an die SPS verbleiben in der Python-Anwendung. Auf Grundlage der in Kapitel~\ref{sec:grundlagen} erläuterten Kommunikationsprinzipien beschreibt dieses Kapitel die Untersuchung des Ausgangszustands, die Auswahl der Anbindung und ihre Umsetzung. Abschließend werden die bei der Inbetriebnahme beobachteten Ergebnisse und die noch ausstehenden Prüfungen eingeordnet.
 
-% -----------------------------------------------------------------------------------------------------
 \subsection{Ist-Analyse der bestehenden Anbindung}
 \label{sec:qr_ist}
 
-Als Lesegerät ist ein kamerabasierter Scanner Datalogic Matrix~200 der Variante 212-100 verbaut, der mit 10 bis 30\,V~DC versorgt wird (vgl. Abbildung~\ref{fig:scanner_ist}). Seine fest angeschlossene Leitung wird in der Anschlussbox CBX100 aufgelegt, die Versorgung, serielle Schnittstelle und Triggereingang auf Klemmen führt. \cite{datalogic_cbx100_grundlagen} Zu Projektbeginn war der Scanner nur provisorisch an der Rückseite des Prototyps befestigt.
+An der Anlage ist ein kamerabasierter Scanner Datalogic Matrix~200 der Variante 212-100 verbaut. Laut Typenschild ist das Gerät für eine Versorgung mit 10 bis 30\,V~DC ausgelegt. Seine fest angeschlossene Leitung führt zur Anschlussbox CBX100, über die unter anderem Versorgung, serielle Kommunikation und Triggereingang zugänglich sind. \cite{datalogic_cbx100_grundlagen} Abbildung~\ref{fig:scanner_ist} zeigt die zu Projektbeginn vorhandene, provisorische Befestigung des Scanners an der Rückseite der Anlage sowie das Typenschild und die Anschlussbox.
 
-\begin{figure}[H]
+\begin{figure}[htbp]
   \centering
   \begin{subfigure}[b]{0.26\textwidth}
     \centering
@@ -46,58 +40,38 @@ Als Lesegerät ist ein kamerabasierter Scanner Datalogic Matrix~200 der Variante
   \label{fig:scanner_ist}
 \end{figure}
 
-Die Codes wertet das Python-Programm der Vorgängerarbeit aus. \cite{schaal_zorko_t3200} Es liest den Scanner über die Bibliothek \emph{pyserial} an einer seriellen Schnittstelle des Rechners, sucht den Code in der Datei \texttt{CSV\_Daten.csv} und schreibt Lagerplatz und Materialname über Snap7 in den Datenbaustein DB41. Danach setzt es das Übernahmebit DB41.DBX4.0, mit dem die SPS den Auslagerauftrag übernimmt. Fest im Code hinterlegt waren der Port \texttt{COM3}, die Baudrate 19\,200\,Bd sowie der beim Öffnen gesendete Befehl \texttt{LON}; der Zeichenrahmen entsprach der Voreinstellung 8N1. Die Analyse des Codes zeigte außerdem, dass das Programm nach einem Verbindungsfehler die Schnittstelle nicht neu öffnet, nur Ziffern weiterverarbeitet, das Übernahmebit auch bei unbekannten Codes setzt und anschließend ohne Zeitbegrenzung auf die SPS wartet.
+Die bestehende Python-Anwendung stammt aus der Vorgängerarbeit. Sie empfängt die Scannerdaten mithilfe der Bibliothek \emph{pyserial}, ordnet den gelesenen Code einem Eintrag in \texttt{CSV\_Daten.csv} zu und überträgt Lagerplatz und Materialname über Snap7 in den Datenbaustein DB41. Anschließend signalisiert das Übernahmebit DB41.DBX4.0 der SPS, dass ein Auslagerauftrag vorliegt. \cite{schaal_zorko_t3200} Für die serielle Verbindung waren im Programm der Port \texttt{COM3}, eine Baudrate von 19\,200\,Bd und der beim Öffnen gesendete Befehl \texttt{LON} hinterlegt. Der Zeichenrahmen entsprach der Voreinstellung 8N1.
 
-\subsubsection*{Referenzinbetriebnahme über RS232}
+Vor dem Umbau wurde diese Lösung als Referenz in Betrieb genommen, da zu Projektbeginn noch keine lauffähige Vorführung vorlag. Der eingesetzte Rechner besitzt keine eigene RS232-Schnittstelle. Die Verbindung zur CBX100 wurde daher über einen USB-RS232-Adapter hergestellt, den Windows als \texttt{COM10} einband. Die fest hinterlegte Portnummer musste entsprechend angepasst werden. Zusätzlich war für die Kommunikation mit der SPS eine feste IPv4-Adresse erforderlich. Der Netzwerkadapter war zunächst für DHCP konfiguriert, erhielt im Anlagennetz jedoch keine für die SPS-Verbindung geeignete Adresse. Erst nach der manuellen Adressierung konnte die Verbindung hergestellt werden.
 
-Vor der Umstellung wurde die bestehende Lösung als Referenz in Betrieb genommen, da sie zu Projektbeginn nicht lauffähig vorgeführt worden war. Der verwendete Rechner besitzt keine RS232-Schnittstelle; die CBX100 wurde deshalb über einen USB-RS232-Adapter angeschlossen, den Windows als \texttt{COM10} einbindet. Dabei traten vier Abweichungen vom dokumentierten Zustand auf:
+Auch die Auslösung des Lesevorgangs wich von der im Programm vorgesehenen Vorgehensweise ab. Bei den durchgeführten Versuchen mit unterschiedlichen Baudraten zwischen 9\,600 und 115\,200\,Bd sowie unterschiedlichen Paritätseinstellungen wurden auf den Befehl \texttt{LON} keine Scannerdaten empfangen. Ein Lesevorgang erfolgte dagegen nach Betätigung der Schaltfläche \glqq Scannen\grqq{} am HMI. Diese Beobachtung spricht für eine Auslösung durch die SPS über den Triggereingang; sie ersetzt jedoch nicht die Prüfung der tatsächlichen Verdrahtung und der Scannerparametrierung. \textcolor{red}{[TODO: Triggerleitung SPS--CBX100 und Triggereinstellung des Scanners bestätigen.]}
 
-\begin{enumerate}[itemsep=0pt]
-  \item Der fest hinterlegte Port \texttt{COM3} existierte auf dem Rechner nicht und musste angepasst werden.
-  \item Der Netzwerkadapter des Rechners bezog seine Adresse über DHCP. Da im Anlagennetz kein DHCP-Server arbeitet, erhielt er keine IPv4-Adresse, und die Verbindung zur SPS scheiterte mit einer Zeitüberschreitung. Abhilfe schaffte eine feste Adresse (vgl. Abschnitt~\ref{sec:qr_netz}).
-  \item Auf den Befehl \texttt{LON} antwortete der Scanner bei keiner Kombination aus Baudrate (9\,600 bis 115\,200\,Bd) und Parität. Ein Lesevorgang startet erst, wenn am HMI \glqq Scannen\grqq{} betätigt wird; die SPS löst den Scanner also über den Triggereingang aus. \textcolor{red}{[TODO: Triggerleitung SPS--CBX100 und Triggereinstellung des Scanners bestätigen]}
-  \item Die vorhandenen Etiketten enthalten den Materialnamen als Klartext, etwa \texttt{Buche}. Der Ziffernfilter ließ davon nichts übrig, sodass kein Auftrag entstand.
-\end{enumerate}
+Bei der Auswertung der empfangenen Daten zeigte sich eine weitere Abweichung: Die vorhandenen Etiketten enthalten Materialnamen als Klartext, beispielsweise \texttt{Buche}. Der bisherige Ziffernfilter entfernte diese Zeichen vollständig, sodass daraus kein Auftrag entstehen konnte. Nach Anpassung der Verarbeitung wurde der Materialname über RS232 empfangen und als Auftrag an die SPS übergeben. Damit stand eine funktionsfähige Referenz für den Vergleich mit der Ethernet-Anbindung zur Verfügung. Zugleich wurde die in Abschnitt~\ref{txt:istzustandanlage} beschriebene Abhängigkeit von der Rechnerschnittstelle konkret sichtbar: Bereits der Wechsel des Adapters beziehungsweise seiner Portzuordnung erforderte eine Anpassung des Programms.
 
-Nach Behebung dieser Punkte wurde \texttt{Buche} über RS232 empfangen und als Auftrag an die SPS übergeben. Damit lag eine funktionierende Referenz vor. Zugleich bestätigte sich die Schwachstelle aus Abschnitt~\ref{txt:istzustandanlage}: Der Betrieb hängt von einer seriellen Schnittstelle am Rechner beziehungsweise einem Adapter mit rechnerabhängiger Portnummer ab.
-
-% -----------------------------------------------------------------------------------------------------
-\subsection{Variantenvergleich}
+\subsection{Auswahl der Anbindungsvariante}
 \label{sec:qr_varianten}
 
-Betrachtet wurden drei Varianten. Bei den Varianten~A und~B wird ein RS232-Ethernet-Konverter an die CBX100 angeschlossen. In Variante~A stellt eine Herstellersoftware auf dem Rechner einen virtuellen COM-Port bereit \cite[Abschn.~2.3.2]{usr410s_grundlagen}, in Variante~B baut die Python-Anwendung die TCP-Verbindung über das Modul \texttt{socket} selbst auf \cite{python_socket_api}. Variante~C nutzt das in der SPS bereits gesteckte Kommunikationsmodul CM PtP RS232 BA, sodass die SPS die Codes direkt empfängt.
+Für die Weiterentwicklung wurden drei Möglichkeiten betrachtet. Ein RS232-Ethernet-Konverter kann die seriellen Daten entweder über einen virtuellen COM-Port oder über eine unmittelbar von der Python-Anwendung aufgebaute TCP-Verbindung bereitstellen. Alternativ kann das bereits in der SPS gesteckte Kommunikationsmodul CM PtP RS232 BA für den direkten Empfang der Scannerdaten verwendet werden.
 
-\begin{table}[htbp]
-  \centering
-  \caption{Vergleich der Anbindungsvarianten (eigene Bewertung)}
-  \label{tab:qr_varianten}
-  \small
-  \begin{tabular}{|p{0.25\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|p{0.22\textwidth}|}
-    \hline
-    \textbf{Kriterium} & \textbf{A: Virt. COM-Port} & \textbf{B: TCP-Socket} & \textbf{C: CM PtP (SPS)} \\ \hline
-    Zusatzsoftware am Rechner & Treiber erforderlich & keine & keine \\ \hline
-    Änderung im TIA-Projekt & keine & keine & umfangreich \\ \hline
-    Änderung am Python-Code & gering & nur Scanner-Modul & Auftragslogik neu \\ \hline
-    Fehlerbehandlung & im Treiber verborgen & im eigenen Code & in der SPS \\ \hline
-  \end{tabular}
-\end{table}
+Bei einem virtuellen COM-Port bildet eine Herstellersoftware die Netzwerkverbindung auf eine serielle Schnittstelle des Rechners ab. Die bisherige Verarbeitung mit \emph{pyserial} könnte dadurch weitgehend erhalten bleiben. Für den Betrieb wäre jedoch auf jedem eingesetzten Rechner die entsprechende Software einzurichten. Die Abhängigkeit von einem lokalen RS232-Anschluss würde damit durch die Abhängigkeit von einer zusätzlichen Treiberinstallation ersetzt. \cite[Abschn.~2.3.2]{usr410s_grundlagen}
 
-Variante~C scheidet aus, da sie Eingriffe in das SPS-Programm erfordert, die über die Aufgabenstellung hinausgehen. Variante~A verlagert die Abhängigkeit vom Rechner lediglich von der Hardware auf einen zu installierenden Treiber. Gewählt wurde Variante~B: Sie kommt ohne Zusatzsoftware aus, macht Zeitüberschreitungen und Verbindungsabbrüche im eigenen Code behandelbar und beschränkt die Änderung auf das Scanner-Modul.
+Eine direkte Anbindung an die SPS über das CM-PtP-Modul würde dagegen die Zuständigkeit für den Empfang der Codes verändern. Die Zuordnung der Codes zu den Auftragsdaten müsste dann ebenfalls in der SPS umgesetzt oder über eine zusätzliche Schnittstelle mit der bestehenden Python-Anwendung abgestimmt werden. Diese Variante würde somit eine weitergehende Überarbeitung der vorhandenen Auftragsverarbeitung erfordern. Für die angestrebte Umstellung des Übertragungswegs wurde sie deshalb nicht weiterverfolgt.
 
-% -----------------------------------------------------------------------------------------------------
-\subsection{Netzwerkkonzept}
+Gewählt wurde die direkte TCP-Verbindung zwischen Konverter und Python-Anwendung. Das Python-Modul \texttt{socket} stellt die dafür erforderlichen Funktionen bereit; eine zusätzliche Software zur Nachbildung eines COM-Ports entfällt. \cite{python_socket_api} Die vorhandene Aufteilung zwischen Auftragsverarbeitung auf dem Rechner und Ablaufsteuerung in der SPS bleibt bestehen. Zugleich können Verbindungsabbrüche und Zeitüberschreitungen innerhalb der Anwendung behandelt werden. Die Änderung des Übertragungswegs lässt sich damit auf das Scanner-Modul begrenzen. Davon zu unterscheiden sind die bei der Inbetriebnahme erkannten Fehler der bestehenden Auftragsverarbeitung, deren Korrektur in den Abschnitten~\ref{sec:qr_python} und~\ref{sec:qr_test} beschrieben wird.
+
+\subsection{Einbindung in das Anlagennetz}
 \label{sec:qr_netz}
 
-Alle Teilnehmer liegen im Subnetz 192.168.0.0/24 und sind über den Switch auf dem Bauteilträger verbunden; ein Gateway ist nicht erforderlich. \cite[Abschn.~3.3.1.1]{rfc1122} Die belegten Adressen wurden der Netzsicht des TIA-Projekts entnommen (Tabelle~\ref{tab:qr_adressplan}).
+Die Kommunikation erfolgt innerhalb des Subnetzes 192.168.0.0/24. Der Konverter wird an den Switch auf dem Bauteilträger angeschlossen und ist damit über dieselbe Netzwerkinfrastruktur erreichbar wie die SPS. Für den hier betrachteten Datenaustausch innerhalb dieses Subnetzes ist kein Gateway erforderlich. \cite[Abschn.~3.3.1.1]{rfc1122} Tabelle~\ref{tab:qr_adressplan} fasst die Adressierung zusammen. Die bestehenden Geräteadressen wurden der Netzsicht des TIA-Projekts entnommen; der Rechner erhält eine feste Adresse.
 
 \begin{table}[htbp]
   \centering
-  \caption{Adressplan des Anlagennetzes nach der Umstellung}
+  \caption{Adressplan des Anlagennetzes für die Scanneranbindung}
   \label{tab:qr_adressplan}
   \small
   \begin{tabular}{|p{0.36\textwidth}|p{0.18\textwidth}|p{0.36\textwidth}|}
     \hline
-    \textbf{Teilnehmer} & \textbf{IPv4-Adresse} & \textbf{Bemerkung} \\ \hline
+    \textbf{Teilnehmer} & \textbf{IPv4-Adresse} & \textbf{Zuordnung} \\ \hline
     HMI & 192.168.0.2 & laut TIA-Netzsicht \\ \hline
     IO-Link-Master ifm AL1100 & 192.168.0.4 & PROFINET-IO-Device \\ \hline
     RS232-Ethernet-Konverter & 192.168.0.7 & TCP-Server, Port 23 \\ \hline
@@ -106,96 +80,52 @@ Alle Teilnehmer liegen im Subnetz 192.168.0.0/24 und sind über den Switch auf d
   \end{tabular}
 \end{table}
 
-Der Konverter arbeitet als TCP-Server, die Python-Anwendung baut als Client die Verbindung auf. Damit initiiert dieselbe Anwendung die Verbindungen zur SPS und zum Scanner, und im Konverter muss keine Rechneradresse hinterlegt werden. Der Datenweg lautet: Scanner $\rightarrow$ CBX100 $\rightarrow$ Konverter $\rightarrow$ Switch $\rightarrow$ Rechner $\rightarrow$ Switch $\rightarrow$ SPS. Am Rechner ist die Adresse des kabelgebundenen Adapters fest einzustellen. Ist zusätzlich ein WLAN mit einem Adressbereich 192.168.0.x verbunden, kann Windows die falsche Schnittstelle wählen; das WLAN ist dann zu trennen.
+Der Konverter arbeitet als TCP-Server und wartet auf eine Verbindung der Python-Anwendung. Diese übernimmt die Rolle des Clients und baut die Verbindung zum konfigurierten Port auf. Im Konverter muss dadurch keine feste Adresse des Rechners als Verbindungsziel hinterlegt werden. Die Anwendung empfängt die vom Scanner über die CBX100 und den Konverter bereitgestellten Daten, wertet sie aus und überträgt den daraus gebildeten Auftrag über eine separate Snap7-Verbindung an die SPS. Der Konverter ersetzt somit die bisherige serielle Rechnerschnittstelle; der Rechner bleibt für die Verarbeitung und Auftragsübergabe erforderlich.
 
-% -----------------------------------------------------------------------------------------------------
-\subsection{Konfiguration von Scanner und Konverter}
+Die feste IPv4-Adresse wird am kabelgebundenen Netzwerkadapter des Rechners eingestellt. Bei gleichzeitig aktiver WLAN-Verbindung ist darauf zu achten, dass deren Adressbereich nicht mit dem Anlagennetz überlappt. Eine solche Überschneidung kann die Zuordnung des Datenverkehrs zur vorgesehenen Schnittstelle beeinträchtigen. Für die Inbetriebnahme ist eine überlappende WLAN-Verbindung daher zu trennen.
+
+\subsection{Anschluss und Parametrierung des Konverters}
 \label{sec:qr_konfig}
 
-Eingesetzt wird der Konverter PUSR USR-TCP232-410S. Ab Werk ist er laut Herstellerangabe auf 192.168.0.7, TCP-Server, Port~23 für RS232 und 115\,200\,Bd bei 8N1 eingestellt; konfiguriert wird er über eine Weboberfläche. \cite{usr410s_quickstart} Da die Werksadresse im Subnetz liegt und laut TIA-Netzsicht nicht belegt ist, wurde sie beibehalten.
+Zum Einsatz kommt ein PUSR USR-TCP232-410S. Laut Herstellerkurzanleitung ist das Gerät ab Werk unter 192.168.0.7 erreichbar und für die RS232-Schnittstelle als TCP-Server auf Port~23 eingerichtet. Die seriellen Werkseinstellungen betragen 115\,200\,Bd bei acht Datenbits, ohne Parität und mit einem Stoppbit. Die Parametrierung erfolgt über die Weboberfläche des Konverters. \cite{usr410s_quickstart} Da die Werksadresse im verwendeten Subnetz liegt und laut TIA-Netzsicht keinem anderen Teilnehmer zugeordnet war, wurde sie beibehalten. Die Subnetzmaske beträgt 255.255.255.0.
 
-Beim ersten Test mit Werkseinstellungen kam die TCP-Verbindung zustande, nach dem Scannen traf jedoch statt \texttt{Buche} nur ein einzelnes, unlesbares Zeichen ein. Dieses Fehlerbild entsteht bei unterschiedlichen Baudraten: Der Konverter tastete die mit 19\,200\,Bd gesendeten Bits mit der sechsfachen Rate ab und erkannte keine gültigen Zeichenrahmen. Nach Umstellung auf die Parameter der Referenz wurde der Code vollständig übertragen (Tabelle~\ref{tab:qr_konfig}).
+Für den Anschluss wurde die bisher am USB-RS232-Adapter angeschlossene Leitung der CBX100 mit der RS232-Buchse des Konverters verbunden. Ein zusätzlicher Nullmodemadapter war für diese Verbindung nicht erforderlich. Am Scanner selbst wurden keine Parameter verändert. Die erste Übertragung mit den Werkseinstellungen des Konverters zeigte jedoch, dass eine erfolgreiche TCP-Verbindung allein noch keine korrekte Übertragung der Scannerdaten belegt: Anstelle des Materialnamens \texttt{Buche} wurde lediglich ein unlesbares Zeichen empfangen.
 
-\begin{table}[htbp]
-  \centering
-  \caption{Konfiguration des USR-TCP232-410S}
-  \label{tab:qr_konfig}
-  \small
-  \begin{tabular}{|p{0.32\textwidth}|p{0.27\textwidth}|p{0.29\textwidth}|}
-    \hline
-    \textbf{Parameter} & \textbf{Werkseinstellung \cite{usr410s_quickstart}} & \textbf{Projekt} \\ \hline
-    IP-Adresse / Maske & 192.168.0.7 / 255.255.255.0 & unverändert \\ \hline
-    Betriebsart / Port (RS232) & TCP-Server / 23 & unverändert \\ \hline
-    Baudrate & 115\,200\,Bd & \textbf{19\,200\,Bd} \\ \hline
-    Datenbits / Parität / Stoppbits & 8 / keine / 1 & unverändert \\ \hline
-    Flusssteuerung & -- & keine \\ \hline
-  \end{tabular}
-\end{table}
+Die Ursache ließ sich auf die abweichende Baudrate eingrenzen. Während die RS232-Referenzverbindung mit 19\,200\,Bd arbeitete, war der Konverter noch auf 115\,200\,Bd eingestellt. Unterschiedliche Baudraten führen dazu, dass der Empfänger die zeitliche Folge der seriellen Bits nicht entsprechend dem gesendeten Zeichenrahmen auswertet (vgl. Abschnitt~\ref{sec:grundlagen_rs232}). Nach Umstellung auf 19\,200\,Bd wurde der Materialname vollständig übertragen. Für den weiteren Betrieb wurden acht Datenbits, keine Parität, ein Stoppbit und keine Flusssteuerung verwendet. TCP-Betriebsart, Port und IP-Adresse blieben unverändert.
 
-Am Scanner wurden keine Parameter verändert. Die RS232-Leitung der CBX100 wurde vom USB-Adapter an die RS232-Buchse des Konverters umgesteckt; ein Nullmodemadapter war nicht nötig. \textcolor{red}{[TODO: Haupt- oder Hilfsschnittstelle der CBX100 angeben \cite{datalogic_cbx100_grundlagen}; Versorgung des Konverters; Zugangsdaten der Weboberfläche geändert?; Abschlusszeichen mit \texttt{scanner\_tcp\_test.py} messen]}
+Die für eine vollständige Reproduzierbarkeit erforderlichen Angaben zum elektrischen Anschluss und zur Scannerkonfiguration sind noch zu ergänzen. \textcolor{red}{[TODO: Haupt- oder Hilfsschnittstelle der CBX100, Versorgung und Montageort des Konverters sowie Änderung der Web-Zugangsdaten dokumentieren; keine Passwörter aufnehmen. Abschlusszeichen mit \texttt{scanner\_tcp\_test.py} ermitteln.]}
 
-% -----------------------------------------------------------------------------------------------------
 \subsection{Anpassung der Python-Anwendung}
 \label{sec:qr_python}
 
-Alle Änderungen sind im Quellcode mit \texttt{\# T3X00} gekennzeichnet; der vollständige Code liegt als digitaler Anhang bei. \textcolor{red}{[TODO: Verweis auf Anhang anpassen]} Das neue Modul \texttt{Scanner\_TCP.py} ersetzt die serielle Anbindung und stellt die Funktionen \texttt{Scanner()} und \texttt{close\_scanner()} mit unveränderter Bedeutung bereit. Im Hauptprogramm ändert sich nur die Importzeile; das alte Modul bleibt als Rückfallebene erhalten.
+Das Modul \texttt{Scanner\_TCP.py} übernimmt den Aufbau der TCP-Verbindung und den Empfang der Scannerdaten. Es ersetzt das bisherige serielle Scanner-Modul, stellt aber weiterhin die Funktionen \texttt{Scanner()} und \texttt{close\_scanner()} bereit. Für den Wechsel des Übertragungswegs genügt deshalb im Hauptprogramm die Anpassung der Importzeile. Das bisherige Modul bleibt als Rückfallebene für eine serielle Verbindung erhalten. Die Änderungen wurden im Quellcode mit \texttt{\# T3X00} gekennzeichnet. Ein gekürzter Ausschnitt der Empfangsschleife ist in Anhang~\ref{sec:anhang_qr_code} wiedergegeben. \textcolor{red}{[TODO: Ablage und Verweis auf den vollständigen Programmstand im digitalen Anhang ergänzen.]}
 
-Weil TCP einen Bytestrom ohne Nachrichtengrenzen liefert (vgl. Abschnitt~\ref{sec:grundlagen_ethernet}), sammelt das Modul die Bytes in einem Puffer. Ein Datensatz ist vollständig, sobald CR oder LF eintrifft; fehlt ein Abschlusszeichen, wird der Puffer nach 0,3\,s ohne neue Daten übernommen. Steuerzeichen werden entfernt, und enthält der Datensatz keine Ziffern, wird der Text zurückgegeben (Listing~\ref{lst:qr_read}). Der Socket arbeitet mit einem Empfangstimeout von 0,2\,s, damit die Schleife das Stoppsignal des Hauptprogramms auswerten kann. Eine leere Bytefolge von \texttt{recv()} oder ein Verbindungsfehler führt zum Schließen des Sockets und nach 2\,s zum erneuten Verbindungsaufbau; ein bloßer Timeout gilt dagegen nicht als Abbruch. \cite{python_socket_api}
+Bei der Verarbeitung ist zu berücksichtigen, dass TCP einen zusammenhängenden Bytestrom und keine einzelnen Scannertelegramme überträgt. Ein Empfangsaufruf kann daher nur einen Teil eines Datensatzes oder Daten mehrerer Datensätze liefern. Das Modul sammelt die empfangenen Bytes zunächst in einem Puffer. Sobald ein Wagenrücklauf (CR) oder ein Zeilenvorschub (LF) erkannt wird, kann ein Datensatz daraus entnommen werden. Bleibt ein Abschlusszeichen aus, wird der vorhandene Puffer nach einer Empfangspause von 0,3\,s zur Auswertung übergeben. Diese zeitliche Abgrenzung ist eine Ersatzlösung und setzt voraus, dass innerhalb eines zusammengehörigen Datensatzes keine längere Pause auftritt. Die tatsächlichen Abschlusszeichen des Scanners sind deshalb noch zu prüfen.
 
-\begin{python}[caption={Kern der Empfangsschleife in \texttt{Scanner\_TCP.py} (gekürzt)}, label={lst:qr_read}]
-roh = self._telegramm_aus_puffer()          # Datensatz bis CR/LF vorhanden?
-if roh is None and self.puffer and letzter_empfang \
-        and time.time() - letzter_empfang > RUHEZEIT:
-    roh, self.puffer = self.puffer, b""     # kein Abschlusszeichen: Ruhezeit
-if roh is not None:
-    data = self._bereinigen(roh)            # Steuerzeichen entfernen
-    if data:
-        digits = "".join(c for c in data if c.isdigit())
-        return digits if digits else data   # Ziffern oder Klartext
-    continue
-try:
-    chunk = self.sock.recv(1024)
-    if chunk == b"":                        # Gegenstelle geschlossen
-        self.schliessen(); continue         # -> Reconnect im naechsten Durchlauf
-    self.puffer += chunk
-    letzter_empfang = time.time()
-except socket.timeout:
-    pass                                    # kein Abbruch, nur keine Daten
-\end{python}
+Nach der Aufteilung in Datensätze werden Steuerzeichen entfernt. Enthält ein Datensatz Ziffern, gibt die bestehende Auswertungslogik diese Ziffern zurück; andernfalls bleibt der Klartext erhalten. Damit lassen sich auch die bei der Referenzinbetriebnahme vorgefundenen Materialnamen verarbeiten. Die Regel ist allerdings keine allgemeine Verarbeitung beliebiger alphanumerischer Codes: Bei einem gemischten Code würden weiterhin nur dessen Ziffern übernommen. Für den Einsatz anderer Etikettenformate wäre diese Zuordnung gesondert zu prüfen.
 
-Die Referenzinbetriebnahme zeigte außerdem zwei Schwächen bei der Auftragsübergabe, die unabhängig vom Übertragungsweg sind. Erstens wurde das Übernahmebit auch bei unbekannten Codes gesetzt, sodass die SPS mit den zuletzt geschriebenen Lagerplatzwerten gearbeitet hätte. \texttt{Auslagern.py} meldet nun zurück, ob ein gültiger Auftrag geschrieben wurde, und sucht dabei über Nummer und Materialname. Zweitens wartete das Programm ohne Zeitgrenze auf Schritt~9 der Auslager-Schrittkette (DB19.DBW26) und hielt währenddessen die Sperre für den SPS-Zugriff, wodurch auch der Einlager-Thread stand. Meldete die SPS einen leeren Lagerplatz, nahm das Programm keine weiteren Scans an. Jetzt wird ein Auftrag verworfen und das Übernahmebit zurückgesetzt, wenn die Schrittkette nicht innerhalb von 20\,s startet. Ein neuer Scan ersetzt einen noch nicht gestarteten Auftrag; während einer Fahrt wird er vorgemerkt und erst danach in DB41 geschrieben. Die Sperre wird nur noch für einzelne Zugriffe gehalten.
+Der Socket verwendet einen Empfangstimeout von 0,2\,s. Dadurch kann die Empfangsschleife regelmäßig das Stoppsignal des Hauptprogramms auswerten, auch wenn gerade keine Scannerdaten eintreffen. Ein solcher Timeout bedeutet zunächst nur, dass innerhalb des Zeitfensters keine Daten empfangen wurden. Eine leere Bytefolge als Rückgabe von \texttt{recv()} kennzeichnet dagegen das Schließen der Verbindung durch die Gegenstelle. \cite{python_socket_api} Bei einem erkannten Verbindungsabbruch oder Verbindungsfehler schließt das Modul den Socket und sieht nach einer Wartezeit von 2\,s einen erneuten Verbindungsaufbau vor. Ob dieser Mechanismus bei einer tatsächlichen Unterbrechung der Netzwerkleitung wie vorgesehen arbeitet, ist noch durch einen gezielten Versuch nachzuweisen.
 
-% -----------------------------------------------------------------------------------------------------
-\subsection{Test und Inbetriebnahme}
+Neben dem Austausch des Scanner-Moduls wurden Fehler in der bestehenden Auftragsübergabe bearbeitet. Bisher setzte das Programm das Übernahmebit auch dann, wenn der gelesene Code keinem gültigen Datensatz zugeordnet werden konnte. Dadurch hätte die SPS einen Auftrag mit zuvor geschriebenen Lagerplatzwerten übernehmen können. Das Modul \texttt{Auslagern.py} meldet nun zurück, ob gültige Auftragsdaten geschrieben wurden. Die Suche berücksichtigt sowohl die Nummer als auch den Materialnamen; das Übernahmebit wird nur für einen gültig zugeordneten Auftrag gesetzt.
+
+Eine weitere Anpassung betrifft die Wartephase nach der Übergabe. Das bisherige Programm wartete ohne Zeitbegrenzung auf Schritt~9 der Auslager-Schrittkette, dessen Zustand über DB19.DBW26 gelesen wird. Währenddessen hielt es die Sperre für den SPS-Zugriff und blockierte damit auch den Einlager-Thread. Wurde ein Auftrag wegen eines leeren Lagerplatzes nicht ausgeführt, konnten keine weiteren Scans verarbeitet werden. Die überarbeitete Anwendung verwirft einen noch nicht gestarteten Auftrag nach 20\,s und setzt das Übernahmebit zurück. Ein neuer Scan kann einen noch nicht gestarteten Auftrag ersetzen; während einer laufenden Fahrt wird er vorgemerkt und erst anschließend in DB41 geschrieben. Die Sperre wird nur noch für einzelne SPS-Zugriffe gehalten. Diese Änderungen betreffen die Auftragsverarbeitung unabhängig davon, ob die Scannerdaten über RS232 oder TCP eintreffen.
+
+\subsection{Inbetriebnahme und Auswertung der Tests}
 \label{sec:qr_test}
 
-Die Tests fanden am 23.11.2026 statt. Vor jedem Test mit SPS-Verbindung wurden der Fahrbereich geräumt und der Zugang zum Not-Halt sichergestellt, da ein angenommener Auftrag eine Fahrbewegung auslöst (Tabelle~\ref{tab:qr_test}).
+Die dokumentierte Inbetriebnahme fand am 23.11.2026 statt. Vor Versuchen mit einer Verbindung zur SPS wurden der Fahrbereich geräumt und der Zugang zum Not-Halt sichergestellt, da die Übernahme eines Auftrags eine Fahrbewegung auslösen kann. Die einzelnen Prüffälle und ihr Bearbeitungsstand sind in Anhang~\ref{sec:anhang_qr_tests} zusammengefasst. Im Folgenden werden die für die Bewertung wesentlichen Ergebnisse erläutert.
 
-\begin{table}[htbp]
-  \centering
-  \caption{Tests der Scanneranbindung (23.11.2026)}
-  \label{tab:qr_test}
-  \small
-  \begin{tabular}{|p{0.045\textwidth}|p{0.31\textwidth}|p{0.31\textwidth}|p{0.21\textwidth}|}
-    \hline
-    \textbf{Nr.} & \textbf{Test} & \textbf{Erwartung} & \textbf{Ergebnis} \\ \hline
-    1 & Referenzscan über RS232 & Code wird als Auftrag übergeben & erfüllt \\ \hline
-    2 & Scan über Konverter, 115\,200\,Bd & Fehlerbild falsche Baudrate & unlesbar, kein Auftrag \\ \hline
-    3 & Scan über Konverter, 19\,200\,Bd & Code vollständig empfangen & erfüllt \\ \hline
-    4 & Unbekannter Code & kein Auftrag, Bit bleibt 0 & erfüllt \\ \hline
-    5 & Auslagern, Platz belegt & Auslagerung, CPU bleibt in RUN & erfüllt nach Korrektur FB~6 \\ \hline
-    6 & Auslagern, Platz leer & HMI-Meldung, Auftrag nach 20\,s verworfen & erfüllt \\ \hline
-    7 & Netzwerkkabel am Konverter ziehen & selbstständiger Wiederaufbau & \textcolor{red}{[TODO]} \\ \hline
-    8 & Dauerbetrieb, mehrere Aufträge & keine Fehlfunktion & \textcolor{red}{[TODO]} \\ \hline
-  \end{tabular}
-\end{table}
+Zunächst wurde mit der seriellen Referenzverbindung nachgewiesen, dass ein gelesener Materialname verarbeitet und als Auftrag an die SPS übergeben werden konnte. Beim anschließenden Wechsel auf den Konverter gelang der TCP-Verbindungsaufbau bereits mit dessen Werkseinstellungen. Die zunächst unlesbaren Daten und die erfolgreiche Übertragung nach Anpassung der Baudrate zeigten jedoch, dass Netzwerkverbindung und serielle Parametrierung getrennt geprüft werden müssen. Mit 19\,200\,Bd wurde der Materialname vollständig empfangen. Ein unbekannter Code führte nach der Anpassung der Auftragsübergabe zu keinem Auftrag; das Übernahmebit blieb zurückgesetzt.
 
-Bei Test~5 ging die CPU zunächst nach Betätigen von \glqq Start\grqq{} in STOP. Der Diagnosepuffer meldete einen Bereichslängenfehler beim Lesen eines Datenbausteins in FB~6 \glqq Auslagerungsprozess\grqq{}, für den kein Fehler-OB vorhanden ist. FB~6 prüft vor dem Auslagern, ob der Lagerplatz laut \texttt{DB\_Lagerbestand} belegt ist. Im Zweig für das auftragsbasierte Auslagern wurde der Platz jedoch mit den Koordinaten der Übersicht (Eingänge \texttt{i\_Soll\_Position\_\allowbreak X\_ue} und \texttt{\_Y\_ue}) statt mit den vorhandenen Auftragseingängen (\texttt{\_X\_auftr} und \texttt{\_Y\_auftr}) adressiert. Ungültige Übersichtswerte führten zum Zugriff außerhalb des Arrays, zufällig gültige zur Prüfung eines falschen Platzes. Nach dem Einsetzen der Auftragskoordinaten und dem Laden des Programms blieb die CPU in RUN, und leere Lagerplätze wurden korrekt gemeldet. \textcolor{red}{[TODO: Abstimmung mit dem Betreuer bestätigen]}
+Bei der Prüfung eines Auslagerauftrags für einen belegten Lagerplatz wechselte die CPU zunächst nach Betätigung von \glqq Start\grqq{} in den Betriebszustand STOP. Der Diagnosepuffer meldete einen Bereichslängenfehler beim Lesen eines Datenbausteins in FB~6 \glqq Auslagerungsprozess\grqq{}. Ein Fehler-OB zur Behandlung dieses Ereignisses war nicht vorhanden. Die Untersuchung des Bausteins zeigte, dass die Belegungsprüfung im auftragsbasierten Zweig die Koordinaten der Übersicht verwendete, obwohl für den Auftrag eigene Koordinateneingänge zur Verfügung stehen. Damit konnte entweder ein unzulässiger Zugriff außerhalb des Arrays oder eine Prüfung des falschen Lagerplatzes entstehen.
 
-Ein weiterer Befund betrifft die Datenhaltung: Die Python-Anwendung entnimmt den Lagerplatz der CSV-Datei, die SPS führt einen eigenen Lagerbestand. Läuft die Anwendung während einer Einlagerung nicht oder wird ein RFID-Tag nicht gelesen, weichen beide Bestände ab, und die SPS lehnt den Auftrag ab.
+Zur Korrektur wurden bei diesem Zugriff die Übersichtseingänge durch die Auftragseingänge ersetzt. Nach dem Laden des korrigierten Programms blieb die CPU bei der erneuten Prüfung in RUN, und die Auslagerung des belegten Platzes wurde durchgeführt. Bei einem leeren Lagerplatz wurde die entsprechende HMI-Meldung ausgegeben und der nicht gestartete Auftrag nach 20\,s verworfen. Die Änderung in FB~6 behebt somit einen während der Inbetriebnahme erkannten Fehler der bestehenden Ablaufsteuerung. Sie verlagert weder den Empfang noch die Auswertung der Scannerdaten in die SPS und ist deshalb von der in Abschnitt~\ref{sec:qr_varianten} verworfenen direkten Scanneranbindung über das CM-PtP-Modul zu unterscheiden. \textcolor{red}{[TODO: Abstimmung der FB-6-Korrektur mit dem Betreuer bestätigen.]}
 
-% -----------------------------------------------------------------------------------------------------
-\subsection{Fazit}
+Als weitere Einschränkung bleibt die getrennte Datenhaltung zu berücksichtigen. Die Python-Anwendung bestimmt den Lagerplatz anhand der CSV-Datei, während die SPS einen eigenen Bestand in \texttt{DB\_Lagerbestand} führt. Läuft die Anwendung während einer Einlagerung nicht oder wird ein RFID-Tag nicht gelesen, können die Bestände voneinander abweichen. Ein aus der CSV-Datei gebildeter Auftrag kann dann auf einen von der SPS als leer geführten Platz verweisen und entsprechend abgelehnt werden. Die Umstellung des Übertragungswegs beseitigt diese Abhängigkeit nicht.
+
+\subsection{Bewertung der Umsetzung}
 \label{sec:qr_fazit}
 
-Der Scanner ist über den USR-TCP232-410S in das Anlagennetz eingebunden, und die Python-Anwendung benötigt keine serielle Schnittstelle mehr. Die Anforderung aus Tabelle~\ref{tab:schwachstellen} ist damit umgesetzt; der gezielte Test des Verbindungswiederaufbaus und ein Dauertest stehen noch aus. Die Referenzinbetriebnahme deckte zudem die Auslösung durch die SPS, Klartext-Etiketten und einen Adressierungsfehler in FB~6 auf, die behoben oder dokumentiert wurden. Das folgende Kapitel behandelt das Versetzen des IO-Link-Masters.
+Die Inbetriebnahme belegt für die durchgeführten Versuche, dass Scannerdaten über den USR-TCP232-410S empfangen, in der Python-Anwendung verarbeitet und als Auslagerauftrag an die SPS übergeben werden können. Eine lokale serielle Schnittstelle beziehungsweise ein USB-RS232-Adapter am Rechner ist für diesen Datenweg nicht mehr erforderlich. Damit ist die in Tabelle~\ref{tab:schwachstellen} beschriebene Schnittstellenabhängigkeit für den untersuchten Aufbau aufgehoben. Die Python-Anwendung und ihre Verbindung zur SPS bleiben dagegen Bestandteil der Lösung.
+
+Die Ergebnisse stellen noch keinen vollständigen Nachweis der Betriebsstabilität dar. Insbesondere der gezielte Test einer unterbrochenen Netzwerkverbindung und ein Dauerbetrieb mit mehreren Aufträgen stehen aus. Auch die tatsächlichen Telegrammabschlusszeichen sowie die noch offenen Anschluss- und Konfigurationsangaben sind vor Abschluss der Dokumentation zu ergänzen. Die erfolgreiche Übertragung einzelner Codes ist damit von der noch ausstehenden Prüfung des längerfristigen Betriebs zu trennen. Die bei der Inbetriebnahme erkannten Probleme der Auftragsverarbeitung und der Datenhaltung zeigen darüber hinaus, dass die Zuverlässigkeit der Scannerfunktion von der gesamten Verarbeitungskette bis zur SPS abhängt.

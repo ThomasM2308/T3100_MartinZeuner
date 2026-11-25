@@ -1,6 +1,6 @@
 # Kapitel 5 (QR-Scanner): Bearbeitungs- und Prüfstand
 
-Stand: 23.11.2026. Branch: `QR-Scanner_Dokument_bearbeitet`, abgezweigt von `studienarbeit/grundlagen-ueberarbeitung` (Commit `fa013e2`).
+Ursprünglicher Stand: 23.11.2026. Branch: `QR-Scanner_Dokument_bearbeitet`, abgezweigt von `studienarbeit/grundlagen-ueberarbeitung` (Commit `fa013e2`).
 
 ## Umfang der Änderung
 
@@ -44,7 +44,7 @@ Andere Kapitel, die Hauptdatei und der KI-Anhang wurden nicht verändert.
 
 ## Hinweise für die Überarbeitung
 
-- Aussagen über das Verhalten bei falscher Baudrate („sechsfache Abtastrate“) sind eigene Erklärung, keine Herstellerangabe.
+- Die ursprüngliche Erklärung der falschen Baudrate („sechsfache Abtastrate“) wurde am 25.11.2026 durch eine Beschreibung der nicht übereinstimmenden Bitzeiten ersetzt. Aus dem einzelnen unlesbaren Zeichen lässt sich kein genauer interner Abtastvorgang ableiten.
 - Die Befunde FB 6 und CSV/SPS-Bestand sollten in Kapitel 7 (Ausblick) aufgegriffen werden: Fehler-OB bzw. Bereichsprüfung in FB 6, Abgleich CSV ↔ `DB_Lagerbestand`.
 - KI-Nutzung: Rohfassung mit Claude erstellt (Kommentar im Kopf der Datei) – im KI-Anhang offenlegen.
 
@@ -53,3 +53,29 @@ Andere Kapitel, die Hauptdatei und der KI-Anhang wurden nicht verändert.
 - Alle Zitierschlüssel existieren in `literature.bib`, alle `\ref`-Ziele existieren im Projekt.
 - Klammern und Umgebungen geschlossen.
 - Probesatz des Kapitels allein (pdfLaTeX, gleiche Seitenränder, 12 pt, 1,5-zeilig; ohne biblatex/ngerman, die im Container fehlen): fehlerfrei, ca. 6,5 Seiten. Ein Gesamtlauf mit `Projektarbeit.tex` steht aus.
+
+
+## Redaktionelle Überarbeitung vom 25.11.2026
+
+Kapitel 5 wurde mit ChatGPT sprachlich und strukturell an die Grundlagen angepasst. Die fachliche Basis bilden ausschließlich die vorhandene Kapitelversion und die oben aufgeführten Prüfnotizen. Es wurden keine neuen Anlagenversuche durchgeführt; die externe Python-Anwendung und das TIA-Projekt wurden bei dieser Überarbeitung nicht ausgeführt oder erneut geprüft.
+
+- Der Adressplan bleibt als einzige Tabelle im Haupttext erhalten. Variantenvergleich und Konverterparameter werden zusammenhängend erläutert.
+- Die nummerierte Fehlerliste wurde in die Beschreibung der Referenzinbetriebnahme integriert. Die Argumentation folgt Ausgangszustand, Auswahl, Umsetzung, Prüfung und Bewertung.
+- Das Prüfprotokoll und der unveränderte Codeausschnitt stehen in `content/103_Anhang_QR-Scanner.tex`. Die Hauptdatei bindet diesen Anhang nach Kapitel 7 ein. Die bisherigen Labels `tab:qr_test` und `lst:qr_read` bleiben erhalten; die nicht mehr benötigten Labels `tab:qr_varianten` und `tab:qr_konfig` entfallen.
+- Die Korrektur in FB 6 wird als Behebung eines bestehenden Fehlers gegenüber der verworfenen Verlagerung der Scannerverarbeitung in die SPS abgegrenzt. Eine Abstimmung mit dem Betreuer wird nicht als erfolgt dargestellt.
+- Der Empfang nach Betätigung des HMI wird als Beobachtung dokumentiert; Triggerleitung und Scannerparametrierung bleiben zu bestätigen. Aus dem Ausbleiben von Daten auf `LON` wird keine allgemeine Aussage über die Unterstützung des Befehls abgeleitet.
+- Bei DHCP ist von einer fehlenden geeigneten Adresse für das Anlagennetz die Rede, nicht pauschal vom Fehlen jeglicher IPv4-Adresse.
+- Die Ruhezeit von 0,3 s wird als Ersatz für ein Abschlusszeichen beschrieben. Der Empfangstimeout von 0,2 s, der Wiederverbindungsabstand von 2 s und das Auftragszeitfenster von 20 s bleiben unverändert.
+- Die bestehende Filterregel wird ausdrücklich erläutert: Gemischte alphanumerische Codes werden auf ihre Ziffern reduziert. Eine beliebige Klartextunterstützung wird nicht behauptet.
+- Der Versuch mit falscher Baudrate wird im Prüfprotokoll als fehlgeschlagener Empfang mit anschließender Ursachenklärung dokumentiert, nicht als von vornherein erfolgreich erwarteter Fehler.
+- Alle offenen Anschlussangaben, die digitalen Codeunterlagen, der Wiederverbindungstest und der Dauertest bleiben offen. Die Inhalte und bibliografischen Einträge der übrigen Kapitel wurden nicht redaktionell verändert.
+- Der bestehende KI-Anhang ist weiterhin ein markierter Vorgänger-Platzhalter. Die Nutzung von Claude für die Rohfassung und von ChatGPT für diese Überarbeitung ist vor Abgabe dort zutreffend zu ergänzen.
+
+### Prüfung der überarbeiteten Fassung
+
+- Vollständiger Build mit pdfLaTeX und Biber (TeX Live 2026) erfolgreich; Literatur und Querverweise nach Folgeläufen aufgelöst. Gesamtfassung: 55 PDF-Seiten.
+- Kapitel 5 umfasst die Druckseiten 29–36 (acht Seiten); Anhang A die Seiten 42–43 (zwei Seiten). Alle zehn Seiten wurden als Bilder auf Lesbarkeit, Umbrüche und überstehende Elemente geprüft.
+- Im überarbeiteten Kapitel und seinem Anhang gibt es im abschließenden LaTeX-Lauf keine Overfull- oder Underfull-Meldungen. Der Prüfbericht im Anhang verwendet linksbündige Tabellenzellen.
+- Alle Zitierschlüssel und Querverweise der beiden bearbeiteten Inhaltsdateien geprüft; der Codeauszug wurde zeichengetreu aus der Ausgangsfassung übernommen. Bibliografie unverändert.
+- Außerhalb des Änderungsumfangs bleiben bestehende Warnungen: fehlende Abbildungsziele `fig:ventil` und `fig:not_halt` in Kapitel 4 sowie überbreite Stellen unter anderem in Vorgänger-Platzhaltern, den Grundlagen und im Literaturverzeichnis. Diese wurden nicht stillschweigend mitbearbeitet.
+- Keine erneute Funktionsprüfung von Python-Code, SPS oder Anlage. Die im Kapitel dokumentierten Versuchsergebnisse sind Angaben aus dem vorhandenen Projektstand, keine Ergebnisse dieser redaktionellen Prüfung.
